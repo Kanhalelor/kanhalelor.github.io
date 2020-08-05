@@ -1,0 +1,210 @@
+/*imports*/
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+/*universal selector*/
+
+* {
+  box-sizing: border-box;
+}
+body {
+  background: white; /* try type yellow */
+  color: #323232;
+  margin: 0;
+  height: 100vh;
+  
+  font-family: 'Maven Pro', sans-serif;
+}
+/*header styling*/
+#main-header {
+  background: black;
+  color: white;
+  padding: 1%;
+
+  display: block;
+  text-align: center;
+  border-bottom: 3px solid teal;
+}
+/*image-styling*/
+#main-header img {
+  margin: 30px;
+}
+.avatar {
+  max-width: 25%;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  border: 3px solid white;
+}
+
+/*title*/
+.title {
+  color: teal;
+}
+
+/*main-navigation*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.ul-nav li {
+  display: inline-block;
+}
+
+/*all <a> tags*/
+a {
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+/*active links*/
+a:active {
+  color: grey;
+}
+
+a:hover {
+  color: dimgrey;
+}
+
+/*.intro*/
+.intro {
+    display: flex;
+    flex-direction: column;
+}
+
+/*text-center*/
+.text-center {
+    text-align: center;
+    padding: 12px;
+}
+/*.command*/
+.command {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+  border-left: solid teal;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+/*call-out*/
+.call-out {
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+    border-left: solid teal;
+    box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1), 
+             0 0  0 2px rgb(255,255,255),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+.call-out p {
+  flex: 1 1 auto;
+  text-align: center;
+  padding: 12px;
+}
+/*main-content*/
+.main-content {
+  display: flex;
+  flex-flow: row wrap;
+  margin: 1% 6% 1% 6%;
+}
+/*.content*/
+.blog-posts {
+    display: block;
+    padding: 50px;
+    margin: 0px;
+}
+
+/*article-title-links*/
+.article-title-link {
+  font-size: large;
+    padding: 0px;
+    color: black;
+}
+
+article {
+  display: flex;
+  flex-flow: row wrap;
+}
+article header {
+  flex: 1 1 auto;
+}
+article p {
+  flex: 1 1 auto;
+}
+/*.article-title-link hover effect*/
+.article-title-link:hover {
+  color: teal;
+    text-decoration: underline;
+}
+/*read-more-call-out*/
+.read-more {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #478;
+  font-weight: bold;
+  width: 140px;
+}
+
+.read-more:hover {
+  background-color: white;
+  border: .5px solid teal;
+}
+.read-more a:hover {
+    color: teal;
+}
+/*archives call-out-link*/
+.archives {
+    margin-top: 15px;
+}
+footer {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+
+  background-color: black;
+  color: white;
+  height: 120px;
+  border-top: 3px solid teal;
+}
+
+footer small {
+  flex: 1 1 auto;
+  text-align: center;
+}
+
+/*media queries*/
+
+@media only screen and (min-width: 900px) {
+    .command {
+        margin: 0px 250px 0px 250px;
+        border-right: solid teal;
+    }
+    .call-out {
+      margin: 0px 250px 0px 250px;
+      border-right: solid teal;
+    }
+
+    .blog-posts {
+      margin: 0px 200px 0px 200px;
+    }
+    .article-title-link {
+      font-size: x-large;
+    }
+    .title {
+      font-size: x-large;
+    }
+}
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: larger;
+  }
+}
