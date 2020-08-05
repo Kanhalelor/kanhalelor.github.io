@@ -1,2 +1,1 @@
-# kanhalelor.gihub.io
-Personal Website
+# Personal Website
