@@ -1,0 +1,148 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+
+* {
+  color: #e3effb;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+  color: #ddd;
+
+  margin: 0;
+  height: 100vh;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: flex-start;
+  font-size: 15px;
+  
+  font-family: 'Maven Pro', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+header {
+  width: 100%;
+  margin-top: 0px;
+}
+
+footer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: auto;
+  height: 22vh;
+}
+footer a {
+  margin: 12px;
+}
+footer a img {
+  border: 2px solid;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+footer a img:hover {
+  transform: scale(1.1);
+}
+
+small {
+  margin-top: 40px;
+  margin-bottom: 20px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+}
+li {
+  padding: 5px;
+  border-radius: 10px;
+}
+.main-nav li:hover {
+  background-color: #eee;
+}
+.main-nav a {
+  font-weight: 900;
+  margin: 0pc 10px;
+}
+.main-nav a:hover {
+  color: #000;
+}
+.welcome-note {
+  min-height: calc(60vh - 38vh);
+  margin-top: 100px;
+
+}
+
+article {
+  display: flex;
+  flex-flow: column wrap;
+  align-items: center;
+  padding: 6px;
+  line-height: 1.5;
+  width: 100%;
+  margin: 0 auto;
+  max-width: 700px;
+  margin-bottom: 40px;
+}
+.intro-img {
+  max-width: 100%;
+  border-radius: 13px;
+  box-shadow: 0 1px 1px #f5f2f226, 
+              0 2px 2px #f3f0f026, 
+              0 4px 4px #faf9f926, 
+              0 8px 8px #36363626;
+}
+.image-div{
+  display: block;
+  text-align: center;
+}
+
+.tag {
+  text-decoration: underline;
+}
+
+.content {
+  display: flex;
+  flex-flow: column wrap;
+  padding: 12px;
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 10px;
+  max-width: 900px;
+}
+
+p {
+  text-align: justify;
+}
+
+.first-para::first-letter {
+  font-weight: 900;
+  font-size: 36px;
+  color: #000;
+  padding: 6px 6px 0px 6px;
+  margin-right: 4px;
+  border-radius: 30px 30px 0px 0px;
+  text-shadow: 1px 1px #e3effb;
+  background-color: #ddd;
+}
+
+@media only screen and (min-width: 900px) {
+  .welcome-note {
+    font-size: 30px;
+  }
+  .main-nav a {
+    font-size: 24px;
+  }
+}
