@@ -90,6 +90,8 @@ ul {
   text-decoration: none;
 }
 
+.love {color: red;}
+
 .archives a:hover {
   color: #ddd;
 }
