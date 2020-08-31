@@ -1,3 +1,3 @@
 # Personal Website
 
-**WIP**
+**Will keep improving it**
