@@ -59,6 +59,11 @@ ul {
   color: #eee;
   border-bottom: .6px solid #ddd;
 }
+
+time {
+  color: #bbb;
+}
+
 .content,
 .article {
   padding: 6px;
