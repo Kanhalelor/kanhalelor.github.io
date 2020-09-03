@@ -35,7 +35,7 @@ ul {
   padding: 0;
 }
 
-/* ====pseuso selectors ====*/
+/* ==== BASE SELECTORS====*/
 
 .avatar {
   max-width: 25%;
@@ -173,6 +173,9 @@ time {
     border-radius: 6px;
     font-family: monospace;
 }
+
+.copyright{color: #eee !important;}
+.love {color: red;}
 
 /*======== media queries ===*/
 
