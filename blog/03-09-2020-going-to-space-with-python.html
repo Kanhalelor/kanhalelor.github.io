@@ -79,30 +79,14 @@ img{
 }
 
 code {
-  padding: 3px 4px;
+  padding: 2px 3px;
   border-radius: 5px;
   color: tomato;
   background-color: #eee;
 }
-  
-button {
-    border: none;
-    font-weight: 900;
-    color: #121212;
-    margin-top: 6.6px;
-    padding: 6px;
-}
-button:hover {
-    color: green;
-    transform: scale(1.2);
-}
 
 article a {color: tomato;}
 /*=== BASE STYLES*/
-
-.lang {
-  padding: 6px;
-  }
 
 .image-div{
   display: block;
@@ -134,15 +118,9 @@ li {
 
 /*== content tags ==*/
 .tag {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
-/*=== input ===*/
-#name-box {
-    border: none;
-    color: #121212;
-    padding: 6px;
-}
-
+    
 .content {
   display: flex;
   flex-flow: column wrap;
@@ -200,25 +178,23 @@ p {
 
 <p>Python has a great plethora of libraries, modules and frameworks that allows you to do just what you want with ease. Even going to space. &#128522;</p>
 
-<p>In this article, we are doing to use the<b> <code>requests</code></b> library and the  <b><code>open-notify API</code></b> to find out which and how many astronauts are in space. Ready? Let's dive in...</p>
+<p>In this article, we are doing to use the <code>requests</code> library and the  <code>open-notify API</code> to find out which and how many astronauts are in space. Ready? Let's dive in...</p>
 
-<p>First, we have to install the <b> <code>requests</code></b> module from <b> <code>PyPI</code></b> using <b> <code>pip</code></b>.  It will help us make <b><code>HTTP</code></b> requests. If you already have it installed, please skip this step.
+<p>First, we have to install the <code>requests</code> module from <code>PyPI</code> using <code>pip</code>.  It will help us make <code>HTTP</code></b> requests. If you already have it installed, please skip this step.
 <div class="img-div"><img src="../images/pip-install.png" alt="bash"></div>
 </p>
-<p>Create a new python file and name it whatever you want. I'll name mine <b> <code>astros.py</code></b></p>
+<p>Create a new python file and name it whatever you want. I'll name mine <code>astros.py</code></p>
 <p>Inside our file, we are going to type this.
   <div class="img-div"><img src="../images/imports.png" alt="bash"></div>
 </p>
 <p>
-  When you are performing a <b><code>HTTP</code></b> request, it should display a status code.  We've assigned this status code to the <b><code>status_code</code></b> variable.</p> 
-
+  When you are performing a <code>HTTP</code>request, it should display a status code.  We've assigned this status code to the <code>status_code</code> variable.</p> 
 <p>
-  Let's run <b><code>astros.py</code></b>.
+  Let's run <code>astros.py</code>.
   <div class="img-div"><img src="../images/output1.png" alt="bash"></div>
 </p>
 <p>
   A <code>200</code> response status code means that our request to the server has been successfully received. To learn more about <code>HTTP</code> status codes check out <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">MDN Docs</a>.</p>
-
 <p>
   Alright, so far so good! Let's get  data.
   <div class="img-div"><img src="../images/data.png" alt="bash"></div>
@@ -227,7 +203,7 @@ p {
   <h4>We're getting dataaaaaaaa!  &#128540;</h4>
 </p>
 <p>
-  Yes, but it is of type <b><code>string</code></b>.  We can't do much faster with data of `string type`. Well, there is another python module that will help us handle this. It is called <b><code>json</code></b>. Go and box this code <b><code>import json</code></b> just below or before where you wrote <b><code>import requests</code></b> in your file. It should look like this;
+  Yes, but it is of type <code>string</code>.  We can't do much faster with data of type <code>string</code>. Well, there is another python module that will help us handle this. It is called <code>json</code>. Go and box this code <code>import json</code> just below or before where you wrote <code>import requests</code> in your file. It should look like this;
   <div class="img-div"><img src="../images/json-import.png" alt="bash"></div>
 </p>
 <p> 
@@ -261,7 +237,7 @@ p {
 </p>
 <h3>That was it.</h3>
 
-<p>We've just learned how to use python's <b><code>requests library</code></b> to perform HTTP requests. We've also learned how to use <b><code>json</code></b> to convert data of type string into a dictionary which allows you to access it easily within our code.
+<p>We've just learned how to use python's <code>requests library</code> to perform HTTP requests. We've also learned how to use <code>json</code> to convert data of type string into a dictionary which allows you to access it easily within our code.
 </p>
 <p>
   This article is also available on <b title="a blogging platform">Hashnode</b>. <a target="_blank" href=""https://hashnode.com/@robson/joinme>Signup</a> for Hashnode.
