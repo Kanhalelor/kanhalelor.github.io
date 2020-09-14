@@ -16,7 +16,6 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: flex-start;
   font-size: 15px;
   
   font-family: 'Maven Pro', Tahoma, Geneva, Verdana, sans-serif !important;
@@ -24,38 +23,34 @@ body {
 
 header {
   width: 100%;
-  margin-top: 0px;
+  margin-top: 0;
 }
 
 footer {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: center;
   width: 100%;
-  margin-top: auto;
-  height: 22vh;
+  padding: 12px;
+  margin-top: 12px;
 }
 footer a {
-  margin: 12px;
+  margin: 0px 12px;
 }
-footer a img {
-  width: 40px;
+footer img {
+  margin: 0px 0px 12px;
+  max-width: 40px;
   border: 2px solid;
   border-radius: 50%;
   background-color: #ddd;
 }
+
 footer a img:hover {
   transform: scale(1.1);
 }
 
 small {
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin: 40px 0px;
 }
-
-.love {color: red;}
-
 ul {
   list-style: none;
   padding: 0;
@@ -83,10 +78,11 @@ li {
 .main-nav a:hover {
   color: #000;
 }
-.welcome-note {
-  min-height: calc(60vh - 38vh);
-  margin-top: 100px;
-
+.about-div{
+  padding: 12px;
+}
+.occupation {
+  text-decoration: underline;
 }
 
 article {
@@ -141,15 +137,15 @@ p {
   text-shadow: 1px 1px #e3effb;
   background-color: #ddd;
 }
-
+.love {color: red;}
 @media only screen and (min-width: 900px) {
   .welcome-note {
-    font-size: 28px;
+    font-size: 30px;
   }
   .main-nav a {
-    font-size: 18px;
+    font-size: 24px;
   }
-  footer a img {
+  footer img {
     width: 60px;
   }
 }
