@@ -16,7 +16,6 @@
 
 body {
   background: #121212;
-  color: #ddd;
 
   margin: 0;
   height: 100vh;
@@ -24,31 +23,28 @@ body {
   display: flex;
   flex-flow: column;
   align-items: center;
-  justify-content: flex-start;
   font-size: 15px;
   
   font-family: 'Maven Pro', Tahoma, Geneva, Verdana, sans-serif !important;
 }
-
 header {
   width: 100%;
-  margin-top: 0px;
+  margin-top: 0;
 }
-
 footer {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
+  display: block;
+  text-align: center;
+  padding: 12px;
   width: 100%;
-  margin-top: auto;
-  height: 22vh;
+  margin-top: 12px;
+  background-color: green;
 }
 footer a {
-  margin: 12px;
+  margin: 0px 12px;
 }
 footer a img {
-  width: 40px;
+  max-width: 40px;
+  margin: 0px 0px 16px;
   border: 2px solid;
   border-radius: 50%;
   background-color: #ddd;
@@ -56,9 +52,7 @@ footer a img {
 footer a img:hover {
   transform: scale(1.1);
 }
-
 small {
-  margin-top: 40px;
   margin-bottom: 20px;
 }
 ul {
