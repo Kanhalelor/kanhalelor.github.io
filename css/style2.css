@@ -31,7 +31,7 @@ footer {
   text-align: center;
   width: 100%;
   padding: 12px;
-  margin-top: 12px;
+  margin-top: auto;
 }
 footer a {
   margin: 0px 12px;
@@ -80,6 +80,7 @@ li {
 }
 .about-div{
   padding: 12px;
+  margin-bottom: 16px;
 }
 .occupation {
   text-decoration: underline;
