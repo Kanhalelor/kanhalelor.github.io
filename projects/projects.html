@@ -157,12 +157,12 @@ footer a img:hover {
   text-align: center;
 }
 .info > a{
-  background-color: #fff;
   color: #121212;
   font-size: 12px;
   font-weight: 600;
 
   display: flex;
+  flex-flow: column;
   align-items: center;
   justify-content: center;
   border-radius: 10px;
@@ -172,10 +172,12 @@ footer a img:hover {
   padding: 4px 6.66px;
   transition: .5s ease-in-out;
 }
-.info a:hover {
+.info i:hover {
   cursor: pointer;
-  color: #fff;
-  background: rgba(176, 175, 80, 0.5);
+  transform: scale(1.05);
+}
+.info i {
+    font-size: 35px;
 }
 .copyright {
   margin-top: 40px;
@@ -196,6 +198,7 @@ footer a img:hover {
   }
 }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
   <header>
@@ -208,42 +211,42 @@ footer a img:hover {
       <h4 class="project-name">Color Generator</h4>
       <img class="project-img" src="../images/random-color.PNG" alt="project-image">
       <div class="overlay">
-        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/Random-Color-Generator">View Code</a><a target="_blank" href="https://kanhalelor.github.io/Random-Color-Generator/">View Project</a></span>
+        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/Random-Color-Generator"><i class="fa fa-github-square" aria-hidden="true"></i><span>View Code</span></a><a target="_blank" href="https://kanhalelor.github.io/Random-Color-Generator/"><i class="fa fa-external-link" aria-hidden="true"></i><span>View Project</span></a></span>
       </div>
     </div>
     <div class="project">
       <h4 class="project-name">To Do App</h4>
       <img class="project-img" src="../images/to-do.PNG" alt="project-image">
       <div class="overlay">
-        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/to-do-app">View Code</a><a target="_blank" href="https://kanhalelor.github.io/to-do-app/">View Project</a></span>
+        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/to-do-app"><i class="fa fa-github-square" aria-hidden="true"></i><span>View Code</span></a><a target="_blank" href="https://kanhalelor.github.io/to-do-app/"><i class="fa fa-external-link" aria-hidden="true"></i><span>View Project</span></a></span>
       </div>
     </div>
     <div class="project">
       <h4 class="project-name">CS Units Conversion Calculator</h4>
       <img class="project-img" src="../images/unit-converter.PNG" alt="project-image">
       <div class="overlay">
-        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/computer-storate-unit-converter">View Code</a><a target="_blank" href="https://kanhalelor.github.io/computer-storate-unit-converter/">View Project</a></span>
+        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/computer-storate-unit-converter"><i class="fa fa-github-square" aria-hidden="true"></i><span>View Code</span></a><a target="_blank" href="https://kanhalelor.github.io/computer-storate-unit-converter/"><i class="fa fa-external-link" aria-hidden="true"></i><span>View Project</span></a></span>
       </div>
     </div>
     <div class="project">
       <h4 class="project-name">Windhoek Namibia | Website</h4>
       <img class="project-img" src="../images/windhoek.PNG" alt="project-image">
       <div class="overlay">
-        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/windhoeknamibia.github.io">View Code</a><a target="_blank" href="https://windhoeknamibia.github.io/">View Project</a></span>
+        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/windhoeknamibia.github.io"><i class="fa fa-github-square" aria-hidden="true"></i><span>View Code</span></a><a target="_blank" href="https://windhoeknamibia.github.io/"><i class="fa fa-external-link" aria-hidden="true"></i><span>View Project</span></a></span>
       </div>
     </div>
     <div class="project">
       <h4 class="project-name">School Blog | Website(WIP)</h4>
       <img class="project-img" src="../images/sxul-blog.PNG" alt="project-image">
       <div class="overlay">
-        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/ium-blog-website">View Code</a><a target="_blank" href="https://kanhalelor.github.io/ium-blog-website/">View Project</a></span>
+        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/ium-blog-website"><i class="fa fa-github-square" aria-hidden="true"></i><span>View Code</span></a><a target="_blank" href="https://kanhalelor.github.io/ium-blog-website/"><i class="fa fa-external-link" aria-hidden="true"></i><span>View Project</span></a></span>
       </div>      
     </div>
     <div class="project">
       <h4 class="project-name">CS - Online Assessment</h4>
       <img class="project-img" src="../images/online-assessment.PNG" alt="project-image">
       <div class="overlay">
-        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/online-assessment">View Code</a><a target="_blank" href="https://kanhalelor.github.io/online-assessment/">View Project</a></span>
+        <span class="info"><a target="_blank" href="https://github.com/Kanhalelor/online-assessment"><i class="fa fa-github-square" aria-hidden="true"></i><span>View Code</span></a><a target="_blank" href="https://kanhalelor.github.io/online-assessment/"><i class="fa fa-external-link" aria-hidden="true"></i><span>View Project</span></a></span>
       </div>
     </div>
   </div>
