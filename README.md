@@ -1,1 +1,1 @@
-### [Personal Website](https://www.kanhalelor.github.io)
+### [Personal Website](https://kanhalelor.github.io/)
