@@ -1,6 +1,6 @@
 >“Everyone in this country should learn to program a computer, because it teaches you to think.” — Steve Jobs
 
-** One of the most important parts of learning to code is learning how to solve coding problems. It will help you to improve your problem solving skills as a programmer.**
+**One of the most important parts of learning to code is learning how to solve coding problems. It will help you to improve your problem solving skills as a programmer.**
 
 
 [Codingbat](https://www.codingbat.com) is a competitive programming website were programmers get to attempt to solve programming challenges.
@@ -9,7 +9,7 @@ Today, we're are going to attempt solving some of these challenges wich I have r
 
 ---
 
-1. Challenge 1
+Challenge 1
 > Return the number of even `ints` in the given array. Note: the % "mod" > operator computes the remainder, e.g. 5 % 2 is 1.
 ```bash
 count_evens([2, 1, 2, 3, 4]) ? 3  
@@ -24,7 +24,7 @@ def count_evens(nums):
   return len([i for i in nums if i % 2 == 0])
 ```
 ---
-2. Challenge 2
+Challenge 2
 > Given an array length 1 or more of ints, return the difference between the largest and smallest values in the array. Note: the built-in min(v1, v2) and max(v1, v2) functions return the smaller or larger of two values.
 ```bash
 big_diff([10, 3, 5, 6]) ? 7  
@@ -40,7 +40,7 @@ def big_diff(nums):
 ```
 
 ---
-3. Challenge 3
+Challenge 3
 > Return the "centered" average of an array of ints, which we'll say is the mean average of the values, except ignoring the largest and smallest values in the array. If there are multiple copies of the smallest value, ignore just one copy, and likewise for the largest value. Use int division to produce the final average. You may assume that the array is length 3 or more.
 
 ```bash
@@ -59,7 +59,7 @@ def centered_average(nums):
 
 ```
 ---
-4. Challenge 4
+Challenge 4
 > Return the sum of the numbers in the array, returning 0 for an empty array. Except the number 13 is very unlucky, so it does not count and numbers that come immediately after a 13 also do not count.
 ```bash
 sum13([1, 2, 2, 1]) ? 6  
@@ -74,7 +74,7 @@ def sum13(nums):
   return sum(i for i, j in zip(nums, [0] + nums) if 13 not in (i, j))
 ```
 
-4. Challenge 5
+Challenge 5
 > Given a string, return a string where for every char in the original, there are two chars.
 
 ```bash
