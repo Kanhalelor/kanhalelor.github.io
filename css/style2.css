@@ -1,6 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap");
 
-* {
+*,
+*::after,
+*::before {
   color: #e3effb;
   text-decoration: none;
   box-sizing: border-box;
@@ -17,8 +19,8 @@ body {
   flex-flow: column;
   align-items: center;
   font-size: 15px;
-  
-  font-family: 'Maven Pro', Tahoma, Geneva, Verdana, sans-serif !important;
+
+  font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 
 header {
@@ -62,23 +64,20 @@ ul {
   justify-content: center;
   color: #fff;
   border-radius: 10px;
-  padding: 12px;
+  padding: 2px;
 }
-li {
-  padding: 5px;
-  border-radius: 10px;
+.main-nav li {
+  border-radius: 2px;
 }
-.main-nav li:hover {
-  background-color: #eee;
-}
+
 .main-nav a {
-  font-weight: 900;
-  margin: 0pc 10px;
+  font-weight: 700;
+  margin: 0 10px;
 }
 .main-nav a:hover {
-  color: #000;
+  color: #aaa9a9;
 }
-.about-div{
+.about-div {
   padding: 12px;
   margin-bottom: 16px;
 }
@@ -100,12 +99,10 @@ article {
 .intro-img {
   max-width: 100%;
   border-radius: 13px;
-  box-shadow: 0 1px 1px #f5f2f226, 
-              0 2px 2px #f3f0f026, 
-              0 4px 4px #faf9f926, 
-              0 8px 8px #36363626;
+  box-shadow: 0 1px 1px #f5f2f226, 0 2px 2px #f3f0f026, 0 4px 4px #faf9f926,
+    0 8px 8px #36363626;
 }
-.image-div{
+.image-div {
   display: block;
   text-align: center;
 }
@@ -138,13 +135,15 @@ p {
   text-shadow: 1px 1px #e3effb;
   background-color: #ddd;
 }
-.love {color: red;}
+.love {
+  color: red;
+}
 @media only screen and (min-width: 900px) {
   .welcome-note {
     font-size: 30px;
   }
   .main-nav a {
-    font-size: 24px;
+    font-size: 16px;
   }
   footer img {
     width: 60px;
