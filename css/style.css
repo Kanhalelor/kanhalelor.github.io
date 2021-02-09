@@ -91,7 +91,7 @@ time {
 }
 
 .article span {
-  font-weight: 900;
+  font-weight: 600;
 }
 
 .article > div {
@@ -99,11 +99,12 @@ time {
 }
 
 .article span a {
-  text-decoration: underline !important;
+  text-decoration: underline teal;
   color: #333;
 }
 .article span a:hover {
-  color: #ddd;
+  color: #aaa8a8;
+  text-decoration: none;
 }
 .archives {
   margin: 30px 0px 50px 0px;
