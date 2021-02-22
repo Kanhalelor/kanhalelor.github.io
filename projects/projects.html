@@ -42,6 +42,7 @@
         flex-flow: column;
         min-height: 100vh;
         font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
+        transition: 0.3s;
       }
 
       header {
@@ -105,8 +106,32 @@
         margin-top: 3rem;
       }
       .heading {
-        display: grid;
-        place-items: center;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+      }
+      .heading span {
+        color: tomato;
+        padding: 0.5em;
+      }
+      .heading .filter-cont {
+        display: flex;
+        justify-content: center;
+        flex-flow: row wrap;
+        background: #333;
+        border-radius: 5px;
+      }
+      .heading .filter-cont > button {
+        border: none;
+        background: rgba(0, 0, 0, 0.9);
+        padding: 0.5em;
+        color: #fff;
+        margin: 0.2em;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .heading .filter-cont > button:hover {
+        opacity: 0.4;
       }
       .projects {
         display: flex;
@@ -152,6 +177,8 @@
       }
       .overlay {
         position: absolute;
+        display: flex;
+        flex-flow: column;
         bottom: 0;
         left: 0;
         right: 0;
@@ -203,6 +230,19 @@
       .info i {
         font-size: 35px;
       }
+      .descrip {
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        color: white;
+        font-size: 16px;
+        position: absolute;
+        top: 74%;
+        left: 50%;
+        margin: 0 auto;
+        text-align: center;
+        transform: translate(-50%, -50%);
+      }
       .copyright {
         margin-top: 40px;
         margin-bottom: 20px;
@@ -231,10 +271,16 @@
       </ul>
     </header>
     <div class="heading">
-      <h3>Projects</h3>
+      <span>Filter</span>
+      <div class="filter-cont">
+        <button class="all-projects">All</button>
+        <button class="static-projects">HTML5 | CSS3</button>
+        <button class="js-projects">JavaScript</button>
+        <button class="py-projects">Python</button>
+      </div>
     </div>
     <div class="projects">
-      <div class="project">
+      <div class="project js">
         <h4 class="project-name">New Year Countdown</h4>
         <img
           class="project-img"
@@ -242,8 +288,8 @@
           alt="project-image"
         />
         <div class="overlay">
-          <span class="info"
-            ><a
+          <div class="info">
+            <a
               target="_blank"
               href="https://github.com/Kanhalelor/newyear-countdown"
               ><i class="fa fa-github-square" aria-hidden="true"></i
@@ -253,11 +299,14 @@
               href="https://kanhalelor.github.io/newyear-countdown/"
               ><i class="fa fa-external-link" aria-hidden="true"></i
               ><span>View Project</span></a
-            ></span
-          >
+            >
+          </div>
+          <div class="descrip">
+            A New Year Countdown App build with JavaScript.
+          </div>
         </div>
       </div>
-      <div class="project">
+      <div class="project js">
         <h4 class="project-name">Color Generator</h4>
         <img
           class="project-img"
@@ -278,9 +327,12 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            A Color generator Application build with JavaScript.
+          </div>
         </div>
       </div>
-      <div class="project">
+      <div class="project js">
         <h4 class="project-name">To Do App</h4>
         <img
           class="project-img"
@@ -297,9 +349,12 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            A Simple To-Do Application build with JavaScript.
+          </div>
         </div>
       </div>
-      <div class="project">
+      <div class="project js">
         <h4 class="project-name">CS Units Conversion Calculator</h4>
         <img
           class="project-img"
@@ -320,10 +375,13 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            A Computer Unit converstion converter build with JavaScript.
+          </div>
         </div>
       </div>
-      <div class="project">
-        <h4 class="project-name">CS - Online Assessment</h4>
+      <div class="project js">
+        <h4 class="project-name">Online Assessment</h4>
         <img
           class="project-img"
           src="../images/online-assessment.PNG"
@@ -343,9 +401,12 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            An online Assessment application build with JavaScript
+          </div>
         </div>
       </div>
-      <div class="project">
+      <div class="project static">
         <h4 class="project-name">CO-FEED NAMIBIA</h4>
         <img
           class="project-img"
@@ -366,10 +427,13 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            A static HTML5, and CSS3 Website.
+          </div>
         </div>
       </div>
       <div class="project">
-        <h4 class="project-name">School Blog | Website(WIP)</h4>
+        <h4 class="project-name">School Blog Website</h4>
         <img
           class="project-img"
           src="../images/sxul-blog.PNG"
@@ -389,9 +453,13 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            This is a work in progress(WIP). The tech stack includes HTML5,
+            CSS3, and JavaScript.
+          </div>
         </div>
       </div>
-      <div class="project">
+      <div class="project static">
         <h4 class="project-name">Resume Template</h4>
         <img
           class="project-img"
@@ -408,9 +476,12 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            A resume template build with HTML, and CSS.
+          </div>
         </div>
       </div>
-      <div class="project">
+      <div class="project static">
         <h4 class="project-name">Windhoek Namibia | Website</h4>
         <img
           class="project-img"
@@ -429,6 +500,9 @@
               ><span>View Project</span></a
             ></span
           >
+          <div class="descrip">
+            A static HTML, and CSS website. Code highlights the use of flexbox.
+          </div>
         </div>
       </div>
     </div>
@@ -457,5 +531,58 @@
         >Made with <span class="love">&#x2764; </span>by Robson</small
       >
     </footer>
+    <script>
+      // select elements
+      const projects = Array.from(document.querySelectorAll(".project"));
+      const allProjects = document.querySelector(".all-projects");
+      const htmlCssProjects = document.querySelector(".static-projects");
+      const pythonProjects = document.querySelector(".py-projects");
+      const jsProjects = document.querySelector(".js-projects");
+
+      // functions
+      const ShowAll = (e) => {
+        e.preventDefault();
+        projects.forEach((project) => {
+          project.style.display = "flex";
+        });
+      };
+      const filterStaticProjects = (e) => {
+        e.preventDefault();
+        projects.filter((project) => {
+          if (!project.classList.contains("static")) {
+            project.style.display = "none";
+          } else {
+            project.style.display = "flex";
+          }
+        });
+      };
+      const filterJsProjects = (e) => {
+        e.preventDefault();
+        projects.filter((project) => {
+          if (!project.classList.contains("js")) {
+            project.style.display = "none";
+          } else {
+            project.style.display = "flex";
+          }
+        });
+      };
+
+      const filterPythonProjects = (e) => {
+        e.preventDefault();
+        projects.filter((project) => {
+          if (!project.classList.contains("py")) {
+            project.style.display = "none";
+          } else {
+            project.style.display = "flex";
+          }
+        });
+      };
+
+      // events
+      allProjects.addEventListener("click", ShowAll);
+      htmlCssProjects.addEventListener("click", filterStaticProjects);
+      pythonProjects.addEventListener("click", filterPythonProjects);
+      jsProjects.addEventListener("click", filterJsProjects);
+    </script>
   </body>
 </html>
