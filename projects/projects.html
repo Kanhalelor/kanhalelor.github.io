@@ -588,7 +588,7 @@
       const jsProjects = document.querySelector(".js-projects");
 
       // functions
-      const ShowAll = (e) => {
+      const displayAllProjects = (e) => {
         e.preventDefault();
         projects.forEach((project) => {
           project.style.display = "flex";
@@ -627,7 +627,7 @@
       };
 
       // events
-      allProjects.addEventListener("click", ShowAll);
+      allProjects.addEventListener("click", displayAllProjects);
       htmlCssProjects.addEventListener("click", filterStaticProjects);
       pythonProjects.addEventListener("click", filterPythonProjects);
       jsProjects.addEventListener("click", filterJsProjects);
