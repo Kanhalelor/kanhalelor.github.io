@@ -519,7 +519,9 @@
               href="https://github.com/Kanhalelor/data-analysis"
               ><i class="fa fa-github-square" aria-hidden="true"></i
               ><span>View Code</span></a
-            ><a target="_blank" href="https://github.com/Kanhalelor/data-analysis/archive/master.zip"
+            ><a
+              target="_blank"
+              href="https://github.com/Kanhalelor/data-analysis/archive/master.zip"
               ><i class="fa fa-external-link" aria-hidden="true"></i
               ><span>View Project</span></a
             ></span
@@ -538,12 +540,12 @@
         />
         <div class="overlay">
           <span class="info"
-            ><a
-              target="_blank"
-              href="https://github.com/Kanhalelor/TraffickApp"
+            ><a target="_blank" href="https://github.com/Kanhalelor/TraffickApp"
               ><i class="fa fa-github-square" aria-hidden="true"></i
               ><span>View Code</span></a
-            ><a target="_blank" href="https://github.com/Kanhalelor/TraffickApp/archive/master.zip"
+            ><a
+              target="_blank"
+              href="https://github.com/Kanhalelor/TraffickApp/archive/master.zip"
               ><i class="fa fa-external-link" aria-hidden="true"></i
               ><span>View Project</span></a
             ></span
@@ -582,10 +584,10 @@
     <script>
       // select elements
       const projects = Array.from(document.querySelectorAll(".project"));
-      const allProjects = document.querySelector(".all-projects");
-      const htmlCssProjects = document.querySelector(".static-projects");
-      const pythonProjects = document.querySelector(".py-projects");
-      const jsProjects = document.querySelector(".js-projects");
+      const allProjectsBtn = document.querySelector(".all-projects");
+      const htmlCssProjectsBtn = document.querySelector(".static-projects");
+      const pythonProjectsBtn = document.querySelector(".py-projects");
+      const jsProjectsBtn = document.querySelector(".js-projects");
 
       // functions
       const displayAllProjects = (e) => {
@@ -627,10 +629,10 @@
       };
 
       // events
-      allProjects.addEventListener("click", displayAllProjects);
-      htmlCssProjects.addEventListener("click", filterStaticProjects);
-      pythonProjects.addEventListener("click", filterPythonProjects);
-      jsProjects.addEventListener("click", filterJsProjects);
+      allProjectsBtn.addEventListener("click", displayAllProjects);
+      htmlCssProjectsBtn.addEventListener("click", filterStaticProjects);
+      pythonProjectsBtn.addEventListener("click", filterPythonProjects);
+      jsProjectsBtn.addEventListener("click", filterJsProjects);
     </script>
   </body>
 </html>
