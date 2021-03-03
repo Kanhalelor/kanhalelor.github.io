@@ -225,7 +225,7 @@ time {
   color: #121212 !important;
 }
 .love {
-  color: royalblue;
+  color: royalblue !important;
 }
 
 /*======== media queries ===*/
