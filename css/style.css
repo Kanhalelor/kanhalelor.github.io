@@ -43,10 +43,12 @@ ul {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   border: 3px solid white;
+  transition: 0.3s ease-in;
 }
 .occupation {
   color: teal;
   transition: opacity 0.3s ease-in-out;
+  transition: 0.3s ease-in;
 }
 .occupation:hover {
   opacity: 0.5;
@@ -68,12 +70,14 @@ ul {
   color: teal;
   font-weight: 700;
   margin: 40px 0px 10px 0px;
+  transition: 0.3s ease-in;
 }
 .mail {
   font-family: inherit;
   color: teal;
   background-color: #fff;
   padding: 0.4em;
+  transition: 0.3s ease-in;
   border-radius: 4px;
 }
 
@@ -83,11 +87,10 @@ time {
 
 .content,
 .article {
+  margin-bottom: 12px;
+  transition: 0.3s ease-in;
   padding: 6px;
   font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
-}
-.content .article {
-  margin-bottom: 12px;
 }
 
 .article span {
@@ -99,7 +102,7 @@ time {
 }
 
 .article span a {
-  text-decoration: underline teal;
+  font-style: italic;
   color: #333;
 }
 .article span a:hover {
