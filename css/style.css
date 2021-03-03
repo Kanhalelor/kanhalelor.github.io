@@ -155,52 +155,77 @@ time {
   padding: 5px;
   margin: 4px;
   border-radius: 9px;
+  cursor: pointer;
+}
+.call-out,
+.hire,
+.mail,
+.lang {
+  transition: 0.5s ease-in-out 0.3s;
+}
+.html:hover {
+  letter-spacing: 1px;
+}
+.css3:hover {
+  letter-spacing: 1px;
+}
+.js:hover {
+  letter-spacing: 1px;
+}
+.py:hover {
+  letter-spacing: 1px;
+}
+.digital-mkt:hover {
+  letter-spacing: 1px;
+}
+.wordpress:hover {
+  letter-spacing: 1px;
 }
 .html {
   background-color: tomato;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #00000033;
+  box-shadow: 0 6px 6px #535353;
 }
 
 .css3 {
   background-color: lightseagreen;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #00000033;
+  box-shadow: 0 6px 6px #535353;
 }
 
 .js {
-  background-color: #6bcc09;
+  background-color: #69b122;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #00000033;
+  box-shadow: 0 6px 6px #535353;
 }
 
 .py {
-  background-color: orange;
-  color: #084fe7;
+  background-color: #e9a82f;
+  color: #ffffff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #00000033;
+  box-shadow: 0 6px 6px #535353;
 }
 .wordpress {
-  background-color: #6bcc09;
+  background-color: #1763aa;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #00000033;
+  box-shadow: 0 6px 6px #535353;
 }
 .digital-mkt {
-  background-color: tomato;
+  background-color: #a021db;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #00000033;
+  box-shadow: 0 6px 6px #535353;
 }
 
 .copyright {
   color: #121212 !important;
 }
 .love {
-  color: red;
+  color: royalblue;
 }
 
 /*======== media queries ===*/
