@@ -37,14 +37,24 @@ ul {
 }
 
 /* ==== BASE SELECTORS====*/
-
+.avatar-container {
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  max-width: 200px;
+  height: 200px;
+  margin: 0 auto;
+  padding: 0.5px;
+  border: 2.5px solid teal;
+}
 .avatar {
-  max-width: 25%;
+  max-width: 100%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  border: 3px solid white;
+  border: 3px solid #fff;
   transition: 0.3s ease-in;
 }
+
 .occupation {
   color: teal;
   transition: opacity 0.3s ease-in-out;
