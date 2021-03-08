@@ -2,13 +2,13 @@
 <html lang="en-US">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="HTML Fixed Footer">
+  <meta name="description" content="Python Web Scraping">
   <meta name="keywords" content="HTML, CSS, JavaScript, Python">
   <meta name="author" content="Robson Kanhalelo">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" type="image/x-icon" href="../images/favicon 2.ico"/>
   <link rel="stylesheet" href="../css/style2.css">
-  <title>BLOG</title>
+  <title>blog</title>
   <style>
     code {
         color: tomato !important;
@@ -24,54 +24,69 @@
   </header>
   <div class="content">
     <article>
-      <h1>How to create a fixed footer with HTML & CSS</h1>
+      <h1>How to scrap data from the website using Python</h1>
       <div>
         <small class="author">Robson - </small
-        ><time datetime="12-09-2020"> 01-03-2021</time>
+        ><time datetime="12-09-2020"> 08-03-2021</time>
       </div>
       <div class="image-div">
         <figure>
           <img
             class="intro-img"
-            src="https://i.stack.imgur.com/YvCtc.jpg"
+            src="https://d1jnx9ba8s6j9r.cloudfront.net/blog/wp-content/uploads/2018/11/Untitled-1-768x183.jpg"
             alt="hello world"
           /><br>
-          <span class="figcaption">Img source: stackoverflow</span>
+          <span class="figcaption">Img source: Edureka</span>
         </figure>
       </div>
-      <p class="first-para">
-        If you are a web developer or learning web development, one of the most
-        problems you might encounter is how to create a footer that sticks at the bottom of the page 
-        and never changes even if the layout of the document changes.
+      <p class="first-para" title="Wikipedia">
+        Web scraping, web harvesting, or web data extraction is data scraping used for extracting data from websites.  There are different ways to scrape websites such as online Services, APIs or writing your own code. In this article, we’ll see how to implement web scraping with python. We will use one of the websites I have built.
+      </p>
+      
+      <p>
+        <b>
+            I will skip the installation of Python in this tutorial.
+        </b> 
       </p>
       <p>
-        <b>In this post, I will show you how.</b>
+        Using your prefered text editor, create a python file and name it whatever you want. I'll name mine <code>scrapper.py</code>. Import all the libraries that we'll need to build our scrapper. a library is a collection of precompiled routines that a program can use. The routines, sometimes called modules, are stored in object format.
+        <br>
       </p>
-      <p>
-        We will create our <code>HTML</code> and <code>CSS</code> files using codepen.
-        You can simply do this using your favorite text editor. Type the following code in your editor.
-      </p>
-      <div>
-          <p class="codepen" data-height="265" data-theme-id="dark" data-default-tab="html,result" data-user="KanhaFly" data-slug-hash="BaQrXYE" data-preview="true" style="height: 265px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="HTML CSS Fixed footer">
-              <span>See the Pen <a href="https://codepen.io/KanhaFly/pen/BaQrXYE">
-              HTML CSS Fixed footer</a> by RK (<a href="https://codepen.io/KanhaFly">@KanhaFly</a>)
-              on <a href="https://codepen.io">CodePen</a>.</span>
-            </p>
-            <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
-        </div>
+      <script style="width:100%" src="https://gist.github.com/Kanhalelor/c9c6b2f14b7de8e93e77fdaf807b8825.js"></script>
         <p>
-          <b>What did we do here?</b>
-          <p>In our <code>HTML</code> file, we created our <code>header</code> , <code>page-content</code>, 
-          and <code>footer</code> sections. They are all created inside the <code>body</code> tag.
+          Now let's get the url for the website from which we want to scrap data form. In this case, we'll use <code>https://windhoeknamibia.github.io</code>
         </p>
         <p>
-          In our <code>CSS</code> file, we made the body to <code>display: flex;</code> 
-          and content to be aligned from top-to-bottom with <code>flex-flow: column;</code>
-
+          Using our url, we'll now use the <code>requests</code> library fetch data from the website.
         </p>
-        Finally, We made our footer to have <code>margin-top: auto;</code>. This makes it stick at the bottom of the page.
+        <script src="https://gist.github.com/Kanhalelor/64e0d8169a4f5e66d16adcfba23e3ec4.js"></script>
+        <p><b>Create a soup object to get the title of the website</b></p>
+        <script src="https://gist.github.com/Kanhalelor/683123ff733ac31f31490acb336925ab.js"></script>
+        <p>
+          <b>Create a soup object to find places!</b>
         </p>
-        <p><b>That is all you need to make a fixed footer!</b></p>
+        <script src="https://gist.github.com/Kanhalelor/59c1fcddcb6696493d6a2875b92f1356.js"></script>
+        <p>
+          <b>Write all place names to a <code>csv</code> file.</b>
+        </p>
+        <script src="https://gist.github.com/Kanhalelor/37bb68f080f8c00b1308c9cc9015ab5a.js"></script>
+        <p>
+          <b>Let's create a soup object to help us get all the image <code>src</code> links.</b>
+        </p>
+        <script src="https://gist.github.com/Kanhalelor/673e897ac1b76ae05fd49d7a8bf064ac.js"></script>
+        <p>
+          <b>Now let's print out all the image links.</b>
+        </p>
+        <script src="https://gist.github.com/Kanhalelor/9eb94442209d86a0f84caff89d9edcc3.js"></script>
+        <p>
+          <b>I hope this article has helped you understand what web scrapping is. You can continue to do more practical examples using different websites.
+            <br>
+          </b> <i>Be carefull not to scrap data from websites which do not give you permission to do so.</i>
+        </p>
+        <p>
+          <h3>Todo</h3>
+          Try to write all image src links into your csv file.
+        </p>
         <br>
         <b>
           Happy coding!
