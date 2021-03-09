@@ -1,7 +1,7 @@
 // fetch api example
-
 const url = "http://api.open-notify.org/astros.json";
 const btn = document.getElementById("getastros");
+const overlayEl = document.querySelector(".overlay");
 
 // what we want from data
 const astros = [];
@@ -12,7 +12,7 @@ const fetchData = () => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => handleData(data))
-    .catch((err) => console.log(err));
+    .catch((err) => displayOverlay(err));
 };
 
 const handleData = (data) => {
@@ -43,5 +43,13 @@ const drawHTML = (astros, craft) => {
   document.querySelector(".astros").innerHTML = template;
 };
 
+const displayOverlay = (text) => {
+  overlayEl.style.display = "flex";
+  overlayEl.textContent = `${text}`;
+};
+const removeOverlay = () => {
+  overlayEl.style.display = "none";
+};
 // events
 btn.addEventListener("click", fetchData);
+overlayEl.addEventListener("click", removeOverlay);
