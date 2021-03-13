@@ -1,4 +1,3 @@
-/*Global Layout*/
 /*===== imports =========*/
 @import url("https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap");
 
@@ -62,29 +61,47 @@ ul {
   transition: 0.3s ease-in;
 }
 .occupation:hover {
-  opacity: 0.5;
-}
-.navigation a:hover {
-  color: #444;
-}
-.content-title {
-  text-align: center;
-  margin: 16px 0px;
-  padding: 6px;
-  background: -webkit-linear-gradient(90deg, teal, #121212);
-  background: linear-gradient(90deg, teal, #121212);
-  color: #fff;
-  border-bottom: 0.6px solid #ddd;
+  opacity: 0.7;
 }
 
+.navigation a:hover {
+  color: rgba(95, 95, 95, 0.925);
+}
+.writings {
+  text-align: center;
+  margin: 1rem 0.5rem;
+  padding: 6px;
+  color: #fff;
+  border-bottom: 0.6px solid #ddd;
+  background: teal;
+  background: -webkit-linear-gradient(
+    to right,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  );
+  background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+}
 .hire {
-  color: teal;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hire p {
+  width: 30%;
+  border-radius: 3px;
+  color: rgba(221, 75, 55, 0.932);
+  background: #fff;
+  padding: 0.2rem;
   font-weight: 700;
   margin: 40px 0px 10px 0px;
   transition: 0.3s ease-in;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
 }
 .mail {
-  font-family: inherit;
+  font-family: system-ui;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
   color: teal;
   background-color: #fff;
   padding: 0.4em;
@@ -131,23 +148,20 @@ time {
 }
 
 .archives a:hover {
-  color: #ddd;
+  color: rgba(179, 177, 177, 0.836);
 }
 
 #card {
   display: flex;
   flex-flow: column wrap;
-  border-top: 20px solid #ccc;
   margin: 20px 0px 40px 0px;
   text-align: center;
-  padding: 13px;
-  background-color: #eee !important;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.15), 0 2px 2px rgba(0, 0, 0, 0.15),
-    0 4px 4px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.15);
+  padding: 2rem 0.7rem;
+  background: #ececec !important;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
 }
-
 .call-out {
-  border: 1.5px solid #ccc;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
   padding: 6px;
   border-radius: 4px;
   color: teal;
@@ -178,22 +192,22 @@ time {
   transition: 0.5s ease-in-out 0.3s;
 }
 .html:hover {
-  letter-spacing: 1px;
+  opacity: 0.7;
 }
 .css3:hover {
-  letter-spacing: 1px;
+  opacity: 0.7;
 }
 .js:hover {
-  letter-spacing: 1px;
+  opacity: 0.7;
 }
 .py:hover {
-  letter-spacing: 1px;
+  opacity: 0.7;
 }
 .digital-mkt:hover {
-  letter-spacing: 1px;
+  opacity: 0.7;
 }
 .wordpress:hover {
-  letter-spacing: 1px;
+  opacity: 0.7;
 }
 .html {
   background-color: tomato;
@@ -252,6 +266,7 @@ time {
   #main-header {
     background: #121212 !important;
     color: white;
+    line-height: 1.5;
     padding: 4px;
     display: block;
     text-align: center;
@@ -275,12 +290,16 @@ time {
     color: #fff;
     padding: 2px;
   }
+  .hire p {
+    width: 100%;
+  }
 }
 
 /*Large screens*/
 
 @media only screen and (min-width: 769px) {
   #main-header {
+    line-height: 1.5;
     background-color: #000000;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 2000 1500'%3E%3Cdefs%3E%3Crect stroke='%23000000' stroke-width='.5' width='1' height='1' id='s'/%3E%3Cpattern id='a' width='3' height='3' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cuse fill='%23050505' href='%23s' y='2'/%3E%3Cuse fill='%23050505' href='%23s' x='1' y='2'/%3E%3Cuse fill='%230a0a0a' href='%23s' x='2' y='2'/%3E%3Cuse fill='%230a0a0a' href='%23s'/%3E%3Cuse fill='%230f0f0f' href='%23s' x='2'/%3E%3Cuse fill='%230f0f0f' href='%23s' x='1' y='1'/%3E%3C/pattern%3E%3Cpattern id='b' width='7' height='11' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23141414'%3E%3Cuse href='%23s'/%3E%3Cuse href='%23s' y='5' /%3E%3Cuse href='%23s' x='1' y='10'/%3E%3Cuse href='%23s' x='2' y='1'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='8'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='5' y='2'/%3E%3Cuse href='%23s' x='5' y='6'/%3E%3Cuse href='%23s' x='6' y='9'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='h' width='5' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23141414'%3E%3Cuse href='%23s' y='5'/%3E%3Cuse href='%23s' y='8'/%3E%3Cuse href='%23s' x='1' y='1'/%3E%3Cuse href='%23s' x='1' y='9'/%3E%3Cuse href='%23s' x='1' y='12'/%3E%3Cuse href='%23s' x='2'/%3E%3Cuse href='%23s' x='2' y='4'/%3E%3Cuse href='%23s' x='3' y='2'/%3E%3Cuse href='%23s' x='3' y='6'/%3E%3Cuse href='%23s' x='3' y='11'/%3E%3Cuse href='%23s' x='4' y='3'/%3E%3Cuse href='%23s' x='4' y='7'/%3E%3Cuse href='%23s' x='4' y='10'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='c' width='17' height='13' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%231a1a1a'%3E%3Cuse href='%23s' y='11'/%3E%3Cuse href='%23s' x='2' y='9'/%3E%3Cuse href='%23s' x='5' y='12'/%3E%3Cuse href='%23s' x='9' y='4'/%3E%3Cuse href='%23s' x='12' y='1'/%3E%3Cuse href='%23s' x='16' y='6'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='d' width='19' height='17' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23000000'%3E%3Cuse href='%23s' y='9'/%3E%3Cuse href='%23s' x='16' y='5'/%3E%3Cuse href='%23s' x='14' y='2'/%3E%3Cuse href='%23s' x='11' y='11'/%3E%3Cuse href='%23s' x='6' y='14'/%3E%3C/g%3E%3Cg fill='%231f1f1f'%3E%3Cuse href='%23s' x='3' y='13'/%3E%3Cuse href='%23s' x='9' y='7'/%3E%3Cuse href='%23s' x='13' y='10'/%3E%3Cuse href='%23s' x='15' y='4'/%3E%3Cuse href='%23s' x='18' y='1'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='e' width='47' height='53' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' x='2' y='5'/%3E%3Cuse href='%23s' x='16' y='38'/%3E%3Cuse href='%23s' x='46' y='42'/%3E%3Cuse href='%23s' x='29' y='20'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='f' width='59' height='71' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' x='33' y='13'/%3E%3Cuse href='%23s' x='27' y='54'/%3E%3Cuse href='%23s' x='55' y='55'/%3E%3C/g%3E%3C/pattern%3E%3Cpattern id='g' width='139' height='97' patternUnits='userSpaceOnUse' patternTransform='scale(50) translate(-980 -735)'%3E%3Cg fill='%23ffffff'%3E%3Cuse href='%23s' x='11' y='8'/%3E%3Cuse href='%23s' x='51' y='13'/%3E%3Cuse href='%23s' x='17' y='73'/%3E%3Cuse href='%23s' x='99' y='57'/%3E%3C/g%3E%3C/pattern%3E%3C/defs%3E%3Crect fill='url(%23a)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23b)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23h)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23c)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23d)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23e)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23f)' width='100%25' height='100%25'/%3E%3Crect fill='url(%23g)' width='100%25' height='100%25'/%3E%3C/svg%3E");
     background-size: cover;
@@ -303,6 +322,16 @@ time {
   .navigation a {
     color: #fff;
     text-decoration: none;
+  }
+  .navigation a::after {
+    display: block;
+    content: "";
+    border-bottom: solid 2px teal;
+    transform: scaleX(0);
+    transition: transform 250ms ease-in-out;
+  }
+  .navigation a:hover:after {
+    transform: scaleX(1);
   }
   .content {
     font-size: 16px;
