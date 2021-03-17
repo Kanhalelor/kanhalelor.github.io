@@ -98,12 +98,14 @@ article {
   margin-bottom: 40px;
 }
 .intro-img {
-  max-width: 100%;
+  width: 100%;
   border-radius: 13px;
   box-shadow: 0 1px 1px #f5f2f226, 0 2px 2px #f3f0f026, 0 4px 4px #faf9f926,
     0 8px 8px #36363626;
 }
 .image-div {
+  max-width: 700px;
+  margin: 0 auto;
   display: block;
   text-align: center;
 }
