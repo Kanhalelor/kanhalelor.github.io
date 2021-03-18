@@ -31,27 +31,38 @@
     <title>BLOG</title>
     <style>
       ::-webkit-scrollbar {
-  width: 20px;
-}
+        width: 20px;
+      }
 
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
-background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
-border-radius: 10px;
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
 
-}
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: -webkit-linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        );
+        background: linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        );
+        border-radius: 10px;
+      }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background:#C9D6FF; 
-}
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c9d6ff;
+      }
       * {
         color: #e3effb;
         text-decoration: none;
@@ -134,6 +145,7 @@ border-radius: 10px;
         padding: 6px;
       }
       button {
+        border-radius: 10px;
         border: none;
         font-weight: 900;
         color: #121212;
@@ -141,8 +153,9 @@ border-radius: 10px;
         padding: 6px;
       }
       button:hover {
-        color: green;
-        transform: scale(1.2);
+        color: tomato;
+        cursor: pointer;
+        opacity: 0.84;
       }
       /*=== BASE STYLES*/
       .image-div {
@@ -173,12 +186,17 @@ border-radius: 10px;
       /*== content tags ==*/
       .tag {
         text-decoration: underline;
+        color: tomato;
       }
       /*=== input ===*/
       #name-box {
         border: none;
         color: #121212;
         padding: 6px;
+        border: none;
+        outline: none;
+
+        color: tomato;
       }
 
       .content {
@@ -207,7 +225,7 @@ border-radius: 10px;
       }
 
       .love {
-        color: red;
+        color: royalblue;
       }
 
       @media only screen and (min-width: 768px) {
@@ -223,8 +241,8 @@ border-radius: 10px;
   <body>
     <header>
       <ul class="main-nav">
-        <li><a href="../index.html">← HOME</a></li>
-        <li><a href="../projects/projects.html">PROJECTS →</a></li>
+        <li><a href="../index.html">← Home</a></li>
+        <li><a href="../projects/projects.html">Projects →</a></li>
       </ul>
     </header>
     <div class="content">
@@ -232,7 +250,8 @@ border-radius: 10px;
         <h1>Hello World</h1>
         <div>
           <small class="author">Robson - </small
-          ><time datetime="12-09-2020"> 12-09-2020</time>
+          ><time datetime="12-09-2020"> 12-09-2020</time>|
+          <a class="tag" href="../tags/general.html">#general</a>
         </div>
         <div class="image-div">
           <figure>
@@ -338,7 +357,6 @@ border-radius: 10px;
       </article>
     </div>
     <footer>
-      <hr />
       <small class="copyright"
         >Made with <span class="love">&#x2764; </span>by Robson</small
       >
