@@ -198,7 +198,8 @@ time {
   justify-content: center;
   margin-top: 30px;
 }
-.lang .html,
+.lang .sql,
+.html,
 .css3,
 .js,
 .py,
@@ -214,6 +215,9 @@ time {
 .mail,
 .lang {
   transition: 0.5s ease-in-out 0.3s;
+}
+.sql:hover {
+  opacity: 0.7;
 }
 .html:hover {
   opacity: 0.7;
@@ -233,6 +237,13 @@ time {
 .wordpress:hover {
   opacity: 0.7;
 }
+.sql {
+  background-color: #aa0c14e3;
+  color: #fff;
+  font-weight: 900;
+  box-shadow: 0 6px 6px #535353;
+}
+
 .html {
   background-color: tomato;
   color: #fff;
@@ -248,7 +259,7 @@ time {
 }
 
 .js {
-  background-color: #69b122;
+  background-color: #0caa26e3;
   color: #fff;
   font-weight: 900;
   box-shadow: 0 6px 6px #535353;
