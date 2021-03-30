@@ -3,7 +3,7 @@
 *,
 *::after,
 *::before {
-  color: #e3effb;
+  color: #ebeef1;
   text-decoration: none;
   box-sizing: border-box;
 }
@@ -59,6 +59,11 @@ ul {
   padding: 0;
   margin-top: 20px;
 }
+i {
+  text-decoration: underline;
+}
+
+/* base selectors */
 .main-nav {
   display: flex;
   flex-wrap: wrap;
@@ -73,10 +78,10 @@ ul {
 
 .main-nav a {
   font-weight: 500;
-  margin: 0 10px;
+  margin: 0 20px;
 }
 .main-nav a:hover {
-  color: #aaa9a9;
+  color: tomato;
 }
 .about-div {
   padding: 12px;
@@ -147,5 +152,6 @@ p {
   }
   .main-nav a {
     font-size: 16px;
+    font-weight: 600;
   }
 }

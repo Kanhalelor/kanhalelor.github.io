@@ -75,16 +75,16 @@ ul {
   justify-content: center;
   color: #fff;
   border-radius: 10px;
-  padding: 12px;
+  padding: 20px;
 }
 
 .main-nav a {
   text-decoration: none;
   font-weight: 500;
-  margin: 0px 10px;
+  margin: 0px 20px;
 }
 .main-nav a:hover {
-  color: #aaa8a8;
+  color: tomato;
 }
 /* resource container */
 .resource-container {

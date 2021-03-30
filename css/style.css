@@ -15,6 +15,7 @@ html {
 }
 
 body {
+  position: relative;
   background-color: #fff;
   display: flex;
   flex-flow: column;
@@ -70,7 +71,7 @@ ul {
   height: 200px;
   margin: 0 auto;
   padding: 0.5px;
-  border: 2.5px solid teal;
+  border: 2.5px solid #0082c8;
 }
 .avatar {
   max-width: 100%;
@@ -80,12 +81,13 @@ ul {
 }
 
 .occupation {
-  color: teal;
-  transition: opacity 0.3s ease-in-out;
-  transition: 0.3s ease-in;
+  -webkit-user-select: none;
+  user-select: none;
+  color: #0082c8 !important;
+  transition: opacity 0.3s linear;
 }
 .occupation:hover {
-  opacity: 0.7;
+  opacity: 0.9;
 }
 
 .navigation a:hover {
@@ -128,11 +130,50 @@ ul {
   box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
   color: teal;
   background-color: #fff;
-  padding: 0.4em;
+  padding: 0.4rem;
   transition: 0.3s ease-in;
-  border-radius: 4px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  font-size: 20px;
+  font-weight: 500;
+}
+.copy {
+  outline: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  padding: 0.4rem;
+  background-color: #ffffff;
+  color: #0082c8;
+  border-bottom-left-radius: 4px;
+  border-bottom-right-radius: 4px;
+  cursor: pointer;
+  transition: background 0.5s linear;
+
+  font-size: 20px;
+  font-weight: 500;
+}
+.copy:hover {
+  background: #0082c8;
+  opacity: 0.9;
+  color: #fff;
 }
 
+.pop-up {
+  display: none;
+  place-items: center;
+  position: absolute;
+  background: rgba(78, 78, 78, 0.911);
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  color: tomato;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  font-size: 20px;
+}
+.remove {
+  display: none;
+}
 time {
   color: #bbb;
 }
@@ -167,7 +208,7 @@ time {
 }
 
 .archives a {
-  color: teal;
+  color: #0082c8;
   text-decoration: none;
 }
 
@@ -176,6 +217,7 @@ time {
 }
 
 #card {
+  position: relative;
   display: flex;
   flex-flow: column wrap;
   margin: 20px 0px 40px 0px;
@@ -306,12 +348,12 @@ time {
     display: block;
     text-align: center;
     font-family: "Maven Pro", monospace !important;
-    border-bottom: 6.66px solid teal;
   }
   .navigation {
     margin-top: 4px;
   }
-  #main-header .name {
+  .name {
+    user-select: none;
     font-size: 20px;
     font-weight: 500;
   }
@@ -327,6 +369,12 @@ time {
   }
   .hire p {
     width: 100%;
+  }
+  .mail {
+    font-size: 15px;
+  }
+  .pop-up {
+    font-size: 16px;
   }
 }
 
@@ -344,10 +392,13 @@ time {
 
     display: block;
     text-align: center;
-    border-bottom: 6px solid teal;
+    border-bottom: 6px solid #0082c8;
   }
   .navigation {
     margin-top: 4px;
+  }
+  .name {
+    user-select: none;
   }
   .navigation li {
     display: inline-flex;
@@ -361,7 +412,7 @@ time {
   .navigation a::after {
     display: block;
     content: "";
-    border-bottom: solid 2px teal;
+    border-bottom: solid 2px #0082c8;
     transform: scaleX(0);
     transition: transform 250ms ease-in-out;
   }
@@ -384,5 +435,8 @@ time {
   }
   .main-nav a {
     font-size: 24px;
+  }
+  .pop-up {
+    font-weight: 600;
   }
 }
