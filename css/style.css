@@ -126,6 +126,7 @@ ul {
   border-top-left-radius: 4px;
   border-top-right-radius: 4px;
   font-size: 20px;
+  font-family: monospace;
   font-weight: 500;
 }
 .copy {
@@ -187,12 +188,12 @@ time {
 
 .article span a {
   font-style: italic;
-  color: #0082c8;
-  transition: color 0.5s linear;
+  color: rgba(179, 177, 177, 0.836);
+  transition: color 0.3s linear;
   text-decoration: none !important;
 }
 .article span a:hover {
-  color: #121212;
+  color: #0082c8;
 }
 .article span a:visited {
   color: #121212;
