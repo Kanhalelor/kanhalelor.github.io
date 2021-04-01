@@ -95,19 +95,10 @@ ul {
 }
 .writings {
   text-align: center;
-  margin: 1rem 0.5rem;
+  margin: 1.4rem 0;
   padding: 6px;
   color: #fff;
-  border-bottom: 0.6px solid #ddd;
-  background: teal;
-  background: -webkit-linear-gradient(
-    to right,
-    #667db6,
-    #0082c8,
-    #0082c8,
-    #667db6
-  );
-  background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+  background: #0082c8;
 }
 .hire {
   display: flex;
