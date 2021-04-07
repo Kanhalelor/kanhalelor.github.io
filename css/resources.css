@@ -34,7 +34,7 @@ footer {
 }
 
 footer .love {
-  color: royalblue;
+  color: #0082c8;
 }
 ul {
   list-style-type: none;
@@ -88,7 +88,6 @@ ul {
 }
 /* resource container */
 .resource-container {
-  height: 100%;
   margin: 0 auto;
   width: 90%;
   max-width: 900px;
@@ -97,16 +96,89 @@ ul {
   flex-flow: column;
   text-align: center;
 }
-/* welcome note sub heading */
-.welcome-note .sub-header {
-  margin-top: 1rem;
-}
 
 /* resource container stay tuned msg */
 .resource-container .msg {
-  margin-top: 4rem;
+  margin-top: 2rem;
+  font-weight: 600;
 }
 /* welcome note paragraph */
 .welcome-note {
   color: tomato;
+}
+/* resource header page */
+.resource-header {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+.resource-container .header {
+  margin: 1rem 0;
+  color: tomato;
+}
+.mathematics,
+.computer-studies {
+  margin: 0 auto;
+  padding: 1rem 1.2rem;
+}
+
+.resource-container .resource-div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1.3rem 0;
+}
+.resource-name {
+  margin: 1rem 0;
+}
+.download-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 50%;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: #0082c8;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  text-decoration: none;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 1px 1px 2px #e0e0e0;
+  cursor: context-menu;
+}
+.dwnld {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  right: 0;
+  width: 30%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: tomato;
+  height: 100%;
+  cursor: pointer;
+}
+
+.dwnld:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transition: 0.3s background linear;
+  color: #fff;
+}
+.resource-container .resource-div a:visited {
+  background: rgba(0, 0, 0, 0.75);
+}
+
+@media only screen and (max-width: 780px) {
+  .resource-container {
+    margin-bottom: 1.2rem;
+  }
+  footer {
+    padding-bottom: 0.5rem;
+  }
 }
