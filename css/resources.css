@@ -119,6 +119,9 @@ ul {
 }
 .mathematics,
 .computer-studies {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
   margin: 0 auto;
   padding: 1rem 1.2rem;
 }
@@ -129,15 +132,20 @@ ul {
   justify-content: flex-start;
   align-items: center;
   margin: 1.3rem 0;
+  width: 100%;
 }
 .resource-name {
+  text-align: justify;
+  word-wrap: wrap;
   margin: 1rem 0;
+  font-weight: 600;
+  font-size: 14px;
 }
 .download-btn {
   position: relative;
   display: flex;
   align-items: center;
-  width: 50%;
+  width: 60%;
   border: 1px solid #e0e0e0;
   border-radius: 10px;
   margin: 0 auto;

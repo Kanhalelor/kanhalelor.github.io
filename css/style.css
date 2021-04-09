@@ -242,11 +242,13 @@ time {
 .js,
 .py,
 .digital-mkt,
-.wordpress {
+.wordpress,
+.digital-mkt {
   padding: 5px;
   margin: 4px;
   border-radius: 9px;
   cursor: pointer;
+  box-shadow: -1px 2px -2px #ffffff !important;
 }
 .call-out,
 .hire,
@@ -279,47 +281,40 @@ time {
   background-color: #aa0c14e3;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #535353;
 }
 
 .html {
   background-color: tomato;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #535353;
 }
 
 .css3 {
   background-color: lightseagreen;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #535353;
 }
 
 .js {
   background-color: #0caa26e3;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #535353;
 }
 
 .py {
   background-color: #e9a82f;
   color: #ffffff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #535353;
 }
 .wordpress {
   background-color: #1763aa;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #535353;
 }
 .digital-mkt {
   background-color: #a021db;
   color: #fff;
   font-weight: 900;
-  box-shadow: 0 6px 6px #535353;
 }
 
 .copyright {
