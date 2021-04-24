@@ -13,13 +13,16 @@ body {
   color: #ddd;
   line-height: 1.5;
 
+  position: relative;
   margin: 0;
-  height: 100vh;
+  /* height: 100vh; */
+  width: 100%;
 
   display: flex;
   flex-flow: column;
   align-items: center;
-  font-size: 15px;
+  font-size: 12px;
+  line-height: 1.33px;
 
   font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
 }
@@ -39,7 +42,7 @@ footer {
 footer a {
   margin: 0px 12px;
 }
-footer img {
+/* footer img {
   margin: 0px 0px 12px;
   max-width: 40px;
   border: 2px solid;
@@ -49,7 +52,7 @@ footer img {
 
 footer a img:hover {
   transform: scale(1.1);
-}
+} */
 
 small {
   margin: 40px 0px;
@@ -92,23 +95,37 @@ article {
   display: flex;
   flex-flow: column;
   align-items: center;
-  padding: 6px;
+  padding: 1rem;
   line-height: 1.5;
   width: 100%;
   margin: 0 auto;
   max-width: 700px;
   margin-bottom: 40px;
+  box-shadow: #ececec4d 0 1px 3px;
+}
+#name-box {
+  border: none;
+  color: #121212;
+  padding: 6px;
+  border: none;
+  outline: none;
+
+  color: tomato;
+}
+.article-details {
+  margin-bottom: 2.5rem;
 }
 .intro-img {
   width: 100%;
-  border-radius: 13px;
-  box-shadow: 0 1px 1px #f5f2f226, 0 2px 2px #f3f0f026, 0 4px 4px #faf9f926,
-    0 8px 8px #36363626;
+  border-radius: 5px;
+  height: auto;
 }
 .image-div {
-  max-width: 700px;
+  width: 100%;
+  /* max-width: 900px; */
   margin: 0 auto;
-  display: block;
+  display: flex;
+  flex-flow: column;
   text-align: center;
 }
 
@@ -120,7 +137,7 @@ article {
   display: flex;
   flex-flow: column wrap;
   padding: 12px;
-  width: 90%;
+  width: 94.4%;
   margin: 0 auto;
   margin-bottom: 10px;
   max-width: 900px;
@@ -140,29 +157,13 @@ article {
   color: #0082c8;
 }
 
-/* about page styles */
-
-.intro > p {
-  text-align: justify;
-  margin: 0;
-}
-
-.studies {
-  margin-top: 1.5rem;
-}
-.separator {
-  height: 2px;
-  background: #f4f5f7;
-  margin: 2rem 0 3.5rem 0 !important;
-}
-.hire-me-call-out {
-  font-size: 16px;
-  font-weight: 600;
-  color: tomato;
-}
-/* about page styles end */
-
 /* media queries */
+
+@media only screen and (max-width: 780px) {
+  .content {
+    width: 98%;
+  }
+}
 
 @media only screen and (min-width: 900px) {
   .welcome-note {
@@ -171,5 +172,8 @@ article {
   .main-nav a {
     font-size: 16px;
     font-weight: 600;
+  }
+  body {
+    font-size: 16px;
   }
 }

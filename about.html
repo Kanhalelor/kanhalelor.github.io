@@ -21,23 +21,8 @@
       href="./images/favicon-16x16.png"
     />
     <link rel="manifest" href="./images/site.webmanifest" />
-    <link rel="stylesheet" href="./css/style2.css" />
+    <link rel="stylesheet" href="./css/about.css" />
     <title>About</title>
-    <style>
-      .about-div {
-        letter-spacing: 1.5px;
-      }
-      
-      a:hover {
-        opacity: .88;
-      }
-      strong {
-        color: tomato;
-      }
-      i {
-  text-decoration: underline;
-} 
-    </style>
   </head>
   <body>
     <header>
@@ -47,7 +32,7 @@
       </ul>
     </header>
     <div class="about-div">
-      <h3>Hello! &#128516</h3>
+      <h3>Hello! <span class="emoji">&#128516</span></h3>
       <p>
         I am <strong class="my-name">Robson Kanhalelo</strong>
       </p>
@@ -66,9 +51,9 @@
       <div class="studies">
         <h4>Besides coding, I like;</h4>
         <ul>
-          <li>&#127907 Fishing</li>
-          <li>&#128214 Reading </li>
-          <li>&#9917 Playing Soccer</li>
+          <li><span class="emoji">&#127907</span> <span>Fishing</span></li>
+          <li><span class="emoji">&#128214</span> <span>Reading</span> </li>
+          <li><span class="emoji">&#9917</span>   <span>Playing soccer</span></li>
         </ul>
       </div>
       <br />
@@ -100,7 +85,10 @@
       </div>
       <br />
       <div class="separator"></div>
-      <span class="hire-me-call-out">Currently available for hire!</span>
+      <div class="contact-div">
+          <span class="hire-me-call-out">Currently available for hire!</span>
+          <a href="mailto:kanhalelor@gmail.com" class="contact-btn">Contact</a>
+      </div>
     </div>
     <footer>
       <div class="social">
