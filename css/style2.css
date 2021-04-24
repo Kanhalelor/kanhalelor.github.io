@@ -90,7 +90,7 @@ ul {
 
 article {
   display: flex;
-  flex-flow: column wrap;
+  flex-flow: column;
   align-items: center;
   padding: 6px;
   line-height: 1.5;
