@@ -10,176 +10,17 @@
     <link rel="icon" type="image/png" sizes="32x32" href="../images/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="../images/favicon-16x16.png">
     <link rel="manifest" href="../images/site.webmanifest">
+  
   <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap" rel="stylesheet">
   <title>blog</title>
-  <style>
-    ::-webkit-scrollbar {
-  width: 20px;
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  box-shadow: inset 0 0 5px grey; 
-  border-radius: 10px;
-}
- 
-/* Handle */
-::-webkit-scrollbar-thumb {
-background: -webkit-linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
-background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6); 
-border-radius: 10px;
-
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background:#C9D6FF; 
-}
-/* Better styles for embedding GitHub Gists */
-.gist{font-size:12px;line-height:10px;width: 100%}
-.gist pre{font-family:Menlo,Monaco,'Bitstream Vera Sans Mono','Courier New',monospace !important}
-.gist-meta{font-family:Arial,sans-serif;font-size:13px !important}
-.gist-meta a{color:#3b5998 !important;font-weight:bold;text-decoration:none}
-.gist-meta a:hover{text-decoration:underline}
-    
-* {
-  color: #ebeef1;
-  text-decoration: none;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #121212;
-  display: flex;
-  flex-flow: column;
-  min-height: 100vh;
-  font-family: 'Maven Pro', Tahoma, Geneva, Verdana, sans-serif !important;
-}
-
-header {
-  width: 100%;
-  margin-top: 0px;
-}
-
-footer {
-  display: flex;
-  flex-flow: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: auto;
-  height: 22vh;
-}
-footer a {
-  margin: 12px;
-}
-footer a img {
-  width: 40px;
-  border: 2px solid;
-  border-radius: 50%;
-  background-color: #ddd;
-}
-footer a img:hover {
-  transform: scale(1.1);
-}
-
-.copyright {
-  margin-top: 40px;
-  margin-bottom: 20px;
-}
-ul {
-  list-style: none;
-  padding: 0;
-  margin-top: 20px;
-}
-
-article {
-  display: flex;
-  flex-flow: column wrap;
-  align-items: center;
-  padding: 6px;
-  line-height: 1.5;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 700px;
-  margin-bottom: 40px;
-}
-img{
-  width: 100%;
-  border-radius: 10px;
-}
-
+<style>
 code {
-  padding: 2px 3px;
-  border-radius: 5px;
+  padding: 2px 3px !important;
+  border-radius: 5px !important;
   color: tomato;
-  background-color: #eee;
+  background-color: #eee !important;
 }
-
-article a {color: tomato;}
-/*=== BASE STYLES*/
-
-.image-div{
-  display: block;
-  text-align: center;
-}
-
-.main-nav {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  color: #fff;
-  border-radius: 10px;
-  padding: 12px;
-}
-
-.main-nav a {
-  font-weight: 500;
-  margin: 0px 20px;
-}
-.main-nav a:hover {
-  color: tomato;
-}
-
-/*== content tags ==*/
-.tag {
-  text-decoration: underline !important;
-  color: tomato;
-}
-    
-.content {
-  display: flex;
-  flex-flow: column wrap;
-  padding: 12px;
-  width: 95%;
-  margin: 0 auto;
-  margin-bottom: 10px;
-  max-width: 900px;
-}
-
-p {
-  text-align: justify;
-}
-
-.first-para::first-letter {
-  font-weight: 900;
-  font-size: 36px;
-  color: #000;
-  padding: 6px 6px 0px 6px;
-  margin-right: 4px;
-  border-radius: 30px 30px 0px 0px;
-  text-shadow: 1px 1px #e3effb;
-  background-color: #ddd;
-}
-
-.love {color: #0082c8}
-
-@media only screen and (min-width: 768px) {
-  footer a img {
-    width: 60px;
-  }
-}
-  </style>
+</style>
   <link rel="stylesheet" href="../css/style2.css">
 </head>
 <body>
@@ -210,59 +51,59 @@ p {
 <p>In this article, we are doing to use the <code>requests</code> library and the  <code>open-notify API</code> to find out which and how many astronauts are in space. Ready? Let's dive in...</p>
 
 <p>First, we have to install the <code>requests</code> module from <code>PyPI</code> using <code>pip</code>.  It will help us make <code>HTTP</code></b> requests. If you already have it installed, please skip this step.
-<div class="img-div"><img src="../images/pip-install.png" alt="bash"></div>
+<script src="https://gist.github.com/Kanhalelor/6026a9124bb5e43513cd1aec469023ab.js"></script>
 </p>
 <p>Create a new python file and name it whatever you want. I'll name mine <code>astros.py</code></p>
 <p>Inside our file, we are going to type this.
-  <div class="img-div"><img src="../images/imports.png" alt="bash"></div>
+  <script src="https://gist.github.com/Kanhalelor/4cdb7d34bc944c6b595d03a303a39c9e.js"></script>
 </p>
 <p>
   When you are performing a <code>HTTP</code>request, it should display a status code.  We've assigned this status code to the <code>status_code</code> variable.</p> 
 <p>
   Let's run <code>astros.py</code>.
-  <div class="img-div"><img src="../images/output1.png" alt="bash"></div>
+  <script src="https://gist.github.com/Kanhalelor/4566de6bfae6df9770d546ab14b597a3.js"></script>
 </p>
 <p>
   A <code>200</code> response status code means that our request to the server has been successfully received. To learn more about <code>HTTP</code> status codes check out <a href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Status">MDN Docs</a>.</p>
 <p>
   Alright, so far so good! Let's get  data.
-  <div class="img-div"><img src="../images/data.png" alt="bash"></div>
+  <script src="https://gist.github.com/Kanhalelor/318aedcfdbfa03870f00a70cc765017c.js"></script>
   <b>Output</b>
-  <div class="img-div"><img src="../images/output2.png" alt="bash"></div>
+  <script src="https://gist.github.com/Kanhalelor/c5dce4b7901c989031dba62181e79748.js"></script>
   <h4>We're getting dataaaaaaaa!  &#128540;</h4>
 </p>
 <p>
   Yes, but it is of type <code>string</code>.  We can't do much faster with data of type <code>string</code>. Well, there is another python module that will help us handle this. It is called <code>json</code>. Go and box this code <code>import json</code> just below or before where you wrote <code>import requests</code> in your file. It should look like this;
-  <div class="img-div"><img src="../images/json-import.png" alt="bash"></div>
+  <script src="https://gist.github.com/Kanhalelor/ba94c8587f9309861f8d382a2098b039.js"></script>
 </p>
 <p> 
   <b>Good. Now let's convert our data into a python dictionary using <code>json</code>.</b>
-  <div class="img-div"><img src="../images/clean-data.png" alt="bash"></div>
+  <script src="https://gist.github.com/Kanhalelor/af7106fefeab2bf0da4c96561c9ed10b.js"></script>
   <b>Output</b>
-   <div class="img-div"><img src="../images/output3.png" alt="bash"></div>
+   <script src="https://gist.github.com/Kanhalelor/b8940d4e995b7834fd3b2637112728ec.js"></script>
 </p>
 <p>
   <b>Now our data is of type <code>dict</code>. Great!</b>
 <h4>How many astronauts are in space?</h4>
-<div class="img-div"><img src="../images/astros.png" alt="bash"></div>
+<script src="https://gist.github.com/Kanhalelor/a93229fbf4883ac89ebf0d48ba6fadc7.js"></script>
 <b>Output</b>
-<div class="img-div"><img src="../images/output4.png" alt="bash"></div>
+<script src="https://gist.github.com/Kanhalelor/8ee7282733c1cbda6364f58be62f30f6.js"></script>
 <h4>Who are they?</h4>
-<div class="img-div"><img src="../images/names.png" alt="bash"></div>
+<script src="https://gist.github.com/Kanhalelor/48350e1bb2061c3d76d41d0b35950d3a.js"></script>
 <b>Output</b>
-<div class="img-div"><img src="../images/output5.png" alt="bash"></div>
+<script src="https://gist.github.com/Kanhalelor/f23017dc9a33cebd1038c1af1e028d83.js"></script>
 </p>
 <p>
   <b>Well, our names are in an  <code>array()</code> of objects. Let's unpack it</b>
- <div class="img-div"><img src="../images/names1.png" alt="bash"></div>
+ <script src="https://gist.github.com/Kanhalelor/7617cc879780d42e0334833b13f2e353.js"></script>
 <b>Output</b>
-<div class="img-div"><img src="../images/output6.png" alt="bash"></div>
+<script src="https://gist.github.com/Kanhalelor/1b63e35df399f5cb195345c19156bf5e.js"></script>
 </p>
 <p>
   <b>Lastly, let's get every astroanut and their craft.</b>
-  <div class="img-div"><img src="../images/craft.png" alt="bash"></div>
+  <script src="https://gist.github.com/Kanhalelor/ecdc861452f774c6404ab92a72efc561.js"></script>
   <b>Output</b>
-<div class="img-div"><img src="../images/output7.png" alt="bash"></div>
+<script src="https://gist.github.com/Kanhalelor/338165d83db450643adeaecd01d3f245.js"></script>
 </p>
 <h3>That was it.</h3>
 
