@@ -56,23 +56,30 @@
           so-called normal forms in order to reduce data redundancy and improve
           data integrity.
         </p>
-        <ul style="align-self: flex-start;">
+        <ul style="align-self: center;">
           <li>1. Flexible Database Design</li>
           <li>2. Reduce Data redundancy</li>
           <li>3. Improves the data integrity</li>
           <li>4. Makes an organised Database</li>
         </ul>
         <h3 style="color: tomato;">Normalization types</h3>
-        <ul style="align-self: flex-start;">
+        <ul style="align-self: center;">
           <li>1. 1NF</li>
           <li>2. 2NF</li>
           <li>3. 3NF</li>
           <li>4. BOYCE CORD NF</li>
         </ul>
-        <div style="display: flex; flex-flow: column; align-items: center;width: 96.6℅;">
-          <b>Example table</b>
-          <br />
-          <img src="../images/1nf.png" alt="table.png" width: 100℅; />
+        <div
+          style="
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            width: 96.6℅;
+          "
+        >
+          <b style="margin-bottom: 1rem;">Example table</b>
+          <img class="content-img" src="../images/1nf.png" alt="table.png"
+          width: 100℅; />
         </div>
         <div style="display: flex; flex-flow: column; align-items: center;">
           <h4 style="color: tomato;">
@@ -82,7 +89,8 @@
           1. It should not have repeating values in a group. <br />
           2. It should not have repeating groups. <br />
           <br />
-          <img src="../images/1nf.png" alt="table.png" width: 100℅;/>
+          <img class="content-img" src="../images/1nf.png" alt="table.png"
+          width: 100℅;/>
         </div>
         <div style="display: flex; flex-flow: column; align-items: center;">
           <h4 style="color: tomato;">
@@ -95,13 +103,14 @@
           4. Occurs when there is a composite key.
           <br />
           <br />
-          <b>Employees table</b>
+          <b style="margin-bottom: 1rem;">Employees table</b>
           <img src="../images/2nf.png" alt="table.png" width: 100℅;/>
           <br />
           <b>Departments table</b>
-          <img src="../images/2nf2.png" alt="table.png" width: 100℅; />
+          <img class="content-img" src="../images/2nf2.png" alt="table.png"
+          width: 100℅; />
           <br />
-          <b>EmployeesDept Table</b>
+          <b style="margin-bottom: 1rem;">EmployeesDept Table</b>
           <img src="../images/2nf3.png" alt="table.png" width: 100℅;/>
         </div>
         <div style="display: flex; flex-flow: column; align-items: center;">
@@ -113,7 +122,6 @@
           2. Any non-key field depend on other no-key field. <br />
           3. No transitive dependency <br />
           4. Occurs when you can guess value of any column from no-key column.
-          <img src="" alt="" />
         </div>
         <h3>What is a KEY?</h3>
         <p>
@@ -157,7 +165,16 @@
           <br />
           <span style="color: tomato;">Delete anomaly:</span> A deletion anomaly
           is the unintended loss of data due to deletion of other data.
+          <br />
+          <h3 style="text-align: center;">Conclusion</h3>
+          We've just learned what database normalization is and how it helps us
+          reduce redundancy in our tables. We've also learned different types of
+          normal forms such as 1NF, 2NF, 3NF ... and highlighted different types
+          of anomalies such as deletion, insertion, and update which arises when
+          our table in not normalized?
         </div>
+        <br />
+        <small style="color: tomato;">That was it!</small>
         <h3>
           Happy learning!
         </h3>
