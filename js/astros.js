@@ -12,7 +12,7 @@ const fetchData = () => {
   fetch(url)
     .then((res) => res.json())
     .then((data) => handleData(data))
-    .catch((err) => displayOverlay(err));
+    .catch((err) => displayOverlay(`${err}: Content is loaded over HTTPS.`));
 };
 
 const handleData = (data) => {
