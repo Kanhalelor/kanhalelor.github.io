@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Python" />
+    <meta name="author" content="Robson Kanhalelo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>blog</title>
+    <style>
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: -webkit-linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        );
+        background: linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        );
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c9d6ff;
+      }
+      code {
+        color: tomato;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/style2.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="main-nav">
+        <li><a href="../index.html">← Home</a></li>
+        <li><a href="../projects/projects.html">Projects →</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <article>
+        <h1>How to build a typewriter with JavaScript</h1>
+        <div class="article-details">
+          <small class="author">Robson - </small
+          ><time datetime="14-05-2021"> 14-05-2021</time>|
+          <a class="tag" href="../tags/general.html">#javascript</a>
+        </div>
+        <div class="image-div">
+          <img
+            class="intro-img"
+            src="https://api.time.com/wp-content/uploads/2015/11/151112-vintage-typewriters-05.jpg?quality=85&w=1024&h=512&crop=1"
+            alt="typewriter"
+          />
+          <br />
+          <span class="figcaption">Img source: time.com</span>
+        </div>
+        <p class="first-para">
+          If you have wandered around the web, you may have came across some
+          very simple nice animated type-writers on some websites. Some are very
+          <b>complex</b>. In this tutorial, we are going to build a very simple
+          typewriter with vanilla JavaScript.
+        </p>
+
+        <p>
+          Create 3 files. if you are using Mac or Linux run
+          <code title="make directory">mkdir typewriter</code> and
+          <code title="change directory">cd typewriter.</code> However if you
+          are not on Mac/Linux you can manually create this files.
+        </p>
+        <p>
+          To know that you are currently in the typewriter directory, type
+          <code title="print working directory">pwd</code> in the terminal and
+          it will output <code>home/user/typewriter$</code>. Now type this in
+          your terminal <code>touch index.html style.css script.js</code> this
+          will create 3 file specified in the command. To actually see your
+          files type <code title="list">ls</code> in the terminal.
+        </p>
+        <p>
+          This is all we need for the setup. The entire code for the tutorial is
+          available in the pen below. Copy and paste it in appropriate files
+          you've created.
+          <br />
+        </p>
+        <p
+          class="codepen"
+          data-height="265"
+          data-theme-id="dark"
+          data-default-tab="js,result"
+          data-user="KanhaFly"
+          data-slug-hash="OJpNwmw"
+          style="
+            height: 265px;
+            box-sizing: border-box;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid;
+            margin: 1em 0;
+            padding: 1em;
+          "
+          data-pen-title="typewriter"
+        >
+          <span
+            >See the Pen
+            <a href="https://codepen.io/KanhaFly/pen/OJpNwmw"> typewriter</a> by
+            RK (<a href="https://codepen.io/KanhaFly">@KanhaFly</a>) on
+            <a href="https://codepen.io">CodePen</a>.</span
+          >
+        </p>
+        <script
+          async
+          src="https://cpwebassets.codepen.io/assets/embed/ei.js"
+        ></script>
+        <br>
+        <h3 style="color: tomato;">What did we do here?</h3>
+
+        <p>
+          Here I will just focus on explaining the code in the
+          <code>script.js</code> file. The entire code in out HTML and CSS3 file
+          is simple but if you don't understand please consider learning more
+          about <b>HTML</b> and <b>CSS</b>. We created a string containing the
+          text to be written called <code>textToWrite</code> and grabbed onto
+          our paragraph tag with an <b>id</b> of <code>text</code> in our html
+          file and asigned it to a variable called <code>textElem</code>.
+        </P>
+        <p>To actually start
+          writting our text to the paragraph in our HTML file, we created a function
+          <code>writer</code>. We then  write text to the paragraph element using 
+          the <code>innerHTML</code> method and the <code>slice</code> method to 
+          extract characters from our string variable. Remember we're keeping Track
+          of the current character with a dummy global variable <code>currentChar</code> 
+          which we declared outside our function and assigned it a value of <i>0</i> 
+          and incremented it inside our  function <code>currentChar += 1</code>.
+        </p>
+        <p>
+          <h3>How the <code>slice</code> String method works.</h3>
+          The JavaScript string slice() method is used to fetch the part of the string and returns the new string. It required to specify the index number as the start and end parameters to fetch the part of the string. The index starts from 0.
+
+          This method allows us to pass a negative number as an index. In such case, the method starts fetching from the end of the string. It doesn't make any change in the original string.
+        </p>
+        <h4>
+            <code>Syntax</code>
+          </h4>
+          <p>
+            <code>string.slice(start, end)</code>
+          <br>
+          <br>
+          <span><code>start</code> - It represents the position of the string from where the fetching starts.
+            </span> <br><br>
+          <span><code>end</code> - It is optional. It represents the position up to which the string fetches. In other words, the end parameter is not included.</span>
+          <p>It returns part of a string.
+          </p>
+          <span>The simple <code>conditional</code> statement in there just checks if the currentChar is greater than the length of a string and assign it a value of <i>0</i>.</span>
+          <br>
+          <span>To actually start our writer function, we have to invoke it. We invoke it inside a <code>setInterval</code> function.</span>
+          </p>
+          <h3>How the <code>setInterval</code> method works.</h3>
+          <p>
+          <blockquote>The <i>setInterval()</i> method calls a function or evaluates an expression at specified intervals (in milliseconds).</blockquote> 
+          <span><code>Note</code>: 1000 ms = 1 second.</span>
+          </p>
+          <h4><code>Syntax</code></h4>
+          <p>
+          <code>setInterval(function, milliseconds, param1, param2, ...)</code>
+          </p>
+          <p>
+          <span><code>function</code> Required. The function that will be executed.</span>
+          <span> <br><br>
+          <code>milliseconds</code>	Required. The intervals (in milliseconds) on how often to execute the code. If the value is less than 10, the value 10 is used
+          </span> <br><br>
+          <span><code>param1, param2, ...</code>	Optional. Additional parameters to pass to the function.</span>
+        </p>
+        <p>
+          As soon as we invoke our function, our typewriter will start in our document.
+        </p>
+        <h4>Conclusion</h4>
+        <p>
+          We've just build a simple typewriter with JavaScript. We have learned how to use different methods such as <code>innerHTML</code>, <code>slice</code>, and how the <code>setInterval</code> function works. You can play around with the code to build more fun things. 
+        </p>
+        <h3>
+          Happy coding!
+        </h3>
+      </article>
+    </div>
+    <footer>
+      <small class="copyright"
+        >Made with <span class="love">&#x2764; </span>by Robson</small
+      >
+    </footer>
+  </body>
+</html>
