@@ -111,7 +111,7 @@
           <code title="print working directory">pwd</code> in the terminal and
           it will output <code>home/user/typewriter$</code>. Now type this in
           your terminal <code>touch index.html style.css script.js</code> this
-          will create 3 file specified in the command. To actually see your
+          will create 3 files specified in the command. To actually see your
           files type <code title="list">ls</code> in the terminal.
         </p>
         <p>
@@ -151,11 +151,11 @@
           src="https://cpwebassets.codepen.io/assets/embed/ei.js"
         ></script>
         <br>
-        <h3 style="color: tomato;">What did we do here?</h3>
+        <h3>What did we do here?</h3>
 
         <p>
-          Here I will just focus on explaining the code in the
-          <code>script.js</code> file. The entire code in out HTML and CSS3 file
+          Here I will mostly just focus on explaining the code in the
+          <code>script.js</code> file. The entire code in the HTML and CSS3 files
           is simple but if you don't understand please consider learning more
           about <b>HTML</b> and <b>CSS</b>. We created a string containing the
           text to be written called <code>textToWrite</code> and grabbed onto
@@ -169,12 +169,12 @@
           extract characters from our string variable. Remember we're keeping Track
           of the current character with a dummy global variable <code>currentChar</code> 
           which we declared outside our function and assigned it a value of <i>0</i> 
-          and incremented it inside our  function <code>currentChar += 1</code>.
+          and incremented it inside our  function(<code>currentChar += 1</code>).
         </p>
         <p>
           <h3>How the <code>slice</code> String method works.</h3>
-          The JavaScript string slice() method is used to fetch the part of the string and returns the new string. It required to specify the index number as the start and end parameters to fetch the part of the string. The index starts from 0.
-
+          The JavaScript string slice() method is used to fetch the part of the string and returns the new string. It is required to specify the index number as the start and end parameters to fetch the part of the string. <br><br> The index starts from 0.
+          <br><br>
           This method allows us to pass a negative number as an index. In such case, the method starts fetching from the end of the string. It doesn't make any change in the original string.
         </p>
         <h4>
@@ -191,7 +191,7 @@
           </p>
           <span>The simple <code>conditional</code> statement in there just checks if the currentChar is greater than the length of a string and assign it a value of <i>0</i>.</span>
           <br>
-          <span>To actually start our writer function, we have to invoke it. We invoke it inside a <code>setInterval</code> function.</span>
+          <span>To actually start our writer function, we have to invoke it. We invoke it inside a <code>setInterval</code> method.</span>
           </p>
           <h3>How the <code>setInterval</code> method works.</h3>
           <p>
@@ -210,7 +210,7 @@
           <span><code>param1, param2, ...</code>	Optional. Additional parameters to pass to the function.</span>
         </p>
         <p>
-          As soon as we invoke our function, our typewriter will start in our document.
+          As soon as we call the <i>setInterval</i> method, the writer function will start displaying text sequentially in the document.
         </p>
         <h4>Conclusion</h4>
         <p>
