@@ -92,6 +92,7 @@ ul {
 article {
   display: flex;
   flex-flow: column;
+  flex: 1 0 auto;
   align-items: center;
   padding: 1rem;
   line-height: 1.5;
