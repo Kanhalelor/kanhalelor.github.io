@@ -9,6 +9,9 @@ const jsProjectsBtn = document.querySelector(".js-projects");
 const displayAllProjects = (e) => {
   e.preventDefault();
   projects.forEach((project) => {
+    if (project.classList.contains("animate")) {
+      project.classList.remove("animate");
+    }
     project.style.display = "flex";
   });
 };
@@ -18,7 +21,9 @@ const filterStaticProjects = (e) => {
     if (!project.classList.contains("static")) {
       project.style.display = "none";
     } else {
+      project.classList.remove("animate");
       project.style.display = "flex";
+      project.classList.add("animate");
     }
   });
 };
@@ -29,6 +34,7 @@ const filterJsProjects = (e) => {
       project.style.display = "none";
     } else {
       project.style.display = "flex";
+      project.classList.add("animate");
     }
   });
 };
@@ -40,6 +46,7 @@ const filterPythonProjects = (e) => {
       project.style.display = "none";
     } else {
       project.style.display = "flex";
+      project.classList.add("animate");
     }
   });
 };

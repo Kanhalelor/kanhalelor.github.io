@@ -259,6 +259,26 @@ footer a img:hover {
 .love {
   color: royalblue;
 }
+
+.animate {
+  animation-name: stretch;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-out;
+  animation-delay: 0;
+  animation-direction: alternate;
+  animation-fill-mode: none;
+  animation-play-state: running;
+}
+
+@keyframes stretch {
+  0% {
+    transform: scale(0.3);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /*=== media queries 
     small screens ===*/
 
