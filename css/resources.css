@@ -29,6 +29,7 @@ footer {
   align-items: center;
   justify-content: center;
   color: #333;
+  padding: 2rem;
   margin-top: auto;
   transition: 0.3s ease-in;
 }
@@ -88,30 +89,36 @@ ul {
 }
 /* resource container */
 .resource-container {
-  margin: 0 auto;
+  align-self: center;
   width: 90%;
   max-width: 900px;
-  margin-top: 2rem;
+  margin-top: 2rem 0;
+  padding: 1rem;
   display: flex;
   flex-flow: column;
-  text-align: center;
+  align-items: center;
 }
 
 /* resource container stay tuned msg */
-.resource-container .msg {
+.resource-container .heading1 {
   margin-top: 2rem;
   font-weight: 600;
+  border: 2px solid #fff;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #0082c8;
 }
 /* welcome note paragraph */
 .welcome-note {
   color: tomato;
 }
 /* resource header page */
-.resource-header {
+.resources-box {
   display: flex;
   flex-wrap: wrap;
-  margin: 0 auto;
-  margin-top: 1rem;
+  width: 80%;
+  margin-top: 1.5rem;
 }
 .resource-container .header {
   margin: 1rem 0;
@@ -181,6 +188,20 @@ ul {
 .resource-container .resource-div a:visited {
   background: rgba(0, 0, 0, 0.75);
 }
+.software,
+.websites {
+  padding: 1rem;
+}
+.software a.download-btn {
+  margin: 0.5rem 0 !important;
+  width: 90%;
+}
+.software span a {
+  margin: 0.2rem 0;
+}
+.websites a {
+  margin: 0.2rem 0;
+}
 
 @media only screen and (max-width: 780px) {
   .resource-container {
@@ -188,5 +209,10 @@ ul {
   }
   footer {
     padding-bottom: 0.5rem;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .resource-container .heading1 {
+    width: 40%;
   }
 }
