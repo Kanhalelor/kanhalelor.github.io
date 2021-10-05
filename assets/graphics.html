@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/graphics.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Graphics gallery</title>
+  </head>
+  <body>
+    <header>
+      <ul class="main-nav">
+        <li><a href="../index.html">← Home</a></li>
+        <li><a href="../projects/projects.html">Projects →</a></li>
+      </ul>
+    </header>
+    <div class="heading">
+      <h3 style="color: tomato;">
+        This is my work of art! I strive to improve...
+      </h3>
+    </div>
+    <div class="dev-jokes">
+      <div class="memes">
+        <img id="jokeImg" name="slide" alt="joke" />
+      </div>
+    </div>
+    <footer>
+      <div class="social">
+        <!-- <a href="https://github.com/Kanhalelor" class="github"
+          ><i class="fab fa-github"></i
+        ></a> -->
+      </div>
+      <small class="copyright"
+        >Made with <span class="love">&#x2764; </span>by Robson</small
+      >
+    </footer>
+    <script>
+      const images = [
+        "final design v9",
+        "Educational Tablets",
+        "mens fitness combo",
+        "Men bridesmaid poster",
+        "2nd design v4",
+        "Genius Graphics v1"
+      ];
+
+      let currentImg = 0;
+
+      (function changeImage() {
+        document.slide.src = `../graphics/${images[currentImg]}.jpg`;
+        if (currentImg < images.length - 1) {
+          currentImg += 1;
+        } else {
+          currentImg = 0;
+        }
+        setTimeout(changeImage, 10000);
+      })();
+    </script>
+  </body>
+</html>
