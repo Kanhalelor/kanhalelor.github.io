@@ -39,10 +39,74 @@
       <h3 style="color: tomato;">
         This is my work of art! I strive to improve...
       </h3>
+      <br />
+      <hr />
     </div>
-    <div class="dev-jokes">
-      <div class="memes">
-        <img id="jokeImg" name="slide" alt="joke" />
+    <br />
+    <br />
+    <div class="wrapper">
+      <div class="graphic one">
+        <img
+          src="../graphics/2nd design v4.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic two">
+        <img
+          src="../graphics/Educational Tablets.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic three">
+        <img
+          src="../graphics/Fresh Eggs Poster.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic four">
+        <img
+          src="../graphics/Genius Graphics v1.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic five">
+        <img
+          src="../graphics/Men bridesmaid poster.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic six">
+        <img
+          src="../graphics/TINA'S TEKKIES CLEANING LOGO.png"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic seven">
+        <img
+          src="../graphics/final design v9.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic eight">
+        <img
+          src="../graphics/imms plumbing.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
+      </div>
+      <div class="graphic nine">
+        <img
+          src="../graphics/mens fitness combo.jpg"
+          id="graphic-img"
+          alt="graphic"
+        />
       </div>
     </div>
     <footer>
@@ -55,29 +119,5 @@
         >Made with <span class="love">&#x2764; </span>by Robson</small
       >
     </footer>
-    <script>
-      const images = [
-        "final design v9",
-        "Educational Tablets",
-        "mens fitness combo",
-        "Men bridesmaid poster",
-        "2nd design v4",
-        "Genius Graphics v1",
-        "Fresh Eggs Poster",
-        "imms plumbing"
-      ];
-
-      let currentImg = 0;
-
-      (function changeImage() {
-        document.slide.src = `../graphics/${images[currentImg]}.jpg`;
-        if (currentImg < images.length - 1) {
-          currentImg += 1;
-        } else {
-          currentImg = 0;
-        }
-        setTimeout(changeImage, 10000);
-      })();
-    </script>
   </body>
 </html>
