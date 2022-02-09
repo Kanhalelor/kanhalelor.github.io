@@ -247,7 +247,8 @@ time {
 .py,
 .digital-mkt,
 .wordpress,
-.digital-mkt {
+.digital-mkt,
+.java {
   padding: 1rem;
   margin: 0 0.2rem 0.2rem;
   border-radius: 9px;
@@ -267,6 +268,9 @@ time {
   opacity: 0.7;
 }
 .css3:hover {
+  opacity: 0.7;
+}
+.java:hover {
   opacity: 0.7;
 }
 .js:hover {
@@ -296,6 +300,11 @@ time {
 .css3 {
   background-color: lightseagreen;
   color: #fff;
+  font-weight: 900;
+}
+.java {
+  background-color: magenta;
+  color: white;
   font-weight: 900;
 }
 
