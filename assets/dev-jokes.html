@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../css/memes.css" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;500;600;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>meme gallery</title>
+  </head>
+  <body>
+    <header>
+      <ul class="main-nav">
+        <li><a href="../index.html">← Home</a></li>
+        <li><a href="../projects/projects.html">Projects →</a></li>
+      </ul>
+    </header>
+    <div class="heading">
+      <h3 style="color: tomato;">
+        Welcome to the M3m3 gallery ... Please have fun! :-D
+      </h3>
+    </div>
+    <div class="dev-jokes">
+      <div class="memes">
+        <img id="jokeImg" name="slide" alt="joke" />
+      </div>
+    </div>
+    <footer>
+      <div class="social">
+        <!-- <a href="https://github.com/Kanhalelor" class="github"
+          ><i class="fab fa-github"></i
+        ></a> -->
+      </div>
+      <small class="copyright"
+        >Made with <span class="love">&#x2764; </span>by Robson</small
+      >
+    </footer>
+    <script>
+      const images = [
+        "https://miro.medium.com/max/300/0*o7iRGMHGNO6JbTg3.png",
+        "https://miro.medium.com/max/640/0*2uLd559j36_L5AlM.png",
+        "https://miro.medium.com/max/5000/1*RQRfhtpZNgauNsWFCZTUBg.png",
+        "https://imgs.xkcd.com/comics/compiling.png",
+        "https://miro.medium.com/max/240/0*DPz7LmnPVJ4odcZD.png",
+        "https://pbs.twimg.com/media/EtH6B5UXIAAIYz2?format=jpg&name=medium",
+        "https://miro.medium.com/max/5000/1*9edgsm2B2q5s21SnYB2QUQ.png",
+        "https://i0.wp.com/production-wordpress-assets.s3.amazonaws.com/blog/wp-content/uploads/2013/03/real_programmers1.png?w=604&ssl=1",
+        "https://i.redd.it/771wdbetnc131.jpg",
+        "https://miro.medium.com/max/300/0*T9Cp1i9aEB9kvUYL.png",
+        "https://i.pinimg.com/originals/de/f5/2f/def52fe41d695d8feebd2cdc194da929.png"
+      ];
+
+      let currentImg = 0;
+
+      (function changeImage() {
+        document.slide.src = images[currentImg];
+        if (currentImg < images.length - 1) {
+          currentImg += 1;
+        } else {
+          currentImg = 0;
+        }
+        setTimeout(changeImage, 10000);
+      })();
+    </script>
+  </body>
+</html>

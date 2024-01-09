@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="HTML Fixed Footer" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Python" />
+    <meta name="author" content="Robson Kanhalelo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/site.webmanifest" />
+    <link rel="stylesheet" href="../css/style2.css" />
+    <title>blog</title>
+  </head>
+  <body>
+    <header>
+      <ul class="main-nav">
+        <li><a href="../index.html">← Home</a></li>
+        <li><a href="https://github.com/kanhalelor">Projects →</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <article>
+        <h1>Database Normalization</h1>
+        <div class="article-details">
+          <small class="author">Robson - </small
+          ><time datetime="03-05-2021"> 03-05-2021</time> |
+          <a class="tag" href="../tags/general.html">#databases</a>
+        </div>
+        <div class="image-div">
+          <img
+            class="intro-img"
+            src="https://d3q6qq2zt8nhwv.cloudfront.net/course/3afc200e611f4254815b30fc8a98bfee.jpg"
+            alt="hello world"
+          /><br />
+          <span class="figcaption">Img source: CourseTalk</span>
+        </div>
+        <p class="first-para">
+          Database normalization is the process of structuring a database,
+          usually a relational database, in accordance with a series of
+          so-called normal forms in order to reduce data redundancy and improve
+          data integrity.
+        </p>
+        <ul style="align-self: center;">
+          <li>1. Flexible Database Design</li>
+          <li>2. Reduce Data redundancy</li>
+          <li>3. Improves the data integrity</li>
+          <li>4. Makes an organised Database</li>
+        </ul>
+        <h3 style="color: tomato;">Normalization types</h3>
+        <ul style="align-self: center;">
+          <li>1. 1NF</li>
+          <li>2. 2NF</li>
+          <li>3. 3NF</li>
+          <li>4. BOYCE CORD NF</li>
+        </ul>
+        <div
+          style="
+            display: flex;
+            flex-flow: column;
+            align-items: center;
+            width: 96.6℅;
+          "
+        >
+          <b style="margin-bottom: 1rem;">Example table</b>
+          <img class="content-img"
+          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/1nf.png"
+          alt="table.png" width: 100℅; />
+        </div>
+        <div style="display: flex; flex-flow: column; align-items: center;">
+          <h4 style="color: tomato;">
+            For a table to be in the first Normal Form;
+          </h4>
+
+          1. It should not have repeating values in a group. <br />
+          2. It should not have repeating groups. <br />
+          <br />
+          <img class="content-img"
+          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/1nf.png"
+          alt="table.png" width: 100℅;/>
+        </div>
+        <div style="display: flex; flex-flow: column; align-items: center;">
+          <h4 style="color: tomato;">
+            For a table to be in the second Normal Form;
+          </h4>
+
+          1. Should be in 1NF <br />
+          2. Any non-key field should entirely depend on its primary key.<br />
+          3. No partial dependency <br />
+          4. Occurs when there is a composite key.
+          <br />
+          <br />
+          <b style="margin-bottom: 1rem;">Employees table</b>
+          <img
+          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf.png"
+          alt="table.png" width: 100℅;/>
+          <br />
+          <b>Departments table</b>
+          <img class="content-img"
+          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf2.png"
+          alt="table.png" width: 100℅; />
+          <br />
+          <b style="margin-bottom: 1rem;">EmployeesDept Table</b>
+          <img
+          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf3.png"
+          alt="table.png" width: 100℅;/>
+        </div>
+        <div style="display: flex; flex-flow: column; align-items: center;">
+          <h4 style="color: tomato;">
+            For a table to be in the third Normal Form;
+          </h4>
+
+          1. Should be in 2NF <br />
+          2. Any non-key field depend on other no-key field. <br />
+          3. No transitive dependency <br />
+          4. Occurs when you can guess value of any column from no-key column.
+        </div>
+        <h3>What is a KEY?</h3>
+        <p>
+          A <span style="color: tomato;">KEY</span> is a value used to identify
+          a record in a table uniquely. A KEY could be a single column or
+          combination of multiple columns.
+          <br />
+          <br />
+          Columns in a table that are NOT used to identify a record uniquely are
+          called non-key columns.
+          <br />
+          <br />
+          <span style="color: tomato;">Primary Key:</span> A primary key is a
+          single column value used to identify a database record uniquely.
+          <br />
+          <br />
+          <span style="color: tomato;">Composite Key:</span> A composite key is
+          a primary key composed of multiple columns used to identify a record
+          uniquely
+          <br />
+          <br />
+          <span style="color: tomato;">Partial dependency:</span> When any of
+          the no-key column does not depend on all primary key column.
+          <br />
+          <br />
+          <span style="color: tomato;">Transitive dependency:</span>A transitive
+          dependency occurs when one non-prime column is dependent on another
+          non-prime column.
+        </p>
+        <div>
+          <h3>What problems do we face when a table is not normalized?</h3>
+          <span style="color: tomato;">Update anomaly: </span> An update anomaly
+          is a data inconsistency that results from data redundancy and a
+          partial update.
+          <br />
+          <br />
+          <span style="color: tomato;">Insert anomaly:</span> An insertion
+          anomaly is the inability to add data to the database due to the
+          absence of other data.
+          <br />
+          <br />
+          <span style="color: tomato;">Delete anomaly:</span> A deletion anomaly
+          is the unintended loss of data due to deletion of other data.
+          <br />
+          <h3 style="text-align: center;">Conclusion</h3>
+          We've just learned what database normalization is and how it helps us
+          reduce redundancy in our tables. We've also learned different types of
+          normal forms such as 1NF, 2NF, 3NF ... and highlighted different types
+          of anomalies such as deletion, insertion, and update which arises when
+          our table in not normalized?
+        </div>
+        <br />
+        <small style="color: tomato;">That was it!</small>
+        <h3>
+          Happy learning!
+        </h3>
+      </article>
+    </div>
+    <footer>
+      <small class="copyright"
+        >Made with<span class="love"> ❤ </span> by Robson</small
+      >
+    </footer>
+  </body>
+</html>

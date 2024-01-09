@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap");
+
+*,
+*::after,
+*::before {
+  color: #ebeef1;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+body {
+  background: #121212;
+  line-height: 1.5;
+
+  margin: 0;
+  height: 100vh;
+  width: 100%;
+
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  font-size: 16px;
+
+  font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+header {
+  width: 100%;
+  margin-top: 0;
+}
+
+footer {
+  display: block;
+  text-align: center;
+  width: 100%;
+  padding: 12px;
+  margin-top: auto;
+}
+footer a {
+  margin: 0px 12px;
+}
+/* footer img {
+  margin: 0px 0px 12px;
+  max-width: 40px;
+  border: 2px solid;
+  border-radius: 50%;
+  background-color: #ddd;
+}
+
+footer a img:hover {
+  transform: scale(1.1);
+} */
+
+small {
+  margin: 40px 0px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+}
+
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  border-radius: 10px;
+  padding: 2px;
+}
+
+.main-nav a {
+  font-weight: 600;
+  margin: 0 20px;
+}
+.main-nav a:hover {
+  color: tomato;
+}
+.about-div {
+  padding: 12px;
+  margin-bottom: 16px;
+}
+.about-div {
+  letter-spacing: 1.5px;
+}
+
+a:hover {
+  opacity: 0.88;
+}
+strong {
+  color: tomato;
+}
+i {
+  text-decoration: underline;
+}
+
+.intro > p {
+  text-align: justify;
+  margin: 0;
+}
+
+.studies {
+  margin-top: 1.5rem;
+}
+.separator {
+  height: 2px;
+  background: #f4f5f7;
+  margin: 2rem 0 3.5rem 0 !important;
+}
+.hire-me-call-out {
+  font-size: 16px;
+  font-weight: 600;
+  color: tomato;
+  width: 100%;
+  text-align: center;
+}
+
+.love {
+  color: #0082c8;
+}
+.emoji {
+  color: #fcc040;
+}
+
+.contact-div {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+.contact-btn {
+  outline: none;
+  width: 100%;
+  text-decoration: none;
+  border: none;
+  box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+  padding: 0.4rem;
+  margin: 0 auto;
+  margin-top: 1.2rem;
+  background-color: #0082c8;
+  color: #fff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s linear;
+
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.contact-btn:hover {
+  background: #fff;
+  opacity: 0.9;
+  color: tomato;
+}
+.contact-btn:visited {
+  background: #0082c8;
+}

@@ -1,0 +1,218 @@
+/*===== imports =========*/
+@import url("https://fonts.googleapis.com/css2?family=Maven+Pro&display=swap");
+
+/* global selectors */
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  color: #eee;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: #121212;
+  display: flex;
+  flex-flow: column;
+  width: 100vw;
+  height: 100vh;
+  font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+footer {
+  height: calc(100vh - 80vh);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  padding: 2rem;
+  margin-top: auto;
+  transition: 0.3s ease-in;
+}
+
+footer .love {
+  color: #0082c8;
+}
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+/* Scroll bar */
+
+/* Track */
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: -webkit-linear-gradient(
+    to right,
+    #667db6,
+    #0082c8,
+    #0082c8,
+    #667db6
+  );
+  background: linear-gradient(to right, #667db6, #0082c8, #0082c8, #667db6);
+  border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #c9d6ff;
+}
+
+/* base styles */
+
+/* Main navigation */
+.main-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  color: #fff;
+  border-radius: 10px;
+  padding: 12px;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-weight: 600;
+  margin: 0px 20px;
+}
+.main-nav a:hover {
+  color: tomato;
+}
+/* resource container */
+.resource-container {
+  align-self: center;
+  width: 90%;
+  max-width: 900px;
+  margin-top: 2rem 0;
+  padding: 1rem;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+/* resource container stay tuned msg */
+.resource-container .heading1 {
+  margin-top: 2rem;
+  font-weight: 600;
+  border: 2px solid #fff;
+  text-align: center;
+  padding: 0.5rem;
+  border-radius: 5px;
+  color: #0082c8;
+}
+/* welcome note paragraph */
+.welcome-note {
+  color: tomato;
+}
+/* resource header page */
+.resources-box {
+  display: flex;
+  flex-wrap: wrap;
+  width: 80%;
+  margin-top: 1.5rem;
+}
+.resource-container .header {
+  margin: 1rem 0;
+  color: tomato;
+}
+.mathematics,
+.computer-studies {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 1rem 1.2rem;
+}
+
+.resource-container .resource-div {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 1.3rem 0;
+  width: 100%;
+}
+.resource-name {
+  text-align: justify;
+  word-wrap: wrap;
+  margin: 1rem 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+.download-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 60%;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  margin: 0 auto;
+  background: #0082c8;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  padding-left: 0.5rem;
+  text-decoration: none;
+  color: #fff !important;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 1px 1px 2px #e0e0e0;
+  cursor: context-menu;
+}
+.dwnld {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  right: 0;
+  width: 30%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: tomato;
+  height: 100%;
+  cursor: pointer;
+}
+
+.dwnld:hover {
+  background: rgba(0, 0, 0, 0.85);
+  transition: 0.3s background linear;
+  color: #fff;
+}
+.resource-container .resource-div a:visited {
+  background: rgba(0, 0, 0, 0.75);
+}
+.software,
+.websites {
+  padding: 1rem;
+}
+.software a.download-btn {
+  margin: 0.5rem 0 !important;
+  width: 90%;
+}
+.software span a {
+  margin: 0.2rem 0;
+}
+.websites a {
+  margin: 0.2rem 0;
+}
+
+@media only screen and (max-width: 780px) {
+  .resource-container {
+    margin-bottom: 1.2rem;
+  }
+  footer {
+    padding-bottom: 0.5rem;
+  }
+}
+@media only screen and (min-width: 780px) {
+  .resource-container .heading1 {
+    width: 40%;
+  }
+}

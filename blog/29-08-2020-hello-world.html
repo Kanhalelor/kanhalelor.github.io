@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Free Web tutorials" />
+    <meta name="keywords" content="HTML, CSS, JavaScript, Python" />
+    <meta name="author" content="Robson Kanhalelo" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png"
+    />
+    <link rel="manifest" href="../images/site.webmanifest" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <title>blog</title>
+    <style>
+      ::-webkit-scrollbar {
+        width: 20px;
+      }
+
+      /* Track */
+      ::-webkit-scrollbar-track {
+        box-shadow: inset 0 0 5px grey;
+        border-radius: 10px;
+      }
+
+      /* Handle */
+      ::-webkit-scrollbar-thumb {
+        background: -webkit-linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        );
+        background: linear-gradient(
+          to right,
+          #667db6,
+          #0082c8,
+          #0082c8,
+          #667db6
+        );
+        border-radius: 10px;
+      }
+
+      /* Handle on hover */
+      ::-webkit-scrollbar-thumb:hover {
+        background: #c9d6ff;
+      }
+      * {
+        color: #ebeef1;
+        text-decoration: none;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #121212;
+        display: flex;
+        flex-flow: column;
+        min-height: 100vh;
+        font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
+      }
+
+      header {
+        width: 100%;
+        margin-top: 0px;
+      }
+
+      footer {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        margin-top: auto;
+        height: 22vh;
+      }
+      footer a {
+        margin: 12px;
+      }
+      footer a img {
+        width: 40px;
+        border: 2px solid;
+        border-radius: 50%;
+        background-color: #ddd;
+      }
+      footer a img:hover {
+        transform: scale(1.1);
+      }
+
+      .copyright {
+        margin-top: 40px;
+        margin-bottom: 20px;
+      }
+      ul {
+        list-style: none;
+        padding: 0;
+        margin-top: 20px;
+      }
+
+      article {
+        display: flex;
+        flex-flow: column wrap;
+        align-items: center;
+        padding: 6px;
+        line-height: 1.5;
+        width: 100%;
+        margin: 0 auto;
+        max-width: 700px;
+        margin-bottom: 40px;
+      }
+      img {
+        max-width: 100%;
+        border-radius: 13px;
+        /* box-shadow: 0 1px 1px #f5f2f226, 
+              0 2px 2px #f3f0f026, 
+              0 4px 4px #faf9f926, 
+              0 8px 8px #36363626; */
+      }
+      .code-bg {
+        background-color: #eee;
+      }
+
+      code {
+        color: #121212;
+      }
+
+      .lang {
+        padding: 6px;
+      }
+      button {
+        border-radius: 10px;
+        border: none;
+        font-weight: 900;
+        color: #121212;
+        margin-top: 6.6px;
+        padding: 6px;
+        outline: none;
+      }
+      button:hover {
+        color: tomato;
+        cursor: pointer;
+        opacity: 0.84;
+      }
+      /*=== BASE STYLES*/
+      .image-div {
+        display: block;
+        text-align: center;
+      }
+
+      .main-nav {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        color: #fff;
+        border-radius: 10px;
+        padding: 12px;
+      }
+      li {
+        padding: 5px;
+        border-radius: 10px;
+      }
+      .main-nav a {
+        font-weight: 500;
+        margin: 0px 20px;
+      }
+      .main-nav a:hover {
+        color: tomato;
+      }
+
+      /*== content tags ==*/
+      .tag {
+        text-decoration: underline;
+        color: tomato;
+      }
+      /*=== input ===*/
+      #name-box {
+        border: none;
+        color: #121212;
+        padding: 6px;
+        border: none;
+        outline: none;
+
+        color: tomato;
+      }
+
+      .content {
+        display: flex;
+        flex-flow: column wrap;
+        padding: 12px;
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 10px;
+        max-width: 900px;
+      }
+
+      p {
+        text-align: justify;
+      }
+
+      .first-para::first-letter {
+        font-weight: 900;
+        font-size: 36px;
+        color: #000;
+        padding: 6px 6px 0px 6px;
+        margin-right: 4px;
+        border-radius: 30px 30px 0px 0px;
+        text-shadow: 1px 1px #e3effb;
+        background-color: #ddd;
+      }
+
+      .love {
+        color: #0082c8;
+      }
+    </style>
+    <link rel="stylesheet" href="../css/style2.css" />
+  </head>
+  <body>
+    <header>
+      <ul class="main-nav">
+        <li><a href="../index.html">← Home</a></li>
+        <li><a href="../projects/projects.html">Projects →</a></li>
+      </ul>
+    </header>
+    <div class="content">
+      <article>
+        <h1>Hello World</h1>
+        <div class="article-details">
+          <small class="author">Robson - </small
+          ><time datetime="12-09-2020"> 12-09-2020</time>|
+          <a class="tag" href="../tags/general.html">#general</a>
+        </div>
+        <div class="image-div">
+          <img
+            class="intro-img"
+            src="https://miro.medium.com/max/700/0*4ty0Adbdg4dsVBo3.png"
+            alt="hello world"
+          />
+          <span class="figcaption">Img source: yen.io</span>
+        </div>
+        <p class="first-para">
+          Hello! Thanks for stumbling upon my blog. Well... This is my first
+          article and I just want to thank you for passing by. If you wanna know
+          more about me >> Have a look at my
+          <a style="color: tomato;" href="../about.html">ABOUT</a> page. or see
+          some of the awesome things I am working on
+          <a style="color: tomato;" href="../projects.html">HERE.</a>
+        </p>
+        <h3>Lets do something really funny...</h3>
+        <p>
+          We are going to print
+          <code style="color: tomato;">" hello [Your Name]"</code> in many
+          popular programming languages as we can &#128540;.
+        </p>
+        <p>
+          Go on and type your name in the box and click the button below it.
+        </p>
+        <input id="name-box" type="text" name="your-name" />
+        <button id="generate">Lets do it!</button>
+        <ul>
+          <h3 class="js">Bash</h3>
+          <li class="code-bg">
+            <code class="lang">echo '<span id="result"></span>'</code>
+          </li>
+          <h3 class="js">Basic</h3>
+          <li class="code-bg">
+            <code class="lang">PRINT '<span id="result"></span>'</code>
+          </li>
+          <h3>C</h3>
+          <li class="code-bg">
+            <code class="lang">
+              #include <br />
+              int main(void) {<br />
+              puts("<span id="result"></span>"); <br />
+              }
+            </code>
+          </li>
+          <h3 class="cpp">C++</h3>
+          <li class="code-bg">
+            <code class="lang">
+              #include <`iostream> <br />
+              using namespace std; <br />
+              int main() { <br />
+              cout <<"<span id="result"></span>"<< endl; <br />
+              return 0; <br />
+              }
+            </code>
+          </li>
+          <h3 class="js">JavaScript</h3>
+          <li class="code-bg">
+            <code class="lang">console.log('<span id="result"></span>')</code>
+          </li>
+          <h3 class="py">Python</h3>
+          <li class="code-bg">
+            <code class="lang">print('<span id="result"></span>')</code>
+          </li>
+          <h3 class="jav">Java</h3>
+          <li class="code-bg">
+            <code class="lang"
+              >Class Hello {
+              <br />
+              public static void main(String[] args) { <br />
+              System.out.println('<span id="result"></span>') <br />
+              } <br />
+              }
+            </code>
+          </li>
+        </ul>
+        <p>
+          Well! That was pretty fun I guess...&#128540; Didn't find your
+          favorite programming language? Don't worry! This was just a game.
+        </p>
+        <p>
+          Look, your can stick around for some more fun stuff. Have a look at
+          the
+          <a style="color: tomato;" href="../assets/dev-jokes.html"
+            >Dev-jokes</a
+          >
+          page and make sure you go away with a smile.
+        </p>
+        <h3>What is next?</h3>
+        <p>
+          I will try to publish artciles and more
+          <a style="color: tomato;" href="../assets/dev-jokes.html"
+            >fun stuff</a
+          >
+          whenever I got time. make sure your always come back here to have a
+          look
+        </p>
+
+        <h3><i>Cheers!</i></h3>
+      </article>
+    </div>
+    <footer>
+      <small class="copyright"
+        >Made with <span class="love">&#x2764; </span>by Robson</small
+      >
+    </footer>
+    <script>
+      const nameBox = document.getElementById("name-box");
+      const playBtn = document.getElementById("generate");
+      const output = document.querySelectorAll("#result");
+
+      playBtn.addEventListener("click", (e) => {
+        let player = "Hello " + nameBox.value + "!";
+
+        for (let i = 0; i < output.length; i++) {
+          output[i].innerText = player;
+        }
+        for (let i = 0; i < output.length; i++) {
+          output[i].style.color = "tomato";
+        }
+      });
+    </script>
+  </body>
+</html>
