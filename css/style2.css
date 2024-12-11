@@ -104,6 +104,9 @@ article {
   letter-spacing: 0.1em;
   box-shadow: #ececec4d 0 1px 3px !important;
 }
+.jst {
+  text-align: justify;
+}
 #name-box {
   border: none;
   color: #121212;
