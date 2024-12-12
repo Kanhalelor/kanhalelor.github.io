@@ -313,6 +313,30 @@ footer .sep {
   display: flex;
   justify-content: center;
 }
+.archived-projects {
+  margin-top: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #121212;
+  color: #eee;
+}
+.archived-projects > a {
+  font-size: 20px;
+  color: tomato;
+  transition: .3s linear;
+}
+.archived-projects > a:hover {
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+
+}
+.archives {
+  margin: 1.2rem 0;
+  font-size: 16px;
+}
 .pinned,
 .other {
   background: #333;
