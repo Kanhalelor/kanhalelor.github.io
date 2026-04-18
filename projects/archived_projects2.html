@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="author" content="Kanhalelo Robson" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Archived Projects • Robson Kanhalelo</title>
+  
+  <!-- Tailwind + Font Awesome (same as index & projects) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Inter font (matches the rest of the site) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  
+  <!-- Favicon (same as other pages) -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .project-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .project-card:hover {
+      transform: translateY(-8px) scale(1.02);
+    }
+    
+    .filter-btn {
+      transition: all 0.3s ease;
+    }
+    
+    .filter-btn.active {
+      background-color: #3b82f6;
+      color: white;
+      box-shadow: rgba(0, 0, 0, 0.3) 0 1px 3px;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900 min-h-screen">
+
+  <!-- Sticky Navigation (identical to projects.html & index.html) -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <!-- Desktop Menu -->
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="#" class="text-blue-400 font-semibold">Archived</a>
+      </div>
+
+      <!-- Mobile Hamburger -->
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="./projects2.html">All Projects</a>
+        <a href="#" class="text-blue-400">Archived Projects</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold tracking-tighter mb-3">Archived Projects</h1>
+      <p class="text-xl text-zinc-400 dark:text-zinc-600">Early experiments &amp; learning projects from the beginning of my journey 😉</p>
+    </div>
+  </section>
+
+  <!-- Filter Bar (same modern style as projects.html) -->
+  <div class="max-w-6xl mx-auto px-6 py-8">
+    <div class="flex flex-wrap gap-3 justify-center" id="filter-buttons">
+      <button onclick="filterProjects('all')" class="filter-btn active px-6 py-3 rounded-3xl text-sm font-medium border border-white/20 hover:border-blue-400">All Projects</button>
+      <button onclick="filterProjects('static')" class="filter-btn px-6 py-3 rounded-3xl text-sm font-medium border border-white/20 hover:border-blue-400">HTML5 • CSS3</button>
+      <button onclick="filterProjects('js')" class="filter-btn px-6 py-3 rounded-3xl text-sm font-medium border border-white/20 hover:border-blue-400">JavaScript</button>
+      <button onclick="filterProjects('py')" class="filter-btn px-6 py-3 rounded-3xl text-sm font-medium border border-white/20 hover:border-blue-400">Python</button>
+    </div>
+  </div>
+
+  <!-- Projects Grid -->
+  <div class="max-w-6xl mx-auto px-6 pb-24">
+    <div id="projects-container" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1. E-commerce Website Prototype -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="static">
+        <div class="h-56 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-7xl">🛒</div>
+        <img src="https://bit.ly/3QEthie" alt="E-commerce Prototype" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">E-commerce Website Prototype</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Dynamic e-commerce site built to demonstrate PHP &amp; MySQL</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/e-commerce-website" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://github.com/Kanhalelor/e-commerce-website" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Astronauts in Space -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="js">
+        <div class="h-56 bg-gradient-to-br from-blue-600 to-cyan-600 flex items-center justify-center text-7xl">🪐</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/99086adc730b1dde121f9d37ab728818f7dbff22/images/astros.PNG" alt="Astronauts in Space" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">Astronauts in Space</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Project demonstrating JavaScript Fetch API with live space data</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/astros-in-space" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://github.com/Kanhalelor/astros-in-space" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> View Project
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. New Year Countdown -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="js">
+        <div class="h-56 bg-gradient-to-br from-red-500 to-orange-500 flex items-center justify-center text-7xl">🎆</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/e8ba692c0b3459e7e86516f46db412323597a7c8/images/newyear.PNG" alt="New Year Countdown" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">New Year Countdown</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">JavaScript countdown app with real-time timer</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/newyear-countdown" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/newyear-countdown/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Color Generator -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="js">
+        <div class="h-56 bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center text-7xl">🎨</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/6147f34fd559a0c1809233509567be99a35931f2/images/random-color.PNG" alt="Color Generator" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">Color Generator</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Random color generator built with JavaScript</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/Random-Color-Generator" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/Random-Color-Generator/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. To Do App -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="js">
+        <div class="h-56 bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-7xl">✅</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/e1525e046612379174ece5c2df740162c7569397/images/to-do.PNG" alt="To Do App" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">To Do App</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Simple task manager built with HTML &amp; JavaScript</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/to-do-app" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/to-do-app/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. CS Units Conversion Calculator -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="js">
+        <div class="h-56 bg-gradient-to-br from-amber-600 to-yellow-500 flex items-center justify-center text-7xl">📏</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/b7fd23542cd5ba7eb9a7bcea30c1e0232e359bfb/images/unit-converter.PNG" alt="Unit Converter" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">CS Units Conversion Calculator</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Computer storage unit converter built with JavaScript</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/computer-storate-unit-converter" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/computer-storate-unit-converter/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Online Assessment -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="js">
+        <div class="h-56 bg-gradient-to-br from-rose-500 to-pink-600 flex items-center justify-center text-7xl">📝</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/1120b1427e851fd034b110d98fb6aecbc646a468/images/online-assessment.PNG" alt="Online Assessment" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">Online Assessment</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Interactive quiz/assessment app built with JavaScript</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/online-assessment" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/online-assessment/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Product Landing Page -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="static">
+        <div class="h-56 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-7xl">🛍️</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/411d3ed8f3abd20e9079c50d2c6ed26e3fd0258e/images/product-landing-page.PNG" alt="Product Landing Page" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">Product Landing Page</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Static product landing page built with HTML5 &amp; CSS3</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/assignment-5" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/assignment-5/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. CO-Feed Namibia Website -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="static">
+        <div class="h-56 bg-gradient-to-br from-green-600 to-emerald-500 flex items-center justify-center text-7xl">🌱</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/27c98af9e5afc2117bce3ef42a83362dca6d6ea9/images/co-feed.PNG" alt="CO-Feed Namibia" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">CO-Feed Namibia Website</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Static website for a non-profit organization</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/co-feed-namibia" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/co-feed-namibia/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Resume Template -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="static">
+        <div class="h-56 bg-gradient-to-br from-slate-600 to-zinc-500 flex items-center justify-center text-7xl">📄</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/7791b6dbfff42470909bb860424cc70f41a3a169/images/resume.PNG" alt="Resume Template" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">Resume Template</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Static resume built to demonstrate CSS variables</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/resume" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://kanhalelor.github.io/resume/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Windhoek Namibia Website -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="static">
+        <div class="h-56 bg-gradient-to-br from-amber-500 to-yellow-600 flex items-center justify-center text-7xl">🏙️</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/b7fd23542cd5ba7eb9a7bcea30c1e0232e359bfb/images/windhoek.PNG" alt="Windhoek Namibia" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">Windhoek Namibia Website</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Static city showcase using CSS Flexbox</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/windhoeknamibia.github.io" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://windhoeknamibia.github.io/" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-external-link-alt"></i> Live Demo
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. Traffick App -->
+      <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]" data-category="py">
+        <div class="h-56 bg-gradient-to-br from-green-600 to-emerald-700 flex items-center justify-center text-7xl">🚦</div>
+        <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/97b11e52032fe18143e2b3aafc10c70130eee09c/images/traffick.png" alt="Traffick App" class="w-full h-56 object-cover -mt-56 opacity-90">
+        <div class="p-8">
+          <h3 class="font-semibold text-2xl mb-2">Traffick App</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-8">Python GUI app using Tkinter and SQLite</p>
+          <div class="flex gap-4">
+            <a target="_blank" href="https://github.com/Kanhalelor/TraffickApp" class="flex-1 text-center py-3 bg-white/10 hover:bg-white/20 rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fab fa-github"></i> Code
+            </a>
+            <a target="_blank" href="https://github.com/Kanhalelor/TraffickApp/archive/master.zip" class="flex-1 text-center py-3 border border-white/30 hover:border-white rounded-2xl text-sm font-medium flex items-center justify-center gap-2">
+              <i class="fas fa-download"></i> Download
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Footer (exact match to projects.html & updated index.html) -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
+  </footer>
+
+  <script>
+    // Tailwind config
+    tailwind.config = { darkMode: 'class' };
+
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    // Filter function (identical to projects.html)
+    function filterProjects(category) {
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => btn.classList.remove('active'));
+      
+      const activeBtn = Array.from(buttons).find(btn => 
+        (category === 'all' && btn.textContent === 'All Projects') ||
+        (category === 'static' && btn.textContent === 'HTML5 • CSS3') ||
+        (category === 'js' && btn.textContent === 'JavaScript') ||
+        (category === 'py' && btn.textContent === 'Python')
+      );
+      if (activeBtn) activeBtn.classList.add('active');
+
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all') {
+          card.style.display = 'block';
+        } else {
+          const cardCategories = card.getAttribute('data-category').split(' ');
+          card.style.display = cardCategories.includes(category) ? 'block' : 'none';
+        }
+      });
+    }
+
+    // Show all projects on load
+    window.onload = () => filterProjects('all');
+  </script>
+</body>
+</html>
