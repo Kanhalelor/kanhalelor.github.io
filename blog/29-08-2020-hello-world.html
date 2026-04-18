@@ -1,372 +1,312 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="Free Web tutorials" />
-    <meta name="keywords" content="HTML, CSS, JavaScript, Python" />
-    <meta name="author" content="Robson Kanhalelo" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="../images/site.webmanifest" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap"
-      rel="stylesheet"
-    />
-    <title>blog</title>
-    <style>
-      ::-webkit-scrollbar {
-        width: 20px;
-      }
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Free Web tutorials" />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Python" />
+  <meta name="author" content="Robson Kanhalelo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
 
-      /* Track */
-      ::-webkit-scrollbar-track {
-        box-shadow: inset 0 0 5px grey;
-        border-radius: 10px;
-      }
+  <!-- Tailwind + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-      /* Handle */
-      ::-webkit-scrollbar-thumb {
-        background: -webkit-linear-gradient(
-          to right,
-          #667db6,
-          #0082c8,
-          #0082c8,
-          #667db6
-        );
-        background: linear-gradient(
-          to right,
-          #667db6,
-          #0082c8,
-          #0082c8,
-          #667db6
-        );
-        border-radius: 10px;
-      }
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-      /* Handle on hover */
-      ::-webkit-scrollbar-thumb:hover {
-        background: #c9d6ff;
-      }
-      * {
-        color: #ebeef1;
-        text-decoration: none;
-        box-sizing: border-box;
-      }
+  <title>Hello World</title>
 
-      body {
-        background-color: #121212;
-        display: flex;
-        flex-flow: column;
-        min-height: 100vh;
-        font-family: "Maven Pro", Tahoma, Geneva, Verdana, sans-serif !important;
-      }
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
 
-      header {
-        width: 100%;
-        margin-top: 0px;
-      }
+    .article-wrapper {
+      max-width: 42rem;
+    }
 
-      footer {
-        display: flex;
-        flex-flow: column;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-        margin-top: auto;
-        height: 22vh;
-      }
-      footer a {
-        margin: 12px;
-      }
-      footer a img {
-        width: 40px;
-        border: 2px solid;
-        border-radius: 50%;
-        background-color: #ddd;
-      }
-      footer a img:hover {
-        transform: scale(1.1);
-      }
+    .blog-content p {
+      line-height: 1.85;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+    
+    .blog-content h2, .blog-content h3, .blog-content h4 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    
+    .blog-content h2::before, .blog-content h3::before, .blog-content h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 6px;
+      height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
+    }
 
-      .copyright {
-        margin-top: 40px;
-        margin-bottom: 20px;
-      }
-      ul {
-        list-style: none;
-        padding: 0;
-        margin-top: 20px;
-      }
+    .code-bg {
+      background-color: #1f2937;
+      padding: 1rem;
+      border-radius: 0.75rem;
+      overflow-x: auto;
+      margin: 1rem 0;
+    }
 
-      article {
-        display: flex;
-        flex-flow: column wrap;
-        align-items: center;
-        padding: 6px;
-        line-height: 1.5;
-        width: 100%;
-        margin: 0 auto;
-        max-width: 700px;
-        margin-bottom: 40px;
-      }
-      img {
-        max-width: 100%;
-        border-radius: 13px;
-        /* box-shadow: 0 1px 1px #f5f2f226, 
-              0 2px 2px #f3f0f026, 
-              0 4px 4px #faf9f926, 
-              0 8px 8px #36363626; */
-      }
-      .code-bg {
-        background-color: #eee;
-      }
+    code {
+      color: #e0f2fe;
+      font-family: ui-monospace, monospace;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
 
-      code {
-        color: #121212;
-      }
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
+      </div>
 
-      .lang {
-        padding: 6px;
-      }
-      button {
-        border-radius: 10px;
-        border: none;
-        font-weight: 900;
-        color: #121212;
-        margin-top: 6.6px;
-        padding: 6px;
-        outline: none;
-      }
-      button:hover {
-        color: tomato;
-        cursor: pointer;
-        opacity: 0.84;
-      }
-      /*=== BASE STYLES*/
-      .image-div {
-        display: block;
-        text-align: center;
-      }
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
 
-      .main-nav {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        color: #fff;
-        border-radius: 10px;
-        padding: 12px;
-      }
-      li {
-        padding: 5px;
-        border-radius: 10px;
-      }
-      .main-nav a {
-        font-weight: 500;
-        margin: 0px 20px;
-      }
-      .main-nav a:hover {
-        color: tomato;
-      }
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
 
-      /*== content tags ==*/
-      .tag {
-        text-decoration: underline;
-        color: tomato;
-      }
-      /*=== input ===*/
-      #name-box {
-        border: none;
-        color: #121212;
-        padding: 6px;
-        border: none;
-        outline: none;
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
 
-        color: tomato;
-      }
+  <!-- Article Header -->
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+        Hello World
+      </h1>
+      <div class="mt-8 flex items-center gap-6 text-sm text-zinc-400">
+        <div>Robson Kanhalelo</div>
+        <div>•</div>
+        <time datetime="2020-09-12">September 12, 2020</time>
+        <div class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#general</div>
+      </div>
+    </div>
+  </section>
 
-      .content {
-        display: flex;
-        flex-flow: column wrap;
-        padding: 12px;
-        width: 90%;
-        margin: 0 auto;
-        margin-bottom: 10px;
-        max-width: 900px;
-      }
+  <!-- Featured Image -->
+  <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+    <div class="glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <img src="https://miro.medium.com/max/700/0*4ty0Adbdg4dsVBo3.png" 
+           alt="Hello World" 
+           class="w-full h-auto">
+      <div class="px-8 py-4 text-sm text-zinc-400 dark:text-zinc-600 border-t border-white/10">
+        Img source: yen.io
+      </div>
+    </div>
+  </div>
 
-      p {
-        text-align: justify;
-      }
-
-      .first-para::first-letter {
-        font-weight: 900;
-        font-size: 36px;
-        color: #000;
-        padding: 6px 6px 0px 6px;
-        margin-right: 4px;
-        border-radius: 30px 30px 0px 0px;
-        text-shadow: 1px 1px #e3effb;
-        background-color: #ddd;
-      }
-
-      .love {
-        color: #0082c8;
-      }
-    </style>
-    <link rel="stylesheet" href="../css/style2.css" />
-  </head>
-  <body>
-    <header>
-      <ul class="main-nav">
-        <li><a href="../index.html">← Home</a></li>
-        <li><a href="../projects/projects.html">Projects →</a></li>
-      </ul>
-    </header>
-    <div class="content">
-      <article>
-        <h1>Hello World</h1>
-        <div class="article-details">
-          <small class="author">Robson - </small
-          ><time datetime="12-09-2020"> 12-09-2020</time>|
-          <a class="tag" href="../tags/general.html">#general</a>
-        </div>
-        <div class="image-div">
-          <img
-            class="intro-img"
-            src="https://miro.medium.com/max/700/0*4ty0Adbdg4dsVBo3.png"
-            alt="hello world"
-          />
-          <span class="figcaption">Img source: yen.io</span>
-        </div>
+  <!-- Article Content -->
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
+        
         <p class="first-para">
           Hello! Thanks for stumbling upon my blog. Well... This is my first
           article and I just want to thank you for passing by. If you wanna know
           more about me >> Have a look at my
-          <a style="color: tomato;" href="../about.html">ABOUT</a> page. or see
+          <a href="../about.html">ABOUT</a> page. or see
           some of the awesome things I am working on
-          <a style="color: tomato;" href="../projects.html">HERE.</a>
+          <a href="../projects.html">HERE.</a>
         </p>
+
         <h3>Lets do something really funny...</h3>
         <p>
           We are going to print
-          <code style="color: tomato;">" hello [Your Name]"</code> in many
-          popular programming languages as we can &#128540;.
+          <code>" hello [Your Name]"</code> in many
+          popular programming languages as we can 😄.
         </p>
         <p>
           Go on and type your name in the box and click the button below it.
         </p>
-        <input id="name-box" type="text" name="your-name" />
-        <button id="generate">Lets do it!</button>
-        <ul>
-          <h3 class="js">Bash</h3>
-          <li class="code-bg">
-            <code class="lang">echo '<span id="result"></span>'</code>
+
+        <div class="flex gap-4 items-center my-6">
+          <input id="name-box" type="text" placeholder="Your name" 
+                 class="flex-1 bg-zinc-800 text-white px-5 py-3 rounded-2xl focus:outline-none focus:ring-2 focus:ring-blue-500">
+          <button id="generate" 
+                  class="px-8 py-3 bg-blue-600 hover:bg-blue-700 rounded-2xl font-semibold transition">
+            Lets do it!
+          </button>
+        </div>
+
+        <ul class="space-y-8">
+          <li>
+            <h4 class="text-lg font-semibold mb-2">Bash</h4>
+            <div class="code-bg"><code class="lang">echo '<span id="result"></span>'</code></div>
           </li>
-          <h3 class="js">Basic</h3>
-          <li class="code-bg">
-            <code class="lang">PRINT '<span id="result"></span>'</code>
+          <li>
+            <h4 class="text-lg font-semibold mb-2">Basic</h4>
+            <div class="code-bg"><code class="lang">PRINT '<span id="result"></span>'</code></div>
           </li>
-          <h3>C</h3>
-          <li class="code-bg">
-            <code class="lang">
-              #include <br />
-              int main(void) {<br />
-              puts("<span id="result"></span>"); <br />
-              }
-            </code>
+          <li>
+            <h4 class="text-lg font-semibold mb-2">C</h4>
+            <div class="code-bg">
+              <code class="lang">
+                #include &lt;stdio.h&gt;<br>
+                int main(void) {<br>
+                  puts("<span id="result"></span>"); <br>
+                }
+              </code>
+            </div>
           </li>
-          <h3 class="cpp">C++</h3>
-          <li class="code-bg">
-            <code class="lang">
-              #include <`iostream> <br />
-              using namespace std; <br />
-              int main() { <br />
-              cout <<"<span id="result"></span>"<< endl; <br />
-              return 0; <br />
-              }
-            </code>
+          <li>
+            <h4 class="text-lg font-semibold mb-2">C++</h4>
+            <div class="code-bg">
+              <code class="lang">
+                #include &lt;iostream&gt;<br>
+                using namespace std;<br>
+                int main() {<br>
+                  cout &lt;&lt; "<span id="result"></span>" &lt;&lt; endl;<br>
+                  return 0;<br>
+                }
+              </code>
+            </div>
           </li>
-          <h3 class="js">JavaScript</h3>
-          <li class="code-bg">
-            <code class="lang">console.log('<span id="result"></span>')</code>
+          <li>
+            <h4 class="text-lg font-semibold mb-2">JavaScript</h4>
+            <div class="code-bg"><code class="lang">console.log('<span id="result"></span>')</code></div>
           </li>
-          <h3 class="py">Python</h3>
-          <li class="code-bg">
-            <code class="lang">print('<span id="result"></span>')</code>
+          <li>
+            <h4 class="text-lg font-semibold mb-2">Python</h4>
+            <div class="code-bg"><code class="lang">print('<span id="result"></span>')</code></div>
           </li>
-          <h3 class="jav">Java</h3>
-          <li class="code-bg">
-            <code class="lang"
-              >Class Hello {
-              <br />
-              public static void main(String[] args) { <br />
-              System.out.println('<span id="result"></span>') <br />
-              } <br />
-              }
-            </code>
+          <li>
+            <h4 class="text-lg font-semibold mb-2">Java</h4>
+            <div class="code-bg">
+              <code class="lang">
+                class Hello {<br>
+                  public static void main(String[] args) {<br>
+                    System.out.println("<span id="result"></span>");<br>
+                  }<br>
+                }
+              </code>
+            </div>
           </li>
         </ul>
+
         <p>
-          Well! That was pretty fun I guess...&#128540; Didn't find your
+          Well! That was pretty fun I guess... 😄 Didn't find your
           favorite programming language? Don't worry! This was just a game.
         </p>
         <p>
-          Look, your can stick around for some more fun stuff. Have a look at
+          Look, you can stick around for some more fun stuff. Have a look at
           the
-          <a style="color: tomato;" href="../assets/dev-jokes.html"
-            >Dev-jokes</a
-          >
+          <a href="../assets/dev-jokes.html">Dev-jokes</a>
           page and make sure you go away with a smile.
         </p>
         <h3>What is next?</h3>
         <p>
-          I will try to publish artciles and more
-          <a style="color: tomato;" href="../assets/dev-jokes.html"
-            >fun stuff</a
-          >
-          whenever I got time. make sure your always come back here to have a
-          look
+          I will try to publish articles and more
+          <a href="../assets/dev-jokes.html">fun stuff</a>
+          whenever I got time. Make sure you always come back here to have a
+          look.
         </p>
 
         <h3><i>Cheers!</i></h3>
-      </article>
+
+      </div>
     </div>
-    <footer>
-      <small class="copyright"
-        >Made with <span class="love">&#x2764; </span>by Robson</small
-      >
-    </footer>
-    <script>
-      const nameBox = document.getElementById("name-box");
-      const playBtn = document.getElementById("generate");
-      const output = document.querySelectorAll("#result");
+  </article>
 
-      playBtn.addEventListener("click", (e) => {
-        let player = "Hello " + nameBox.value + "!";
+  <!-- Footer -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Build With Care in Windhoek, Namibia</p>
+    </div>
+  </footer>
 
-        for (let i = 0; i < output.length; i++) {
-          output[i].innerText = player;
-        }
-        for (let i = 0; i < output.length; i++) {
-          output[i].style.color = "tomato";
-        }
+  <script>
+    tailwind.config = { darkMode: 'class' };
+
+    const nameBox = document.getElementById("name-box");
+    const playBtn = document.getElementById("generate");
+    const outputs = document.querySelectorAll("#result");
+
+    playBtn.addEventListener("click", () => {
+      let player = "Hello " + (nameBox.value || "World") + "!";
+
+      outputs.forEach(output => {
+        output.textContent = player;
+        output.style.color = "#60a5fa";
       });
-    </script>
-  </body>
+    });
+
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
+</body>
 </html>
