@@ -10,6 +10,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
   <link rel="manifest" href="./images/site.webmanifest">
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
     
@@ -27,19 +28,8 @@
       border: 2px solid rgba(255, 255, 255, 0.08);
     }
     
-    .fade-in {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: all 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-    
-    .fade-in.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
     .project-card, .writing-card {
-      transition: all 0.4s cubic-bezier(0.4, 0.0, 0.2, 1);
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     }
     
     .project-card:hover, .writing-card:hover {
@@ -52,7 +42,7 @@
   <!-- Navigation -->
   <nav class="sticky top-0 z-50 glass">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      <div class="text-2xl font-semibold tracking-tighter">Robson K.</div>
       
       <!-- Desktop Menu -->
       <div class="hidden md:flex gap-8 text-sm font-medium">
@@ -96,7 +86,7 @@
       <p class="max-w-xl mx-auto text-lg text-zinc-400 mb-10">Building scalable applications • Teaching Python & web tech • Windhoek, Namibia</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
         <a href="#contact" class="px-8 py-4 bg-blue-600 hover:bg-blue-700 rounded-2xl font-semibold transition-all hover:scale-105 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">Get in touch</a>
-        <a href="#projects" class="px-8 py-4 border border-zinc-400 hover:border-white rounded-2xl font-semibold transition-all hover:scale-105">View Projects</a>
+        <a href="projects.html" class="px-8 py-4 border border-zinc-400 hover:border-white rounded-2xl font-semibold transition-all hover:scale-105">View All Projects</a>
       </div>
     </div>
   </section>
@@ -151,52 +141,54 @@
           <i class="fab fa-html5 text-5xl text-orange-500 mb-4"></i>
           <p class="font-semibold">HTML / CSS</p>
         </div>
-        <!-- Add Bash, Java, Git, Hadoop as needed -->
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
+  <!-- Featured Projects - Now shows first 3 from projects.html -->
   <section id="projects" class="py-24">
     <div class="max-w-6xl mx-auto px-6">
       <div class="flex justify-between items-end mb-12">
         <h2 class="text-5xl font-bold">Featured Projects</h2>
-        <a href="/projects/projects2.html" class="text-blue-400 hover:underline flex items-center gap-2">View all <i class="fas fa-arrow-right"></i></a>
+        <a href="projects.html" class="text-blue-400 hover:underline flex items-center gap-2">View all projects <i class="fas fa-arrow-right"></i></a>
       </div>
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-        <!-- Project Card 1 -->
+        <!-- 1. Developer's Salary Prediction -->
         <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
-          <div class="h-52 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-7xl">🚀</div>
+          <div class="h-52 bg-gradient-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-7xl">📈</div>
           <div class="p-8">
-            <h3 class="font-semibold text-2xl mb-3">School Programming Competition Platform</h3>
-            <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-6">Python-based system that helped learners prepare for and win the NUST Annual Programming Competition.</p>
+            <h3 class="font-semibold text-2xl mb-3">Developer's Salary Prediction Data App</h3>
+            <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-6">StackOverflow Developer's Salary Prediction Machine Learning Data App</p>
             <div class="flex gap-3">
-              <a href="/projects/" class="text-sm px-5 py-2 bg-white/10 hover:bg-white/20 rounded-2xl transition">Details</a>
+              <a href="https://github.com/Kanhalelor/Developers-Salary-Prediction-Data-App" target="_blank" class="text-sm px-5 py-2 bg-white/10 hover:bg-white/20 rounded-2xl transition flex-1 text-center">GitHub</a>
+              <a href="https://github.com/Kanhalelor/Developers-Salary-Prediction-Data-App" target="_blank" class="text-sm px-5 py-2 border border-white/30 hover:border-white rounded-2xl transition flex-1 text-center">View Project</a>
             </div>
           </div>
         </div>
 
-        <!-- Project Card 2 -->
+        <!-- 2. Twitter Sentiment Analysis -->
         <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
-          <div class="h-52 bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-7xl">📊</div>
+          <div class="h-52 bg-gradient-to-br from-emerald-600 to-teal-600 flex items-center justify-center text-7xl">🐦</div>
           <div class="p-8">
-            <h3 class="font-semibold text-2xl mb-3">Data Science Workflow Automation</h3>
-            <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-6">Bash + Python scripts to automate data processing pipelines (inspired by my writings).</p>
+            <h3 class="font-semibold text-2xl mb-3">Twitter Sentiment Analysis</h3>
+            <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-6">An app built to demonstrate the use of Python's NLTK Library</p>
             <div class="flex gap-3">
-              <a href="/projects/" class="text-sm px-5 py-2 bg-white/10 hover:bg-white/20 rounded-2xl transition">View Project</a>
+              <a href="https://github.com/Kanhalelor/Twitter-Sentiment-Analysis" target="_blank" class="text-sm px-5 py-2 bg-white/10 hover:bg-white/20 rounded-2xl transition flex-1 text-center">GitHub</a>
+              <a href="https://share.streamlit.io/kanhalelor/twitter-sentiment-anylysis/main/App.py" target="_blank" class="text-sm px-5 py-2 border border-white/30 hover:border-white rounded-2xl transition flex-1 text-center">Live Demo</a>
             </div>
           </div>
         </div>
 
-        <!-- Project Card 3 -->
+        <!-- 3. Havana High School Website -->
         <div class="project-card glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
-          <div class="h-52 bg-gradient-to-br from-purple-600 to-pink-600 flex items-center justify-center text-7xl">🌐</div>
+          <div class="h-52 bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center text-7xl">🏫</div>
           <div class="p-8">
-            <h3 class="font-semibold text-2xl mb-3">Personal Portfolio & Blog</h3>
-            <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-6">This very site — built with HTML/CSS/JS and now upgraded with Tailwind + Glassmorphism.</p>
+            <h3 class="font-semibold text-2xl mb-3">Havana High School Website</h3>
+            <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3 mb-6">Full Stack educational dynamic website - Built with MySQL, PHP & JavaScript</p>
             <div class="flex gap-3">
-              <a href="https://github.com/Kanhalelor/kanhalelor.github.io" target="_blank" class="text-sm px-5 py-2 border border-white/30 hover:border-white rounded-2xl transition">GitHub</a>
+              <a href="https://github.com/Kanhalelor/HSPS" target="_blank" class="text-sm px-5 py-2 bg-white/10 hover:bg-white/20 rounded-2xl transition flex-1 text-center">GitHub</a>
+              <a href="https://havanahighschool.edu.na/" target="_blank" class="text-sm px-5 py-2 border border-white/30 hover:border-white rounded-2xl transition flex-1 text-center">Live Site</a>
             </div>
           </div>
         </div>
@@ -205,40 +197,34 @@
     </div>
   </section>
 
-  <!-- Writings -->
+  <!-- Writings (unchanged) -->
   <section id="writings" class="py-24 bg-zinc-900 dark:bg-zinc-100">
     <div class="max-w-6xl mx-auto px-6">
       <h2 class="text-5xl font-bold text-center mb-16">Recent Writings</h2>
       <div class="grid md:grid-cols-2 gap-8">
-
-        <!-- Real post 1 -->
         <a href="blog/nust-2025-annua-programming-competition-winners.html" class="writing-card glass rounded-3xl p-8 hover:scale-[1.02] transition-all shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
           <div class="text-sm text-blue-400 mb-3">November 2025</div>
           <h3 class="text-2xl font-semibold mb-4">How my school learners won the NUST Annual Programming Competition using Python</h3>
           <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Sharing the teaching methods and Python techniques that led to victory.</p>
         </a>
 
-        <!-- Real post 2 -->
         <a href="blog/01-05-2025-pycon-de-pydata-darmsdadt.html" class="writing-card glass rounded-3xl p-8 hover:scale-[1.02] transition-all shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
           <div class="text-sm text-blue-400 mb-3">May 2025</div>
           <h3 class="text-2xl font-semibold mb-4">My PyCon DE & PyData experience</h3>
           <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Key takeaways from the international Python conferences.</p>
         </a>
 
-        <!-- Real post 3 -->
         <a href="blog/01-06-2024-Are-our-classrooms-ready-for-the-4IR.html" class="writing-card glass rounded-3xl p-8 hover:scale-[1.02] transition-all shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
           <div class="text-sm text-blue-400 mb-3">June 2024</div>
           <h3 class="text-2xl font-semibold mb-4">Are our classrooms ready for the 4IR?</h3>
           <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Thoughts on technology integration in Namibian education.</p>
         </a>
 
-        <!-- Real post 4 -->
         <a href="blog/12-01-2024-Python-in-Orbit.html" class="writing-card glass rounded-3xl p-8 hover:scale-[1.02] transition-all shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
           <div class="text-sm text-blue-400 mb-3">January 2024</div>
           <h3 class="text-2xl font-semibold mb-4">Python in Orbit: A DjangoCon Africa 2023 Workshop</h3>
           <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Workshop reflection and Python web development insights.</p>
         </a>
-
       </div>
       <div class="text-center mt-12">
         <a href="/blog/" class="inline-flex items-center gap-3 px-8 py-4 border border-zinc-400 hover:border-white rounded-2xl transition">
@@ -261,13 +247,19 @@
       
       <div class="flex justify-center gap-10 mt-16 text-4xl">
         <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition"><i class="fab fa-github"></i></a>
-        <!-- Add LinkedIn or others if you have links -->
       </div>
     </div>
   </section>
 
+  <!-- Updated Footer - Matching projects.html style -->
   <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
-    © 2026 Robson Kanhalelo • Redesigned with Tailwind CSS + Glassmorphism
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
   </footer>
 
   <script>
@@ -301,7 +293,7 @@
       icon.classList.toggle('fa-times');
     });
 
-    // Scroll fade-in
+    // Scroll fade-in (kept for consistency)
     function handleScroll() {
       document.querySelectorAll('.fade-in').forEach(el => {
         if (el.getBoundingClientRect().top < window.innerHeight * 0.85) {
