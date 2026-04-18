@@ -1,71 +1,198 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="DjangoCon Tanzania Technical Event 2023">
-  <meta name="keywords" content="DjangoCon Africa, Django Converence, Coding, Software">
+  <meta name="keywords" content="DjangoCon Africa, Django Conference, Coding, Software">
   <meta name="author" content="Robson Kanhalelo">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
-    <link rel="manifest" href="../images/site.webmanifest">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-  <title>blog</title>
-  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <!-- Tailwind + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Python in Orbit: A DjangoCon Africa - 2023 Workshop</title>
+
   <style>
-    .jst {
-        text-align: justify;
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
-     a {
-        color: #0082c8;
-        text-decoration: underline;
-     }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .article-wrapper {
+      max-width: 42rem;
+    }
+
+    .blog-content p {
+      line-height: 1.85;
+      font-size: 1.1rem;
+    }
+    
+    .blog-content h2, .blog-content h4 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    
+    .blog-content h2::before, .blog-content h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 6px;
+      height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
+    }
   </style>
 </head>
-<body>
-  <header>
-    <ul class="main-nav">
-      <li><a href="../index.html">← Home</a></li>
-      <li><a href="../projects/projects.html">Projects →</a></li>
-    </ul>
-  </header>
-  <div class="content">
-    <article>
-      <h1>Python in Orbit: A DjangoCon Africa - 2023 Workshop.</h1>
-      <div class="article-details"><small class="author">Robson - </small><time datetime="22-06-2023">12-01-2024</time> | <a class="tag" href="../tags/python.html">#python</a></div>
-      <div class="image-div">
-        <img class="intro-img" src="../images/workshop1.jpg" alt="Robson">
-        <span class="figcaption">Me at DjangoCon Africa - 2023</span>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
       </div>
-      <h2>Hello Pythonistas!</h2>
-        <p class="jst">I love Python 	&#128521; . .</p>
-        <p class="jst">So, I recently had the privilege of attending DjangoCon Africa 2023 in the enchanting island of Zanzibar, Tanzania, and let me tell you, it was more than just a tech conference. Zanzibar, with its friendly folks and the chill vibe in the air, set the perfect scene for Django enthusiasts to gather and geek out.</p>
-        
-        <h4>Zanzibar's Charm: More Than Just Code.</h4>
-        <p class="jst">
-            Zanzibar deserves a shoutout. The place is like a dream — from the historical Stone Town to the serene beaches, it was the perfect mix of tech talks and island vibes. Huge thanks to the organisers for picking this gem of a location!
-        </p>
-        <h4>Big Ups to the Organisers and Sponsors! 🙌</h4>
-        <p class="jst">
-            Before diving into the geeky stuff, gotta give a massive shoutout to our organisers and sponsors. Their support made DjangoCon Africa way cooler than it already was. Without them, our coding fiesta wouldn’t have been the same. Cheers for having our back!
-        </p>
-    <h4>Workshop Vibes: Exploring Space Data and High-Fives 🚀</h4>
-    <p class="jst">
-        Now, let's dive into the <a target="_blank" href="https://github.com/Kanhalelor/DjangoCon/tree/master">workshop</a>  I led. We rolled up our sleeves and got hands-on with extracting space data from an API, and let me tell you, it was nothing short of epic! Watching the excitement light up participants' faces as they finally got to crack the code was the absolute highlight. Major high-fives to everyone who joined and made it a coding fiesta to remember! 🙌 
-    </p>
-    <h4>Diversity, Inclusivity, and Good Vibes Only.</h4>
-    <p class="jst">
-        DjangoCon Africa isn't just about code; it's about people. The inclusivity and diversity were off the charts. No matter your skill level or where you're from, you felt like you belonged. The mix of voices and experiences added that extra spice to the conference.
-    </p>
-    <p class="jst">  
-        In a nutshell, DjangoCon Africa 2023 was a mashup of code, community, and the magical vibes of Zanzibar. Huge love to the friends made, the knowledge shared, and the Django passion that brought us all together. Until the next DjangoCon adventure! 🚀✌️
-    </p>
-    </article>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+        Python in Orbit: A DjangoCon Africa - 2023 Workshop
+      </h1>
+      <div class="mt-8 flex items-center gap-6 text-sm text-zinc-400">
+        <div>Robson Kanhalelo</div>
+        <div>•</div>
+        <time datetime="2024-01-12">January 12, 2024</time>
+        <div class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#python</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Image -->
+  <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+    <div class="glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <img src="../images/workshop1.jpg" 
+           alt="Robson at DjangoCon Africa 2023" 
+           class="w-full h-auto">
+      <div class="px-8 py-4 text-sm text-zinc-400 dark:text-zinc-600 border-t border-white/10">
+        Me at DjangoCon Africa - 2023
+      </div>
+    </div>
   </div>
-<footer>
-  <small class="copyright">Made with <span class="love">&#x2764; </span>by  Robson</small>
-</footer>
+
+  <!-- Article Content -->
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
+        
+        <h2>Hello Pythonistas!</h2>
+        <p>I love Python 😊 . .</p>
+        <p>So, I recently had the privilege of attending DjangoCon Africa 2023 in the enchanting island of Zanzibar, Tanzania, and let me tell you, it was more than just a tech conference. Zanzibar, with its friendly folks and the chill vibe in the air, set the perfect scene for Django enthusiasts to gather and geek out.</p>
+        
+        <h2>Zanzibar's Charm: More Than Just Code</h2>
+        <p>Zanzibar deserves a shoutout. The place is like a dream — from the historical Stone Town to the serene beaches, it was the perfect mix of tech talks and island vibes. Huge thanks to the organisers for picking this gem of a location!</p>
+
+        <h2>Big Ups to the Organisers and Sponsors! 🙌</h2>
+        <p>Before diving into the geeky stuff, gotta give a massive shoutout to our organisers and sponsors. Their support made DjangoCon Africa way cooler than it already was. Without them, our coding fiesta wouldn’t have been the same. Cheers for having our back!</p>
+
+        <h2>Workshop Vibes: Exploring Space Data and High-Fives 🚀</h2>
+        <p>Now, let's dive into the <a href="https://github.com/Kanhalelor/DjangoCon/tree/master" target="_blank">workshop</a> I led. We rolled up our sleeves and got hands-on with extracting space data from an API, and let me tell you, it was nothing short of epic! Watching the excitement light up participants' faces as they finally got to crack the code was the absolute highlight. Major high-fives to everyone who joined and made it a coding fiesta to remember! 🙌</p>
+
+        <h2>Diversity, Inclusivity, and Good Vibes Only</h2>
+        <p>DjangoCon Africa isn't just about code; it's about people. The inclusivity and diversity were off the charts. No matter your skill level or where you're from, you felt like you belonged. The mix of voices and experiences added that extra spice to the conference.</p>
+
+        <p>In a nutshell, DjangoCon Africa 2023 was a mashup of code, community, and the magical vibes of Zanzibar. Huge love to the friends made, the knowledge shared, and the Django passion that brought us all together. Until the next DjangoCon adventure! 🚀✌️</p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
+  </footer>
+
+  <script>
+    tailwind.config = { darkMode: 'class' };
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
 </body>
 </html>

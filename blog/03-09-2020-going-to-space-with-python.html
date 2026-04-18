@@ -1,44 +1,230 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Python Programming, requests library">
-  <meta name="keywords" content="Python, requests module, PIPy, , Libraries,Frameworks ">
+  <meta name="keywords" content="Python, requests module, PIPy, Libraries, Frameworks">
   <meta name="author" content="Robson Kanhalelo">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
-    <link rel="manifest" href="../images/site.webmanifest">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-  <title>blog</title>
-  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <!-- Tailwind + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Are our classrooms ready for the 4IR?</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .article-wrapper {
+      max-width: 42rem;
+    }
+
+    .blog-content p {
+      line-height: 1.85;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+    
+    .blog-content h2 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    
+    .blog-content h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 6px;
+      height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
+    }
+
+    .blockquote {
+      border-left: 4px solid rgb(59 130 246);
+      padding-left: 1.5rem;
+      margin: 2rem 0;
+      font-style: italic;
+      color: rgb(163 163 163);
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <ul class="main-nav">
-      <li><a href="../index.html">← Home</a></li>
-      <li><a href="../projects/projects.html">Projects →</a></li>
-    </ul>
-  </header>
-  <div class="content">
-    <article>
-      <h1>Are our classrooms ready for the 4IR?</h1>
-      <div class="article-details"><small class="author">Robson - </small><time datetime="01-06-2024"> 01-06-2024</time> | <a class="tag" href="../tags/python.html">#python</a></div>
-      <div class="image-div">
-        <blockquote>
-          <p>''If you are going to <i tabindex="1" style="text-decoration: underline">change the world</i>, you've got to try really different things.''</p>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+        Are our classrooms ready for the 4IR?
+      </h1>
+      <div class="mt-8 flex items-center gap-6 text-sm text-zinc-400">
+        <div>Robson Kanhalelo</div>
+        <div>•</div>
+        <time datetime="2024-06-01">June 01, 2024</time>
+        <div class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#python</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Image -->
+  <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+    <div class="glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <img src="https://cdn.vox-cdn.com/thumbor/A0ZJfcWW6Z_gVoTGHUmwgZ_Z348=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19617733/lego_iss_international_space_station_007_32.jpg" 
+           alt="ISS and 4IR" 
+           class="w-full h-auto">
+      <div class="px-8 py-4 text-sm text-zinc-400 dark:text-zinc-600 border-t border-white/10">
+        Img source: the Verge
+      </div>
+    </div>
+  </div>
+
+  <!-- Article Content -->
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
+        
+        <blockquote class="blockquote">
+          <p>"If you are going to <i>change the world</i>, you've got to try really different things."</p>
           <cite>- Frances Arnold, Nobel Prize in Chemistry</cite>
         </blockquote>
-        <img class="intro-img" src="https://cdn.vox-cdn.com/thumbor/A0ZJfcWW6Z_gVoTGHUmwgZ_Z348=/1400x1050/filters:format(jpeg)/cdn.vox-cdn.com/uploads/chorus_asset/file/19617733/lego_iss_international_space_station_007_32.jpg" alt="iss">
-        <span class="figcaption">Img source: the Verge</span>
+
+        <p>The Fourth Industrial Revolution (4IR) is upon us, bringing groundbreaking advancements in technology like artificial intelligence (AI), the Internet of Things (IoT), and robotics. These innovations are transforming industries, economies, and societies at an unprecedented pace. But as we venture into this new frontier, a critical question arises: Are our classrooms equipped to prepare the next generation for this revolution?</p>
+
+        <h2>What is the Fourth Industrial Revolution</h2>
+        <p>The 4IR is characterized by the fusion of technologies that blur the lines between the physical, digital, and biological spheres. Unlike previous industrial revolutions, which were driven by mechanization, electricity, and information technology, 4IR introduces interconnected systems powered by AI, IoT, and advanced robotics. These innovations are reshaping industries, from healthcare and manufacturing to finance and education.</p>
+
+        <h2>The current state of education</h2>
+        <p>In many parts of the world, especially in African classrooms, traditional teaching methods dominate. These methods often emphasize rote memorization over critical thinking and problem-solving—skills essential for thriving in the 4IR era. Moreover, resource limitations, inadequate teacher training, and outdated curricula exacerbate the challenges faced by educational institutions.</p>
+
+        <h2>The skills gap</h2>
+        <p>To succeed in the 4IR, learners need skills such as critical thinking, digital literacy, and problem-solving. Unfortunately, many education systems fall short in equipping students with these competencies. This gap highlights the urgent need for transformative changes in how we approach teaching and learning.</p>
+
+        <h2>Integrating technology in classrooms</h2>
+        <p>Technology plays a pivotal role in bridging the skills gap and modernizing education. Smart classrooms, e-learning platforms, and other tech-driven solutions have demonstrated their potential to enhance learning experiences. For instance, interactive whiteboards, online resources, and gamified learning tools promote engagement and collaboration among students. However, integrating technology is not without challenges, such as high costs and the digital divide.</p>
+
+        <h2>Case studies</h2>
+        <p>Several schools and regions have successfully integrated 4IR technologies into their classrooms. For example, some schools in Kenya have adopted digital learning platforms that provide access to quality educational content. In South Africa, initiatives like the Smart Classrooms Project are equipping schools with digital infrastructure, demonstrating significant improvements in student engagement and performance.</p>
+
+        <h2>The role of open source software</h2>
+        <p>Open source software (OSS) offers an affordable and flexible alternative for integrating technology into education. Tools like Scratch for coding, Moodle for online learning, and LibreOffice for productivity empower educators and learners alike. OSS also benefits from community support, ensuring continuous improvement and adaptation to local needs.</p>
+
+        <h2>Preparing teachers and students</h2>
+        <p>Teacher training is crucial for effective technology integration and for promoting 4IR skills among students. Professional development programs can equip teachers with the knowledge and tools needed to implement innovative teaching strategies. Simultaneously, educational institutions must prioritise equipping students with critical thinking, creativity, and digital literacy skills. Policymakers also play a vital role in creating an enabling environment for these transformations.</p>
+
+        <h2>Recommendations and future directions</h2>
+        <p>To prepare classrooms for the 4IR, schools should:</p>
+        <ul>
+          <li>Invest in digital infrastructure and affordable technology solutions.</li>
+          <li>Prioritise teacher training and continuous professional development.</li>
+          <li>Revamp curricula to include 4IR-focused subjects like coding, robotics, and data analysis.</li>
+          <li>Promote partnerships with technology companies and non-profits to access resources and expertise.</li>
+        </ul>
+        <p>Policymakers and stakeholders must collaborate to ensure inclusive access to technology and education. Looking ahead, trends like augmented reality, personalised learning, and AI-driven teaching tools are set to revolutionise education further.</p>
+
+        <h2>Conclusion</h2>
+        <p>The Fourth Industrial Revolution presents both challenges and opportunities for education systems worldwide. By embracing innovation, investing in teacher training, and reimagining curricula, we can ensure that our classrooms are ready to equip students with the skills they need to thrive in the 4IR era. The time to act is now. Educators, policymakers, and stakeholders must work together to shape a future where education empowers every learner to succeed in a rapidly evolving world.</p>
+
       </div>
-      <div class="p">Article coming soon!</div>
-    </article>
-  </div>
-<footer>
-  <small class="copyright">Made with <span class="love">&#x2764; </span>by  Robson</small>
-</footer>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
+  </footer>
+
+  <script>
+    tailwind.config = { darkMode: 'class' };
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
 </body>
 </html>

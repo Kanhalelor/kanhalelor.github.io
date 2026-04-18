@@ -1,79 +1,218 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="description" content="Python Programming, requests library">
-  <meta name="keywords" content="Python, requests module, PIPy, , Libraries,Frameworks ">
+  <meta name="keywords" content="Python, requests module, PIPy, Libraries, Frameworks">
   <meta name="author" content="Robson Kanhalelo">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Favicon -->
   <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
-    <link rel="manifest" href="../images/site.webmanifest">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-  <title>blog</title>
-  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <!-- Tailwind + Font Awesome -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Are our classrooms ready for the fourth industrial revolution? 🌍</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .article-wrapper {
+      max-width: 42rem;
+    }
+
+    .blog-content p {
+      line-height: 1.85;
+      font-size: 1.1rem;
+      text-align: justify;
+      
+    }
+    
+    .blog-content h2 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    
+    .blog-content h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 6px;
+      height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
+    }
+  </style>
 </head>
-<body>
-  <header>
-    <ul class="main-nav">
-      <li><a href="../index.html">← Home</a></li>
-      <li><a href="../projects/projects.html">Projects →</a></li>
-    </ul>
-  </header>
-  <div class="content">
-    <article>
-      <h1 style="text-align: center;">Are our classrooms ready for the fourth industrial revolution? 🌍</h1>
-      <div class="article-details"><small class="author">Robson - </small><time datetime="01-06-2024"> 04-06-2024</time> | <a class="tag" href="../tags/python.html">#python</a></div>
-      <div class="image-div">
-        <img class="intro-img" src="https://i0.wp.com/dfafrica.co.za/wp-content/uploads/2020/02/4IR_Skills.jpg?fit=2880%2C1800&ssl=1" alt="AI">
-        <span class="figcaption">Img source: Shutterstock</span>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
       </div>
-    <p class="jst">The Fourth Industrial Revolution (4IR) is upon us, bringing groundbreaking advancements in technology like artificial intelligence (AI), the Internet of Things (IoT), and robotics. These innovations are transforming industries, economies, and societies at an unprecedented pace. But as we venture into this new frontier, a critical question arises: Are our classrooms equipped to prepare the next generation for this revolution?</p>
 
-    <h2>What is the Fourth Industrial Revolution</h2>
-    <p class="jst">The 4IR is characterized by the fusion of technologies that blur the lines between the physical, digital, and biological spheres. Unlike previous industrial revolutions, which were driven by mechanization, electricity, and information technology, 4IR introduces interconnected systems powered by AI, IoT, and advanced robotics. These innovations are reshaping industries, from healthcare and manufacturing to finance and education.</p>
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
 
-    <h2>The current state of education</h2>
-    <p class="jst">In many parts of the world, especially in African classrooms, traditional teaching methods dominate. These methods often emphasize rote memorization over critical thinking and problem-solving—skills essential for thriving in the 4IR era. Moreover, resource limitations, inadequate teacher training, and outdated curricula exacerbate the challenges faced by educational institutions.</p>
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
 
-    <h2>The skills gap</h2>
-    <p class="jst">To succeed in the 4IR, learners need skills such as critical thinking, digital literacy, and problem-solving. Unfortunately, many education systems fall short in equipping students with these competencies. This gap highlights the urgent need for transformative changes in how we approach teaching and learning.</p>
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
 
-    <h2>Integrating technology in classrooms</h2>
-    <p class="jst">Technology plays a pivotal role in bridging the skills gap and modernizing education. Smart classrooms, e-learning platforms, and other tech-driven solutions have demonstrated their potential to enhance learning experiences. For instance, interactive whiteboards, online resources, and gamified learning tools promote engagement and collaboration among students. However, integrating technology is not without challenges, such as high costs and the digital divide.</p>
+  <!-- Article Header -->
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+        Are our classrooms ready for the fourth industrial revolution? 🌍
+      </h1>
+      <div class="mt-8 flex items-center gap-6 text-sm text-zinc-400">
+        <div>Robson Kanhalelo</div>
+        <div>•</div>
+        <time datetime="2024-06-04">June 04, 2024</time>
+        <div class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#python</div>
+      </div>
+    </div>
+  </section>
 
-    <h2>Case studies</h2>
-    <p class="jst">Several schools and regions have successfully integrated 4IR technologies into their classrooms. For example, some schools in Kenya have adopted digital learning platforms that provide access to quality educational content. In South Africa, initiatives like the Smart Classrooms Project are equipping schools with digital infrastructure, demonstrating significant improvements in student engagement and performance.</p>
-
-    <h2>The role of open source software</h2>
-    <p class="jst">Open source software (OSS) offers an affordable and flexible alternative for integrating technology into education. Tools like Scratch for coding, Moodle for online learning, and LibreOffice for productivity empower educators and learners alike. OSS also benefits from community support, ensuring continuous improvement and adaptation to local needs.</p>
-
-    <h2>Preparing teachers and students</h2>
-    <p class="jst">Teacher training is crucial for effective technology integration and for promoting 4IR skills among students. Professional development programs can equip teachers with the knowledge and tools needed to implement innovative teaching strategies. Simultaneously, educational institutions must prioritise equipping students with critical thinking, creativity, and digital literacy skills. Policymakers also play a vital role in creating an enabling environment for these transformations.</p>
-
-    <h2>Recommendations and future directions</h2>
-    <p class="jst">To prepare classrooms for the 4IR, schools should:</p>
-    <ul class="jst">
-        <li>1. Invest in digital infrastructure and affordable technology solutions.</li>
-        <li>2. Prioritise teacher training and continuous professional development.</li>
-        <li>3. Revamp curricula to include 4IR-focused subjects like coding, robotics, and data analysis.</li>
-        <li>4. Promote partnerships with technology companies and non-profits to access resources and expertise.</li>
-    </ul>
-    <p class="jst">Policymakers and stakeholders must collaborate to ensure inclusive access to technology and education. Looking ahead, trends like augmented reality, personalised learning, and AI-driven teaching tools are set to revolutionise education further.</p>
-
-    <h2>Conclusion</h2>
-    <p class="jst">The Fourth Industrial Revolution presents both challenges and opportunities for education systems worldwide. By embracing innovation, investing in teacher training, and reimagining curricula, we can ensure that our classrooms are ready to equip students with the skills they need to thrive in the 4IR era. The time to act is now. Educators, policymakers, and stakeholders must work together to shape a future where education empowers every learner to succeed in a rapidly evolving world.</p>
-    </article>
+  <!-- Featured Image -->
+  <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+    <div class="glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <img src="https://i0.wp.com/dfafrica.co.za/wp-content/uploads/2020/02/4IR_Skills.jpg?fit=2880%2C1800&ssl=1" 
+           alt="Fourth Industrial Revolution in Education" 
+           class="w-full h-auto">
+      <div class="px-8 py-4 text-sm text-zinc-400 dark:text-zinc-600 border-t border-white/10">
+        Img source: Shutterstock
+      </div>
+    </div>
   </div>
-<footer>
-  <div class="social">
-  <!-- <a href="#"><img src="data:image/png;base64,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" alt="whatsapp" width="60"></a>
-  <a href="#"><img src="data:image/png;base64,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" alt="linked-in" width="60"></a>
-  <a href="#"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAFm0lEQVR4Xu2bR8gkRRTHf6uCF7OuYs5ZMYKiu2YPioLhsGICFRE8qBgRr4qYEBU9GBaM6MGsCCrmiBgwxzWLWQwHFyM/rYLa3prprpmemW925l2+b7qrXr3616uXqnoWi9Mc4HhgL2AtYNlMm3F6tBD4CngCuAF4NhV+VvJjeeA6YN44za4HWe8ATgR+tW8EwMk/BWzfA8Nx7PIqsKcgRABun4CVry6UmnCEALjnnx7HZWxB5rkCMB84rgVm48hivgAsADYcR+lbkHmBAPy+BLi6XrFYKAD/9Np7Seg3BaBFDfgTeAZ4GfgU+Az4CfD5X13+qkhLA8t0+bsysB6wPrBT8Fy275va0IAPgAuBu4Cf+5aoGYMVgcOAc4FNm3XJt+oHAFf2DOCasLr9yNFrX7XgZOCyoEHFfHoF4MewAk8WjziYDoa1auAqpex7AcCV3zfkDtXxtgYOALYANgBW77C30/0uj9RO5GzGt8AnwLvAQ8BbmYkKwqOlmtALAKcAV1UE0DCphgoxDFLz3H4a3JSU7YoSAUoBeA9wlbXqkQ4Hbh1BMGWefxRwZyKLmqV2bNYUhFIAjgVuTpi78hYYhlE0MX9/LXGHiiEIu1c0QRlvHAQAfwCrAb8kzK2yDEPtXwEOBL4BlgLODy5QUdwOVq8irQD80NQWlGjA48A+yUBuhTebIt1nuz0qKbsgfBy0QdbbVAyjsqagdBy+BACN3JkJJ/+/pI+JfR9qdbKw9qh2daJ1gC8rL61gzQ3PzgIuTd4r6+lNZCsBoGr9rwdOaDJI0saVuQV4ANC1paTLPAg4Gti78u4k4Nrk2RrAh8By4ZmyWOeL1NgblABwCHBvMog+13igCb0NnBr8dJP2+wFXAluGxr8Ft/cgsDFwObBjRZb9k9/KeneTgUoA0NipdpFeB7ZtMMh9YVX/q8IWkIVa3evBDfooy3ZJO2XVQNdSCQC6m+cSjq5qXKFOAzl5k5Y0boht1wU2Cj+sSn2eYWKW6ErWgaAsGuVIympmWkslAOwKvJhwNCjqFnAolH3Sldd6G7ycHSx3KqAe5eKw6n8nL9SEF4CtusxGWQy/Iznu87WzD+cCTStCO1cCjo+SFcyN5Z7UTkTSYN3WYDXVGkFy30eS18NdJqQsmyTvlfWltgHYIURika/JiQWKHFVjBlf+ngaTj7zuBzRkqSY8lvEOqSxpYVdZDZ5qqWQLaPDSwOcLYO0OI+geLbdHOga4qVaaRRvYR5cZSZ66uxwpizYlkrJqGGupBAD34DsJx68B/XGOfJ76+Tcye75OOMFOvYxxgqFwjpRlzeSFsuZS5sX6lgCgwbP8Fem7DtGbEd7spJ0rY32wF7KvqxtJ3qtmGCmLAEVSVg1jLZUAYACiu4pkwXOlzAg9++QMr6axh7Kk1SDdq4axlqYAFJTFJ34LTLwRnHg3OMxAyGjw0JkWCE18KFyaDBk07ZJJho4EzumQDF0U8oVqMmQS1i3zHEoy1HY6bJkrTYfTgCf67xmVDjcNSqrBh4mN2d3YF0T6LYmdBjxSG5r938D01xOeuoJLZGfaPfCSWFtFUctcakWuKGrlR22pFkXrcBtKUbTtsriHF15hlSyL55KcuonH90Mpi4/yYKQOiKEcjIzyaKwbAEM7GlOIUR6O5kDwcHS3SvlrYIejCjDxx+OCMNEXJATAKyweXeXuB8UrMpsP6IqMGjjyKzKCMNGXpKIxitfkru5w9FXnutp4P7Jrcqnw7wMXhIOP9PZIGxPsxMNbIIbm55XcB8oxKymK1k0oXpX1RKbpVVn7SK5k06uyHov7kceMuSpbB8yMft+mBszoiXYSbvrBxPSTmelHUxP92dyc6YeTwTpO/Kez4jDRH0+nbtIoyy9JvWvrFZhh3AQfZAxh0cRrtt4b9NrOIp/P/wsJgq17nS0+pgAAAABJRU5ErkJggg==" alt="instagram" width="60"></a>
-  </div> -->
-  <small class="copyright">Made with <span class="love">&#x2764; </span>by  Robson</small>
-</footer>
+
+  <!-- Article Content -->
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
+        
+        <p>The Fourth Industrial Revolution (4IR) is upon us, bringing groundbreaking advancements in technology like artificial intelligence (AI), the Internet of Things (IoT), and robotics. These innovations are transforming industries, economies, and societies at an unprecedented pace. But as we venture into this new frontier, a critical question arises: Are our classrooms equipped to prepare the next generation for this revolution?</p>
+
+        <h2>What is the Fourth Industrial Revolution</h2>
+        <p>The 4IR is characterized by the fusion of technologies that blur the lines between the physical, digital, and biological spheres. Unlike previous industrial revolutions, which were driven by mechanization, electricity, and information technology, 4IR introduces interconnected systems powered by AI, IoT, and advanced robotics. These innovations are reshaping industries, from healthcare and manufacturing to finance and education.</p>
+
+        <h2>The current state of education</h2>
+        <p>In many parts of the world, especially in African classrooms, traditional teaching methods dominate. These methods often emphasize rote memorization over critical thinking and problem-solving—skills essential for thriving in the 4IR era. Moreover, resource limitations, inadequate teacher training, and outdated curricula exacerbate the challenges faced by educational institutions.</p>
+
+        <h2>The skills gap</h2>
+        <p>To succeed in the 4IR, learners need skills such as critical thinking, digital literacy, and problem-solving. Unfortunately, many education systems fall short in equipping students with these competencies. This gap highlights the urgent need for transformative changes in how we approach teaching and learning.</p>
+
+        <h2>Integrating technology in classrooms</h2>
+        <p>Technology plays a pivotal role in bridging the skills gap and modernizing education. Smart classrooms, e-learning platforms, and other tech-driven solutions have demonstrated their potential to enhance learning experiences. For instance, interactive whiteboards, online resources, and gamified learning tools promote engagement and collaboration among students. However, integrating technology is not without challenges, such as high costs and the digital divide.</p>
+
+        <h2>Case studies</h2>
+        <p>Several schools and regions have successfully integrated 4IR technologies into their classrooms. For example, some schools in Kenya have adopted digital learning platforms that provide access to quality educational content. In South Africa, initiatives like the Smart Classrooms Project are equipping schools with digital infrastructure, demonstrating significant improvements in student engagement and performance.</p>
+
+        <h2>The role of open source software</h2>
+        <p>Open source software (OSS) offers an affordable and flexible alternative for integrating technology into education. Tools like Scratch for coding, Moodle for online learning, and LibreOffice for productivity empower educators and learners alike. OSS also benefits from community support, ensuring continuous improvement and adaptation to local needs.</p>
+
+        <h2>Preparing teachers and students</h2>
+        <p>Teacher training is crucial for effective technology integration and for promoting 4IR skills among students. Professional development programs can equip teachers with the knowledge and tools needed to implement innovative teaching strategies. Simultaneously, educational institutions must prioritise equipping students with critical thinking, creativity, and digital literacy skills. Policymakers also play a vital role in creating an enabling environment for these transformations.</p>
+
+        <h2>Recommendations and future directions</h2>
+        <p>To prepare classrooms for the 4IR, schools should:</p>
+        <ul>
+          <li>Invest in digital infrastructure and affordable technology solutions.</li>
+          <li>Prioritise teacher training and continuous professional development.</li>
+          <li>Revamp curricula to include 4IR-focused subjects like coding, robotics, and data analysis.</li>
+          <li>Promote partnerships with technology companies and non-profits to access resources and expertise.</li>
+        </ul>
+        <p>Policymakers and stakeholders must collaborate to ensure inclusive access to technology and education. Looking ahead, trends like augmented reality, personalised learning, and AI-driven teaching tools are set to revolutionise education further.</p>
+
+        <h2>Conclusion</h2>
+        <p>The Fourth Industrial Revolution presents both challenges and opportunities for education systems worldwide. By embracing innovation, investing in teacher training, and reimagining curricula, we can ensure that our classrooms are ready to equip students with the skills they need to thrive in the 4IR era. The time to act is now. Educators, policymakers, and stakeholders must work together to shape a future where education empowers every learner to succeed in a rapidly evolving world.</p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
+  </footer>
+
+  <script>
+    tailwind.config = { darkMode: 'class' };
+
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
 </body>
 </html>
