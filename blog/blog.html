@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog • Robson Kanhalelo</title>
+  
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png" />
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+    
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+    
+    .blog-card {
+      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .blog-card:hover {
+      transform: translateY(-8px);
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900 min-h-screen">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="#" class="text-blue-400 font-semibold">Blog</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="#" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-6xl mx-auto px-6 text-center">
+      <h1 class="text-5xl font-bold tracking-tighter mb-4">Blog</h1>
+      <p class="text-xl text-zinc-400 dark:text-zinc-600">Thoughts on Python, education, technology, and software development</p>
+    </div>
+  </section>
+
+  <!-- Blog Posts Grid -->
+  <div class="max-w-6xl mx-auto px-6 py-16">
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+      <!-- 1. NUST Competition -->
+      <a target="_blank" href="nust-2025-annua-programming-competition-winners.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/WhatsApp Image 2025-12-11 at 23.48.05.jpeg" alt="NUST Annual Programming Competition Winners 2025" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">November 2025</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">How my school learners won the NUST Annual Programming Competition using Python</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">From limited resources to victory in just one week of learning Python.</p>
+        </div>
+      </a>
+
+      <!-- 2. PyCon DE & PyData -->
+      <a target="_blank" href="01-05-2025-pycon-de-pydata-darmsdadt.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/250425-pycon-pydata-mf-FZ8_8449.jpg" alt="PyCon DE & PyData" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">May 2025</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">My PyCon DE & PyData experience</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Key takeaways and memorable moments from the international Python conferences.</p>
+        </div>
+      </a>
+
+      <!-- 3. 4IR Classrooms -->
+      <a target="_blank" href="01-06-2024-Are-our-classrooms-ready-for-the-4IR.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/4ir-classrooms.jpg" alt="4IR Classrooms" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">June 2024</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Are our classrooms ready for the 4IR?</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Reflections on technology integration in Namibian education.</p>
+        </div>
+      </a>
+
+      <!-- 4. Python in Orbit -->
+      <a target="_blank" href="12-01-2024-Python-in-Orbit.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/djangocon-africa.jpg" alt="DjangoCon Africa Workshop" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">January 2024</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Python in Orbit: A DjangoCon Africa 2023 Workshop</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Workshop reflections and insights from DjangoCon Africa 2023.</p>
+        </div>
+      </a>
+
+      <!-- 5. PyCon Namibia 2023 -->
+      <a target="_blank" href="22-06-2023-pycon-namibia.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/pycon-namibia.jpg" alt="PyCon Namibia 2023" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">June 2023</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Reflecting on PyCon Namibia 2023</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">My experience and takeaways from PyCon Namibia 2023.</p>
+        </div>
+      </a>
+
+      <!-- 6. Research Project -->
+      <a target="_blank" href="draft.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/research-project.jpg" alt="Research Project" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">October 2022</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Research Project</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Ongoing research work and reflections.</p>
+        </div>
+      </a>
+
+      <!-- 7. Automate Data Science Workflow -->
+      <a target="_blank" href="04-06-2022-automate-your-data-science-workflow.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/bash-automation.jpg" alt="Automate Data Science Workflow" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">June 2022</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Automate your Data Science Workflow with Bash</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Practical automation techniques using Bash scripts.</p>
+        </div>
+      </a>
+
+      <!-- 8. Happy New Year 2022 -->
+      <a target="_blank" href="happy-new-year-2022.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/new-year-2022.jpg" alt="Happy New Year 2022" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">December 2021</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Happy New Year 2022</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">New year reflections and wishes.</p>
+        </div>
+      </a>
+
+      <!-- 9. Typewriter with JS -->
+      <a target="_blank" href="typewriter.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/typewriter-js.jpg" alt="Typewriter with JS" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">May 2021</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Build a typewriter with JavaScript</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Creating a fun typewriter effect using vanilla JS.</p>
+        </div>
+      </a>
+
+      <!-- 10. Database Normalization -->
+      <a target="_blank" href="03-05-2021-DB-normalization.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/db-normalization.jpg" alt="Database Normalization" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">May 2021</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Database Normalization</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Understanding normalization concepts in databases.</p>
+        </div>
+      </a>
+
+      <!-- 11. Web Scraping with Python -->
+      <a target="_blank" href="08-03-2021-web-scrapper.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/web-scraping.jpg" alt="Web Scraping with Python" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">March 2021</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Web Scraping with Python</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Introduction to web scraping using Python.</p>
+        </div>
+      </a>
+
+      <!-- 12. Fixed Footer -->
+      <a target="_blank" href="01-03-2021-fixed-footer.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/fixed-footer.jpg" alt="Fixed Footer" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">March 2021</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">How to create a fixed footer</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Simple CSS technique for a sticky footer.</p>
+        </div>
+      </a>
+
+      <!-- 13. Solving coding challenges with Python -->
+      <a target="_blank" href="https://hashnode.com/preview/5f8eb53803022e45ade4a48f" target="_blank" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/coding-challenges.jpg" alt="Solving coding challenges with Python" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">October 2020</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Solving coding challenges with Python</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Approaches and tips for tackling coding problems.</p>
+        </div>
+      </a>
+
+      <!-- 14. Build a calculator with Python -->
+      <a target="_blank" href="https://hashnode.com/post/how-to-build-a-basic-calculator-with-python-ckfghxf4t01cg8as1b8k47clx" target="_blank" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/calculator-python.jpg" alt="Calculator with Python" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">September 2020</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">How to build a calculator with Python</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Step-by-step guide to building a basic calculator.</p>
+        </div>
+      </a>
+
+      <!-- 15. Going to space with Python -->
+      <a target="_blank" href="03-09-2020-going-to-space-with-python.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/space-python.jpg" alt="Going to space with Python" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">September 2020</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Going to space with Python</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">Fun exploration of space-related Python projects.</p>
+        </div>
+      </a>
+
+      <!-- 16. Hello World -->
+      <a target="_blank" href="29-08-2020-hello-world.html" class="blog-card glass rounded-3xl overflow-hidden group">
+        <img src="../images/hello-world.jpg" alt="Hello World" class="h-56 w-full object-cover">
+        <div class="p-8">
+          <div class="text-sm text-blue-400 mb-3">August 2020</div>
+          <h3 class="font-semibold text-2xl mb-4 group-hover:text-blue-400 transition">Hello World</h3>
+          <p class="text-zinc-400 dark:text-zinc-600 line-clamp-3">My first blog post and introduction.</p>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- Footer (exact match) -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <!-- GitHub -->
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
+  </footer>
+
+  <script>
+    tailwind.config = { darkMode: 'class' };
+
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
+</body>
+</html>
