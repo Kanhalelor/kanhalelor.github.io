@@ -17,7 +17,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-  <!-- Inter font (matches the rest of the site) -->
+  <!-- Inter font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <title>From limited resources to victory: How my school learners won the NUST Annual Programming Competition using Python</title>
@@ -38,35 +38,53 @@
       background: rgba(0, 0, 0, 0.65);
       border: 1px solid rgba(255, 255, 255, 0.08);
     }
-    
+
+    .article-wrapper {
+      max-width: 42rem;           /* Much narrower on large screens */
+    }
+
     .blog-content p {
-      line-height: 1.8;
+      line-height: 1.85;
+      font-size: 1.1rem;
+      text-align: justify;
     }
     
     .blog-content h2 {
-      font-size: 1.75rem;
+      font-size: 1.85rem;
       font-weight: 600;
-      margin-top: 2.5rem;
-      margin-bottom: 1rem;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    
+    .blog-content h2::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 6px;
+      height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
     }
   </style>
 </head>
 <body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
 
-  <!-- Navigation (matches other pages) -->
+  <!-- Navigation -->
   <nav class="sticky top-0 z-50 glass">
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
-      <div class="text-2xl font-semibold tracking-tighter">Robson K.</div>
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
       
       <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="../index.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
           <i class="fas fa-arrow-left"></i> Home
         </a>
-        <a href="../projects.html" class="hover:text-blue-400 transition-colors">Projects</a>
-        <a href="../blog/" class="text-blue-400 font-semibold">Blog</a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="./blog.html" class="text-blue-400 font-semibold">Blog</a>
       </div>
 
-      <!-- Mobile Hamburger -->
       <div class="md:hidden">
         <button id="mobile-menu-btn" class="p-3 text-2xl">
           <i class="fas fa-bars"></i>
@@ -78,12 +96,11 @@
       </button>
     </div>
 
-    <!-- Mobile Menu -->
     <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
       <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
-        <a href="../index.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
-        <a href="../projects.html">Projects</a>
-        <a href="../blog/" class="text-blue-400">Blog</a>
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
       </div>
     </div>
   </nav>
@@ -92,10 +109,10 @@
   <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
     <div class="max-w-4xl mx-auto px-6">
       <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
-        <a href="../blog/" class="hover:underline">← Back to Blog</a>
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
       </div>
       <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
-        🏆 From limited resources to victory: How my school learners won the NUST Annual Programming Competition using Python
+        From limited resources to victory: How my school learners won the NUST Annual Programming Competition using Python
       </h1>
       <div class="mt-8 flex items-center gap-6 text-sm text-zinc-400">
         <div>Robson Kanhalelo</div>
@@ -118,42 +135,47 @@
     </div>
   </div>
 
-  <!-- Article Content -->
-  <article class="max-w-4xl mx-auto px-6 py-16 blog-content prose prose-invert dark:prose-invert max-w-none">
-    <section>
-      <h2>The Challenge and the Leap of Faith</h2>
-      <p>At Windhoek Technical High School (HTS) in Namibia, we face a common challenge: we do not have a fully functional computer laboratory to teach programming to a group of students simultaneously. This presented a significant hurdle for the <strong>12 Grade 12 AS Level learners</strong> I was preparing for the highly anticipated <strong>Namibia University of Science and Technology (NUST) Annual Programming Competition.</strong></p>
-      
-      <p>With only a single week remaining before the competition, I arranged for my learners to use the computer labs at NUST, dedicating time to learn Python <strong>from scratch</strong>. This was a race against time, but I was confident that Python’s famously clear syntax and beginner-friendly nature would give us a fighting chance.</p>
-    </section>
+  <!-- Article Content - Now narrower and much more visually appealing -->
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
+        
+        <section>
+          <h2>The Challenge and the Leap of Faith</h2>
+          <p>At Windhoek Technical High School (HTS) in Namibia, we face a common challenge: we do not have a fully functional computer laboratory to teach programming to a group of students simultaneously. This presented a significant hurdle for the <strong>12 Grade 12 AS Level learners</strong> I was preparing for the highly anticipated <strong>Namibia University of Science and Technology (NUST) Annual Programming Competition.</strong></p>
+          
+          <p>With only a single week remaining before the competition, I arranged for my learners to use the computer labs at NUST, dedicating time to learn Python <strong>from scratch</strong>. This was a race against time, but I was confident that Python’s famously clear syntax and beginner-friendly nature would give us a fighting chance.</p>
+        </section>
 
-    <section>
-      <h2>Our Python Journey: From Colab to VS Code</h2>
-      <p>We started our intense week of training using <strong>Google Colab</strong> as our primary Integrated Development Environment (IDE). Its browser-based accessibility and lightweight nature made it the perfect tool for our initial lessons on fundamental Python concepts.</p>
+        <section>
+          <h2>Our Python Journey: From Colab to VS Code</h2>
+          <p>We started our intense week of training using <strong>Google Colab</strong> as our primary Integrated Development Environment (IDE). Its browser-based accessibility and lightweight nature made it the perfect tool for our initial lessons on fundamental Python concepts.</p>
 
-      <p>Later that same week, we transitioned our practice to <strong>Visual Studio Code (VS Code)</strong> for hands-on sessions back at school. This shift allowed the learners to experience a professional coding environment, preparing them for the competition setting.</p>
+          <p>Later that same week, we transitioned our practice to <strong>Visual Studio Code (VS Code)</strong> for hands-on sessions back at school. This shift allowed the learners to experience a professional coding environment, preparing them for the competition setting.</p>
 
-      <p>I was genuinely <strong>surprised and amazed</strong> by the speed at which the learners grasped the basic concepts of Python. They not only comprehended the material but quickly developed strong, logical problem-solving skills. The rapid adoption of concepts proved to me, once again, that Python is an ideal language for education and for fast-tracking technical skills.</p>
-    </section>
+          <p>I was genuinely <strong>surprised and amazed</strong> by the speed at which the learners grasped the basic concepts of Python. They not only comprehended the material but quickly developed strong, logical problem-solving skills. The rapid adoption of concepts proved to me, once again, that Python is an ideal language for education and for fast-tracking technical skills.</p>
+        </section>
 
-    <section>
-      <h2>The Competition and the Triumph</h2>
-      <p>On competition day, the learners faced a multitude of complex programming challenges, all of which had to be solved within a strict time limit. They applied their newly acquired Python skills with impressive focus and teamwork.</p>
-      
-      <p>The result? They successfully solved <strong>all of the given challenges</strong>!</p>
+        <section>
+          <h2>The Competition and the Triumph</h2>
+          <p>On competition day, the learners faced a multitude of complex programming challenges, all of which had to be solved within a strict time limit. They applied their newly acquired Python skills with impressive focus and teamwork.</p>
+          
+          <p>The result? They successfully solved <strong>all of the given challenges</strong>!</p>
 
-      <p>Their determination, swift adaptability, and collective spirit led them to <strong>win the NUST Annual Programming Competition.</strong> This victory was more than a trophy; it was a powerful affirmation that a lack of resources cannot stop motivated learners who are equipped with the right tools—in this case, the versatile and powerful Python language.</p>
+          <p>Their determination, swift adaptability, and collective spirit led them to <strong>win the NUST Annual Programming Competition.</strong> This victory was more than a trophy; it was a powerful affirmation that a lack of resources cannot stop motivated learners who are equipped with the right tools—in this case, the versatile and powerful Python language.</p>
 
-      <p>This experience has profoundly reaffirmed my belief in Python as one of the most effective languages for introducing computer science in schools. More importantly, it has inspired my learners to pursue software development careers, demonstrating the life-changing impact of accessible programming education.</p>
-    </section>
+          <p>This experience has profoundly reaffirmed my belief in Python as one of the most effective languages for introducing computer science in schools. More importantly, it has inspired my learners to pursue software development careers, demonstrating the life-changing impact of accessible programming education.</p>
+        </section>
+
+      </div>
+    </div>
   </article>
 
-  <!-- Footer (exact match to other pages) -->
+  <!-- Footer -->
   <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
     <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
       <div class="flex items-center gap-6">
         <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
-        <!-- GitHub -->
         <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
       </div>
       <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
@@ -164,7 +186,6 @@
   <script>
     tailwind.config = { darkMode: 'class' };
 
-    // Theme toggle
     const toggleBtn = document.getElementById('theme-toggle');
     const htmlEl = document.documentElement;
     toggleBtn.addEventListener('click', () => {
@@ -174,7 +195,6 @@
       icon.classList.toggle('fa-sun');
     });
 
-    // Mobile menu
     const mobileBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
     mobileBtn.addEventListener('click', () => {
