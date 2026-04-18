@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robson Kanhalelo | Software Developer</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    :root {
+      --accent: #4f8ef7;
+      --accent-dim: rgba(79,142,247,0.12);
+      --glass-bg: rgba(255,255,255,0.04);
+      --glass-border: rgba(255,255,255,0.09);
+      --surface: rgba(255,255,255,0.03);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: #080c12;
+      color: #e8eaf0;
+      margin: 0;
+      overflow-x: hidden;
+    }
+
+    /* ---- Background grid ---- */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(79,142,247,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79,142,247,0.03) 1px, transparent 1px);
+      background-size: 64px 64px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ---- Aurora blob ---- */
+    .aurora {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(120px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.35;
+      animation: drift 18s ease-in-out infinite alternate;
+    }
+    .aurora-1 { width: 600px; height: 600px; background: #1a3a8f; top: -200px; left: -100px; animation-delay: 0s; }
+    .aurora-2 { width: 500px; height: 500px; background: #0e2d5c; top: 30%; right: -150px; animation-delay: -6s; }
+    .aurora-3 { width: 400px; height: 400px; background: #0a1f4d; bottom: 10%; left: 20%; animation-delay: -12s; }
+
+    @keyframes drift {
+      from { transform: translate(0, 0) scale(1); }
+      to   { transform: translate(40px, 30px) scale(1.08); }
+    }
+
+    /* ---- Glass ---- */
+    .glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(24px);
+      -webkit-backdrop-filter: blur(24px);
+      border: 1px solid var(--glass-border);
+    }
+
+    /* ---- Typography ---- */
+    .font-display { font-family: 'Syne', sans-serif; }
+
+    /* ---- Nav ---- */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      border-bottom: 1px solid var(--glass-border);
+      background: rgba(8,12,18,0.7);
+      backdrop-filter: blur(24px);
+    }
+
+    .nav-link {
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: #8a90a2;
+      transition: color 0.2s;
+    }
+    .nav-link:hover { color: var(--accent); }
+
+    /* ---- Hero ---- */
+    .hero-name {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: clamp(3rem, 8vw, 6.5rem);
+      line-height: 1.0;
+      letter-spacing: -0.03em;
+      background: linear-gradient(135deg, #ffffff 0%, #a8b8d8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ---- Typewriter ---- */
+    .typewriter-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 0;
+    }
+    #typewriter-text {
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.1rem, 3vw, 1.7rem);
+      color: var(--accent);
+    }
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.4em;
+      background: var(--accent);
+      margin-left: 3px;
+      vertical-align: middle;
+      animation: blink 1s step-end infinite;
+    }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+
+    /* ---- Scroll reveal ---- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ---- Cards ---- */
+    .project-card {
+      border-radius: 20px;
+      overflow: hidden;
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.35s;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+    }
+    .project-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(79,142,247,0.35);
+    }
+
+    .writing-card {
+      border-radius: 20px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), border-color 0.35s;
+      display: block;
+    }
+    .writing-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(79,142,247,0.35);
+    }
+
+    /* ---- Skill chip ---- */
+    .skill-chip {
+      border-radius: 14px;
+      border: 1px solid var(--glass-border);
+      background: var(--glass-bg);
+      backdrop-filter: blur(16px);
+      transition: transform 0.25s, border-color 0.25s;
+      text-align: center;
+      padding: 1.75rem 1rem;
+    }
+    .skill-chip:hover {
+      transform: translateY(-4px) scale(1.03);
+      border-color: rgba(79,142,247,0.4);
+    }
+
+    /* ---- Section label ---- */
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-family: 'Syne', sans-serif;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    /* ---- Gradient badge ---- */
+    .badge {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(79,142,247,0.3);
+      background: rgba(79,142,247,0.1);
+      color: #90b8f8;
+    }
+
+    /* ---- CTA buttons ---- */
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-weight: 500;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      background: var(--accent);
+      color: #fff;
+      transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #3a79f0;
+      transform: translateY(-2px);
+      box-shadow: 0 12px 32px rgba(79,142,247,0.25);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 14px;
+      font-weight: 500;
+      font-family: 'Syne', sans-serif;
+      font-size: 0.95rem;
+      background: transparent;
+      color: #c8d0e0;
+      border: 1px solid rgba(255,255,255,0.18);
+      transition: border-color 0.2s, color 0.2s, transform 0.2s;
+      text-decoration: none;
+    }
+    .btn-outline:hover {
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+      transform: translateY(-2px);
+    }
+
+    /* ---- Divider dot ---- */
+    .dot-divider {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      display: inline-block;
+      margin: 0 10px;
+      opacity: 0.5;
+      vertical-align: middle;
+    }
+
+    /* ---- Footer ---- */
+    footer {
+      border-top: 1px solid var(--glass-border);
+    }
+
+    /* ---- Mobile menu ---- */
+    #mobile-menu {
+      border-top: 1px solid var(--glass-border);
+      background: rgba(8,12,18,0.95);
+    }
+
+    /* ---- Stat numbers ---- */
+    .stat-num {
+      font-family: 'Syne', sans-serif;
+      font-weight: 800;
+      font-size: 2.4rem;
+      line-height: 1;
+      background: linear-gradient(135deg, #fff 0%, #90b8f8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ---- Noise overlay (very subtle) ---- */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.4;
+    }
+
+    /* Everything above z=0 */
+    section, nav, footer { position: relative; z-index: 1; }
+  </style>
+</head>
+<body>
+
+  <!-- Aurora blobs -->
+  <div class="aurora aurora-1"></div>
+  <div class="aurora aurora-2"></div>
+  <div class="aurora aurora-3"></div>
+
+  <!-- ===== NAV ===== -->
+  <nav>
+    <div class="max-w-6xl mx-auto px-6 py-4 flex justify-between items-center">
+      <div class="font-display font-bold text-xl tracking-tight text-white">RK<span style="color:var(--accent)">.</span></div>
+
+      <div class="hidden md:flex items-center gap-8">
+        <a href="#about"    class="nav-link">About</a>
+        <a href="#skills"   class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#writings" class="nav-link">Writings</a>
+        <a href="#contact"  class="nav-link">Contact</a>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button id="mobile-menu-btn" class="md:hidden p-2 text-xl text-zinc-400 hover:text-white transition">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden">
+      <div class="max-w-6xl mx-auto px-6 py-6 flex flex-col gap-5">
+        <a href="#about"    class="nav-link text-base mobile-link">About</a>
+        <a href="#skills"   class="nav-link text-base mobile-link">Skills</a>
+        <a href="#projects" class="nav-link text-base mobile-link">Projects</a>
+        <a href="#writings" class="nav-link text-base mobile-link">Writings</a>
+        <a href="#contact"  class="nav-link text-base mobile-link">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="min-h-screen flex items-center relative">
+    <div class="max-w-6xl mx-auto px-6 py-24 w-full">
+
+      <div class="reveal">
+        <span class="badge mb-6 inline-block">Available for opportunities</span>
+      </div>
+
+      <h1 class="hero-name reveal reveal-delay-1 mb-4">
+        Robson<br>Kanhalelo
+      </h1>
+
+      <div class="reveal reveal-delay-2 mb-8" style="min-height:2.5rem;">
+        <span style="color:#8a90a2; font-size:1.1rem;">I build </span>
+        <span class="typewriter-wrap">
+          <span id="typewriter-text"></span><span class="cursor"></span>
+        </span>
+      </div>
+
+      <p class="reveal reveal-delay-3 text-zinc-400 text-lg max-w-lg mb-10 leading-relaxed">
+        Software Developer & Mentor based in Windhoek, Namibia.<br>
+        Turning ideas into applications, and teaching the next generation.
+      </p>
+
+      <div class="reveal reveal-delay-3 flex flex-wrap gap-4">
+        <a href="#contact"  class="btn-primary"><i class="fas fa-paper-plane text-sm"></i> Get in touch</a>
+        <a href="#projects" class="btn-outline"><i class="fas fa-code text-sm"></i> View Projects</a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="btn-outline"><i class="fab fa-github text-sm"></i> GitHub</a>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="absolute bottom-10 left-1/2 -translate-x-1/2" style="animation: bounce 2s infinite;">
+        <div style="width:1px; height:48px; background:linear-gradient(to bottom, transparent, var(--accent)); margin:0 auto; border-radius:1px;"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ABOUT ===== -->
+  <section id="about" class="py-28">
+    <div class="max-w-6xl mx-auto px-6">
+
+      <span class="section-label reveal">Who I am</span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl mb-16 reveal" style="color:#fff;">About Me</h2>
+
+      <div class="grid md:grid-cols-12 gap-12 items-center">
+        <div class="md:col-span-5 reveal">
+          <div style="position:relative; display:inline-block; width:100%;">
+            <!-- Decorative frame -->
+            <div style="position:absolute; inset:-12px; border:1px solid rgba(79,142,247,0.2); border-radius:28px; z-index:0;"></div>
+            <img src="./images/kanhalelo.jpg"
+                 alt="Robson Kanhalelo"
+                 class="w-full object-cover"
+                 style="border-radius:20px; aspect-ratio:1; position:relative; z-index:1;">
+            <!-- Location badge -->
+            <div class="glass" style="position:absolute; bottom:20px; left:-16px; z-index:2; border-radius:12px; padding:10px 16px; display:flex; align-items:center; gap:8px;">
+              <div style="width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 8px #4ade80;"></div>
+              <span style="font-size:0.82rem; color:#c8d0e0; font-weight:500;">Windhoek, Namibia</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="md:col-span-7">
+          <div class="space-y-6 text-zinc-300 text-lg leading-relaxed reveal">
+            <p>I'm a Software Developer with strong skills in JavaScript, Python, databases, and modern web development. I enjoy turning ideas into functional, well-crafted applications.</p>
+            <p>Beyond building software, I mentor school learners in programming — a journey that culminated in helping them win a national Python competition at NUST.</p>
+            <p>I attend international conferences like PyCon DE & PyData, write about tech and education, and explore the intersection of data science and real-world impact.</p>
+          </div>
+
+          <!-- Stats row -->
+          <div class="grid grid-cols-3 gap-6 mt-12 reveal reveal-delay-1">
+            <div class="glass rounded-2xl p-6 text-center">
+              <div class="stat-num">3+</div>
+              <div style="font-size:0.8rem; color:#8a90a2; margin-top:4px;">Years building</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <div class="stat-num">10+</div>
+              <div style="font-size:0.8rem; color:#8a90a2; margin-top:4px;">Projects shipped</div>
+            </div>
+            <div class="glass rounded-2xl p-6 text-center">
+              <div class="stat-num">1🏆</div>
+              <div style="font-size:0.8rem; color:#8a90a2; margin-top:4px;">Competition won</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SKILLS ===== -->
+  <section id="skills" class="py-28" style="background:rgba(255,255,255,0.015);">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="section-label reveal">What I work with</span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl mb-16 reveal" style="color:#fff;">Tech Stack</h2>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-5">
+        <div class="skill-chip reveal">
+          <i class="fab fa-js text-4xl mb-3" style="color:#f7df1e;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">JavaScript</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-1">
+          <i class="fab fa-python text-4xl mb-3" style="color:#4f8ef7;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">Python</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-2">
+          <i class="fas fa-database text-4xl mb-3" style="color:#3ecf8e;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">MySQL</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-3">
+          <i class="fas fa-leaf text-4xl mb-3" style="color:#4db33d;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">MongoDB</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-1">
+          <i class="fab fa-wordpress text-4xl mb-3" style="color:#21759b;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">WordPress</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-2">
+          <i class="fab fa-html5 text-4xl mb-3" style="color:#e34f26;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">HTML / CSS</p>
+        </div>
+        <div class="skill-chip reveal">
+          <i class="fab fa-git-alt text-4xl mb-3" style="color:#f05032;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">Git</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-1">
+          <i class="fas fa-terminal text-4xl mb-3" style="color:#8a90a2;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">Bash</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-2">
+          <i class="fab fa-java text-4xl mb-3" style="color:#f89820;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">Java</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-3">
+          <i class="fas fa-chart-bar text-4xl mb-3" style="color:#4f8ef7;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">Data Science</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-1">
+          <i class="fas fa-elephant text-4xl mb-3" style="color:#336791;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">PostgreSQL</p>
+        </div>
+        <div class="skill-chip reveal reveal-delay-2">
+          <i class="fab fa-docker text-4xl mb-3" style="color:#2496ed;"></i>
+          <p style="font-size:0.85rem; font-weight:500; color:#c8d0e0;">Docker</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PROJECTS ===== -->
+  <section id="projects" class="py-28">
+    <div class="max-w-6xl mx-auto px-6">
+      <div class="flex justify-between items-end mb-5">
+        <div>
+          <span class="section-label reveal">What I've built</span>
+          <h2 class="font-display font-bold text-4xl md:text-5xl reveal" style="color:#fff;">Featured Projects</h2>
+        </div>
+        <a href="/projects/" class="reveal text-sm nav-link flex items-center gap-2 hover:text-white">
+          View all <i class="fas fa-arrow-right text-xs"></i>
+        </a>
+      </div>
+      <div style="height:1px; background:var(--glass-border); margin-bottom:3rem;" class="reveal"></div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+        <!-- Card 1 -->
+        <div class="project-card reveal">
+          <div style="height:180px; background:linear-gradient(135deg,#1a3a8f,#0d2060); display:flex; align-items:center; justify-content:center; font-size:3.5rem; position:relative; overflow:hidden;">
+            <div style="position:absolute;inset:0;background:radial-gradient(circle at 30% 60%, rgba(79,142,247,0.2), transparent 70%);"></div>
+            🚀
+          </div>
+          <div style="padding:1.5rem;">
+            <div class="badge mb-3">Python · Education</div>
+            <h3 class="font-display font-bold text-xl mb-2" style="color:#fff;">School Programming Competition Platform</h3>
+            <p style="color:#8a90a2; font-size:0.9rem; line-height:1.6; margin-bottom:1.25rem;">Python-based system that helped learners prepare for and win the NUST Annual Programming Competition.</p>
+            <a href="/projects/" style="font-size:0.82rem; color:var(--accent); display:inline-flex; align-items:center; gap:6px; text-decoration:none; font-weight:500;">
+              View details <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="project-card reveal reveal-delay-1">
+          <div style="height:180px; background:linear-gradient(135deg,#0a3d2e,#05271e); display:flex; align-items:center; justify-content:center; font-size:3.5rem; position:relative; overflow:hidden;">
+            <div style="position:absolute;inset:0;background:radial-gradient(circle at 70% 40%, rgba(62,207,142,0.15), transparent 70%);"></div>
+            📊
+          </div>
+          <div style="padding:1.5rem;">
+            <div class="badge mb-3">Bash · Python · Automation</div>
+            <h3 class="font-display font-bold text-xl mb-2" style="color:#fff;">Data Science Workflow Automation</h3>
+            <p style="color:#8a90a2; font-size:0.9rem; line-height:1.6; margin-bottom:1.25rem;">Bash + Python scripts to automate data processing pipelines, inspired by real-world data science workflows.</p>
+            <a href="/projects/" style="font-size:0.82rem; color:var(--accent); display:inline-flex; align-items:center; gap:6px; text-decoration:none; font-weight:500;">
+              View project <i class="fas fa-arrow-right text-xs"></i>
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="project-card reveal reveal-delay-2">
+          <div style="height:180px; background:linear-gradient(135deg,#2d1254,#1a0a38); display:flex; align-items:center; justify-content:center; font-size:3.5rem; position:relative; overflow:hidden;">
+            <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%, rgba(139,92,246,0.2), transparent 70%);"></div>
+            🌐
+          </div>
+          <div style="padding:1.5rem;">
+            <div class="badge mb-3">HTML · CSS · JS</div>
+            <h3 class="font-display font-bold text-xl mb-2" style="color:#fff;">Personal Portfolio & Blog</h3>
+            <p style="color:#8a90a2; font-size:0.9rem; line-height:1.6; margin-bottom:1.25rem;">This very site — redesigned with modern glassmorphism and dark-mode-first aesthetics.</p>
+            <a href="https://github.com/Kanhalelor/kanhalelor.github.io" target="_blank" style="font-size:0.82rem; color:var(--accent); display:inline-flex; align-items:center; gap:6px; text-decoration:none; font-weight:500;">
+              <i class="fab fa-github text-xs"></i> GitHub
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WRITINGS ===== -->
+  <section id="writings" class="py-28" style="background:rgba(255,255,255,0.015);">
+    <div class="max-w-6xl mx-auto px-6">
+      <span class="section-label reveal">Thoughts & articles</span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl mb-4 reveal" style="color:#fff;">Recent Writings</h2>
+      <p class="text-zinc-400 mb-16 reveal">Sharing what I learn about Python, education, and tech in Namibia.</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+
+        <a href="blog/nust-2025-annua-programming-competition-winners.html" class="writing-card p-7 reveal">
+          <div style="font-size:0.75rem; color:var(--accent); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.75rem; font-weight:600;">November 2025</div>
+          <h3 class="font-display font-bold text-xl mb-3" style="color:#fff; line-height:1.3;">How my school learners won the NUST Annual Programming Competition using Python</h3>
+          <p style="color:#8a90a2; font-size:0.9rem; line-height:1.6; margin-bottom:1rem;">Sharing the teaching methods and Python techniques that led to victory.</p>
+          <span style="font-size:0.82rem; color:var(--accent); display:inline-flex; align-items:center; gap:6px; font-weight:500;">
+            Read more <i class="fas fa-arrow-right text-xs"></i>
+          </span>
+        </a>
+
+        <a href="blog/01-05-2025-pycon-de-pydata-darmsdadt.html" class="writing-card p-7 reveal reveal-delay-1">
+          <div style="font-size:0.75rem; color:var(--accent); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.75rem; font-weight:600;">May 2025</div>
+          <h3 class="font-display font-bold text-xl mb-3" style="color:#fff; line-height:1.3;">My PyCon DE & PyData experience</h3>
+          <p style="color:#8a90a2; font-size:0.9rem; line-height:1.6; margin-bottom:1rem;">Key takeaways from the international Python conferences in Darmstadt.</p>
+          <span style="font-size:0.82rem; color:var(--accent); display:inline-flex; align-items:center; gap:6px; font-weight:500;">
+            Read more <i class="fas fa-arrow-right text-xs"></i>
+          </span>
+        </a>
+
+        <a href="blog/01-06-2024-Are-our-classrooms-ready-for-the-4IR.html" class="writing-card p-7 reveal reveal-delay-2">
+          <div style="font-size:0.75rem; color:var(--accent); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.75rem; font-weight:600;">June 2024</div>
+          <h3 class="font-display font-bold text-xl mb-3" style="color:#fff; line-height:1.3;">Are our classrooms ready for the 4IR?</h3>
+          <p style="color:#8a90a2; font-size:0.9rem; line-height:1.6; margin-bottom:1rem;">Thoughts on technology integration in Namibian education and what needs to change.</p>
+          <span style="font-size:0.82rem; color:var(--accent); display:inline-flex; align-items:center; gap:6px; font-weight:500;">
+            Read more <i class="fas fa-arrow-right text-xs"></i>
+          </span>
+        </a>
+
+        <a href="blog/12-01-2024-Python-in-Orbit.html" class="writing-card p-7 reveal reveal-delay-3">
+          <div style="font-size:0.75rem; color:var(--accent); letter-spacing:0.08em; text-transform:uppercase; margin-bottom:0.75rem; font-weight:600;">January 2024</div>
+          <h3 class="font-display font-bold text-xl mb-3" style="color:#fff; line-height:1.3;">Python in Orbit: A DjangoCon Africa 2023 Workshop</h3>
+          <p style="color:#8a90a2; font-size:0.9rem; line-height:1.6; margin-bottom:1rem;">Workshop reflection and Python web development insights from DjangoCon Africa.</p>
+          <span style="font-size:0.82rem; color:var(--accent); display:inline-flex; align-items:center; gap:6px; font-weight:500;">
+            Read more <i class="fas fa-arrow-right text-xs"></i>
+          </span>
+        </a>
+
+      </div>
+
+      <div class="text-center mt-12 reveal">
+        <a href="/blog/" class="btn-outline">
+          Read all writings <i class="fas fa-arrow-right text-sm"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contact" class="py-28">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+      <span class="section-label reveal">Say hello</span>
+      <h2 class="font-display font-bold text-4xl md:text-5xl mb-6 reveal" style="color:#fff;">Let's Connect</h2>
+      <p class="text-zinc-400 text-lg mb-10 reveal max-w-lg mx-auto">
+        Whether you have a project in mind, want to collaborate, or just want to chat about Python — I'd love to hear from you.
+      </p>
+
+      <div class="glass rounded-3xl p-10 max-w-md mx-auto reveal">
+        <p style="color:#8a90a2; font-size:0.85rem; letter-spacing:0.06em; text-transform:uppercase; margin-bottom:0.5rem;">Email</p>
+        <p class="font-display font-bold text-xl mb-6" style="color:#fff;">kanhalelor@gmail.com</p>
+        <button onclick="copyEmail()" class="btn-primary w-full justify-center">
+          <i class="fas fa-copy text-sm"></i> Copy Email Address
+        </button>
+        <p id="copy-message" class="mt-4 text-sm hidden" style="color:#4ade80;">✓ Copied to clipboard!</p>
+      </div>
+
+      <!-- Social row -->
+      <div class="flex justify-center gap-6 mt-14 reveal">
+        <a href="https://github.com/Kanhalelor" target="_blank"
+           style="width:48px;height:48px;border-radius:14px;border:1px solid var(--glass-border);background:var(--glass-bg);display:flex;align-items:center;justify-content:center;font-size:1.2rem;color:#8a90a2;transition:color 0.2s,border-color 0.2s;"
+           onmouseover="this.style.color='#fff';this.style.borderColor='rgba(255,255,255,0.3)'"
+           onmouseout="this.style.color='#8a90a2';this.style.borderColor='var(--glass-border)'">
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-8 text-center" style="color:#4a5068; font-size:0.82rem;">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row justify-between items-center gap-3">
+      <span>© 2026 Robson Kanhalelo</span>
+      <span>Built with care in Windhoek, Namibia</span>
+    </div>
+  </footer>
+
+  <script>
+    /* ---- Typewriter ---- */
+    const phrases = [
+      'scalable web apps.',
+      'Python tools.',
+      'data pipelines.',
+      'for the next generation.',
+      'things that matter.',
+    ];
+    let pi = 0, ci = 0, deleting = false;
+    const tw = document.getElementById('typewriter-text');
+
+    function type() {
+      const current = phrases[pi];
+      if (!deleting) {
+        tw.textContent = current.slice(0, ci + 1);
+        ci++;
+        if (ci === current.length) {
+          deleting = true;
+          setTimeout(type, 1800);
+          return;
+        }
+        setTimeout(type, 60);
+      } else {
+        tw.textContent = current.slice(0, ci - 1);
+        ci--;
+        if (ci === 0) {
+          deleting = false;
+          pi = (pi + 1) % phrases.length;
+          setTimeout(type, 300);
+          return;
+        }
+        setTimeout(type, 35);
+      }
+    }
+    setTimeout(type, 800);
+
+    /* ---- Scroll reveal ---- */
+    const revealEls = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.12 });
+    revealEls.forEach(el => observer.observe(el));
+
+    /* ---- Mobile menu ---- */
+    const mBtn = document.getElementById('mobile-menu-btn');
+    const mMenu = document.getElementById('mobile-menu');
+    mBtn.addEventListener('click', () => {
+      mMenu.classList.toggle('hidden');
+      const icon = mBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+    document.querySelectorAll('.mobile-link').forEach(l => {
+      l.addEventListener('click', () => {
+        mMenu.classList.add('hidden');
+        const icon = mBtn.querySelector('i');
+        icon.classList.add('fa-bars');
+        icon.classList.remove('fa-times');
+      });
+    });
+
+    /* ---- Copy email ---- */
+    function copyEmail() {
+      navigator.clipboard.writeText('kanhalelor@gmail.com');
+      const msg = document.getElementById('copy-message');
+      msg.classList.remove('hidden');
+      setTimeout(() => msg.classList.add('hidden'), 3000);
+    }
+
+    /* ---- Scroll indicator bounce ---- */
+    const style = document.createElement('style');
+    style.textContent = `@keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(8px)} }`;
+    document.head.appendChild(style);
+  </script>
+</body>
+</html>
