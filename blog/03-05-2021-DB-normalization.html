@@ -1,196 +1,257 @@
 <!DOCTYPE html>
-<html lang="en-US">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="description" content="HTML Fixed Footer" />
-    <meta name="keywords" content="HTML, CSS, JavaScript, Python" />
-    <meta name="author" content="Robson Kanhalelo" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png"
-    />
-    <link rel="manifest" href="../images/site.webmanifest" />
-    <link rel="stylesheet" href="../css/style2.css" />
-    <title>blog</title>
-  </head>
-  <body>
-    <header>
-      <ul class="main-nav">
-        <li><a href="../index.html">← Home</a></li>
-        <li><a href="https://github.com/kanhalelor">Projects →</a></li>
-      </ul>
-    </header>
-    <div class="content">
-      <article>
-        <h1>Database Normalization</h1>
-        <div class="article-details">
-          <small class="author">Robson - </small
-          ><time datetime="03-05-2021"> 03-05-2021</time> |
-          <a class="tag" href="../tags/general.html">#databases</a>
-        </div>
-        <div class="image-div">
-          <img
-            class="intro-img"
-            src="https://d3q6qq2zt8nhwv.cloudfront.net/course/3afc200e611f4254815b30fc8a98bfee.jpg"
-            alt="hello world"
-          /><br />
-          <span class="figcaption">Img source: CourseTalk</span>
-        </div>
-        <p class="first-para">
-          Database normalization is the process of structuring a database,
-          usually a relational database, in accordance with a series of
-          so-called normal forms in order to reduce data redundancy and improve
-          data integrity.
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Database Normalization - Reducing redundancy and improving integrity." />
+  <meta name="keywords" content="HTML, CSS, JavaScript, Python, Databases, Normalization" />
+  <meta name="author" content="Robson Kanhalelo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Database Normalization | Blog</title>
+
+  <style>
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .article-wrapper {
+      max-width: 42rem;
+    }
+
+    .blog-content p, .blog-content li {
+      line-height: 1.85;
+      font-size: 1.1rem;
+    }
+
+    .blog-content h2, .blog-content h3, .blog-content h4 {
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+
+    .blog-content h2::before, .blog-content h3::before, .blog-content h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 6px;
+      height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
+    }
+
+    .highlight-text {
+      color: #60a5fa;
+      font-weight: 600;
+    }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
+
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="https://github.com/kanhalelor" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="https://github.com/kanhalelor">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+        Database Normalization
+      </h1>
+      <div class="mt-8 flex items-center gap-6 text-sm text-zinc-400">
+        <div>Robson Kanhalelo</div>
+        <div>•</div>
+        <time datetime="2021-05-03">May 3, 2021</time>
+        <div class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#databases</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+    <div class="glass rounded-3xl overflow-hidden shadow-lg">
+      <img src="https://d3q6qq2zt8nhwv.cloudfront.net/course/3afc200e611f4254815b30fc8a98bfee.jpg" 
+           alt="Database Normalization Concept" 
+           class="w-full h-auto">
+      <div class="px-8 py-4 text-sm text-zinc-400 dark:text-zinc-600 border-t border-white/10">
+        Img source: CourseTalk
+      </div>
+    </div>
+  </div>
+
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-lg">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
+        
+        <p>
+          Database normalization is the process of structuring a database, usually a relational database, in accordance with a series of so-called normal forms in order to reduce data redundancy and improve data integrity.
         </p>
-        <ul style="align-self: center;">
-          <li>1. Flexible Database Design</li>
-          <li>2. Reduce Data redundancy</li>
-          <li>3. Improves the data integrity</li>
-          <li>4. Makes an organised Database</li>
+
+        <ul class="space-y-2 my-6 list-decimal list-inside text-zinc-300 dark:text-zinc-700">
+          <li>Flexible Database Design</li>
+          <li>Reduce Data redundancy</li>
+          <li>Improves the data integrity</li>
+          <li>Makes an organized Database</li>
         </ul>
-        <h3 style="color: tomato;">Normalization types</h3>
-        <ul style="align-self: center;">
-          <li>1. 1NF</li>
-          <li>2. 2NF</li>
-          <li>3. 3NF</li>
-          <li>4. BOYCE CORD NF</li>
+
+        <h3 class="text-blue-400">Normalization Types</h3>
+        <ul class="space-y-2 my-6 list-disc list-inside text-zinc-300 dark:text-zinc-700">
+          <li>1NF (First Normal Form)</li>
+          <li>2NF (Second Normal Form)</li>
+          <li>3NF (Third Normal Form)</li>
+          <li>Boyce-Codd NF (BCNF)</li>
         </ul>
-        <div
-          style="
-            display: flex;
-            flex-flow: column;
-            align-items: center;
-            width: 96.6℅;
-          "
-        >
-          <b style="margin-bottom: 1rem;">Example table</b>
-          <img class="content-img"
-          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/1nf.png"
-          alt="table.png" width: 100℅; />
-        </div>
-        <div style="display: flex; flex-flow: column; align-items: center;">
-          <h4 style="color: tomato;">
-            For a table to be in the first Normal Form;
-          </h4>
 
-          1. It should not have repeating values in a group. <br />
-          2. It should not have repeating groups. <br />
-          <br />
-          <img class="content-img"
-          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/1nf.png"
-          alt="table.png" width: 100℅;/>
+        <div class="my-10 text-center">
+          <span class="block mb-4 font-semibold text-zinc-400 italic">Example Table Structure</span>
+          <img class="rounded-xl mx-auto border border-white/10" 
+               src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/1nf.png" 
+               alt="1NF Example">
         </div>
-        <div style="display: flex; flex-flow: column; align-items: center;">
-          <h4 style="color: tomato;">
-            For a table to be in the second Normal Form;
-          </h4>
 
-          1. Should be in 1NF <br />
-          2. Any non-key field should entirely depend on its primary key.<br />
-          3. No partial dependency <br />
-          4. Occurs when there is a composite key.
-          <br />
-          <br />
-          <b style="margin-bottom: 1rem;">Employees table</b>
-          <img
-          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf.png"
-          alt="table.png" width: 100℅;/>
-          <br />
-          <b>Departments table</b>
-          <img class="content-img"
-          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf2.png"
-          alt="table.png" width: 100℅; />
-          <br />
-          <b style="margin-bottom: 1rem;">EmployeesDept Table</b>
-          <img
-          src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf3.png"
-          alt="table.png" width: 100℅;/>
-        </div>
-        <div style="display: flex; flex-flow: column; align-items: center;">
-          <h4 style="color: tomato;">
-            For a table to be in the third Normal Form;
-          </h4>
+        <h4>First Normal Form (1NF)</h4>
+        <p>For a table to be in the first Normal Form:</p>
+        <ul class="list-decimal list-inside mb-6">
+          <li>It should not have repeating values in a group.</li>
+          <li>It should not have repeating groups.</li>
+        </ul>
 
-          1. Should be in 2NF <br />
-          2. Any non-key field depend on other no-key field. <br />
-          3. No transitive dependency <br />
-          4. Occurs when you can guess value of any column from no-key column.
+        <h4>Second Normal Form (2NF)</h4>
+        <p>For a table to be in the second Normal Form:</p>
+        <ul class="list-decimal list-inside mb-6">
+          <li>Should be in 1NF.</li>
+          <li>Any non-key field should entirely depend on its primary key.</li>
+          <li>No partial dependency (Occurs when there is a composite key).</li>
+        </ul>
+
+        <div class="space-y-8 my-10">
+          <div class="text-center">
+            <span class="block mb-2 text-sm text-zinc-500">Employees Table</span>
+            <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf.png" class="mx-auto rounded-lg" alt="2NF Step 1">
+          </div>
+          <div class="text-center">
+            <span class="block mb-2 text-sm text-zinc-500">Departments Table</span>
+            <img src="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/4b3529b47a5d732aebc6374900ade1320fd30ac2/images/2nf2.png" class="mx-auto rounded-lg" alt="2NF Step 2">
+          </div>
         </div>
+
+        <h4>Third Normal Form (3NF)</h4>
+        <ul class="list-decimal list-inside mb-6">
+          <li>Should be in 2NF.</li>
+          <li>Any non-key field must not depend on other non-key fields.</li>
+          <li>No transitive dependency.</li>
+        </ul>
+
         <h3>What is a KEY?</h3>
         <p>
-          A <span style="color: tomato;">KEY</span> is a value used to identify
-          a record in a table uniquely. A KEY could be a single column or
-          combination of multiple columns.
-          <br />
-          <br />
-          Columns in a table that are NOT used to identify a record uniquely are
-          called non-key columns.
-          <br />
-          <br />
-          <span style="color: tomato;">Primary Key:</span> A primary key is a
-          single column value used to identify a database record uniquely.
-          <br />
-          <br />
-          <span style="color: tomato;">Composite Key:</span> A composite key is
-          a primary key composed of multiple columns used to identify a record
-          uniquely
-          <br />
-          <br />
-          <span style="color: tomato;">Partial dependency:</span> When any of
-          the no-key column does not depend on all primary key column.
-          <br />
-          <br />
-          <span style="color: tomato;">Transitive dependency:</span>A transitive
-          dependency occurs when one non-prime column is dependent on another
-          non-prime column.
+          A <span class="highlight-text">KEY</span> is a value used to identify a record in a table uniquely. It could be a single column or a combination of multiple columns.
         </p>
-        <div>
-          <h3>What problems do we face when a table is not normalized?</h3>
-          <span style="color: tomato;">Update anomaly: </span> An update anomaly
-          is a data inconsistency that results from data redundancy and a
-          partial update.
-          <br />
-          <br />
-          <span style="color: tomato;">Insert anomaly:</span> An insertion
-          anomaly is the inability to add data to the database due to the
-          absence of other data.
-          <br />
-          <br />
-          <span style="color: tomato;">Delete anomaly:</span> A deletion anomaly
-          is the unintended loss of data due to deletion of other data.
-          <br />
-          <h3 style="text-align: center;">Conclusion</h3>
-          We've just learned what database normalization is and how it helps us
-          reduce redundancy in our tables. We've also learned different types of
-          normal forms such as 1NF, 2NF, 3NF ... and highlighted different types
-          of anomalies such as deletion, insertion, and update which arises when
-          our table in not normalized?
+        <p>
+          <span class="highlight-text">Primary Key:</span> A single column value used to identify a database record uniquely.<br>
+          <span class="highlight-text">Composite Key:</span> A primary key composed of multiple columns.<br>
+          <span class="highlight-text">Transitive Dependency:</span> Occurs when one non-prime column is dependent on another non-prime column.
+        </p>
+
+        <h3>The Risks of Non-Normalized Data</h3>
+        <ul class="space-y-4">
+          <li><span class="highlight-text text-red-400">Update Anomaly:</span> Data inconsistency resulting from redundancy and a partial update.</li>
+          <li><span class="highlight-text text-red-400">Insert Anomaly:</span> Inability to add data due to the absence of other required data.</li>
+          <li><span class="highlight-text text-red-400">Delete Anomaly:</span> Unintended loss of data due to deletion of other records.</li>
+        </ul>
+
+        <div class="mt-16 pt-8 border-t border-white/10 text-center">
+          <h3 class="mt-0">Conclusion</h3>
+          <p>
+            Normalization is essential for reducing redundancy and ensuring that your data remains accurate through every update, insertion, and deletion.
+          </p>
+          <p class="text-blue-400 font-bold mt-4">Happy learning!</p>
         </div>
-        <br />
-        <small style="color: tomato;">That was it!</small>
-        <h3>
-          Happy learning!
-        </h3>
-      </article>
+
+      </div>
     </div>
-    <footer>
-      <small class="copyright"
-        >Made with<span class="love"> ❤ </span> by Robson</small
-      >
-    </footer>
-  </body>
+  </article>
+
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
+  </footer>
+
+  <script>
+    tailwind.config = { darkMode: 'class' };
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
+</body>
 </html>
