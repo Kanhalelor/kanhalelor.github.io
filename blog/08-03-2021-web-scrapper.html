@@ -68,7 +68,7 @@
     <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
       <div class="text-2xl font-semibold tracking-tighter">R K</div>
       <div class="hidden md:flex gap-8 text-sm font-medium">
-        <a href="../index2.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+        <a href="../index.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
           <i class="fas fa-arrow-left"></i> Home
         </a>
         <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
@@ -194,10 +194,25 @@ for img in images:
     </div>
   </footer>
 
-  <script>
+<script>
+    tailwind.config = { darkMode: 'class' };
+
     const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
     toggleBtn.addEventListener('click', () => {
-      document.documentElement.classList.toggle('dark');
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
     });
   </script>
 </body>

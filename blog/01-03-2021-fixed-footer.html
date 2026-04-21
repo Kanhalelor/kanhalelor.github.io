@@ -2,13 +2,26 @@
 <html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Learn how to create a sticky fixed footer using HTML and CSS Flexbox" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+  <meta name="description" content="Python Programming, requests library">
+  <meta name="keywords" content="Python, requests module, PIPy, Libraries, Frameworks">
+  <meta name="author" content="Robson Kanhalelo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
+  <!-- Favicon -->
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <!-- Tailwind + Font Awesome -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Fira+Code&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
+  <!-- Inter font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Fira Code font -->
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
   <title>Sticky Footer Tutorial | Robson Kanhalelo</title>
 
   <style>
@@ -27,14 +40,38 @@
     }
   </style>
 </head>
-<body class="bg-zinc-950 text-zinc-200 min-h-screen flex flex-col">
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
 
-  <nav class="glass sticky top-0 z-50 px-6 py-4">
-    <div class="max-w-5xl mx-auto flex justify-between items-center">
-      <a href="../index.html" class="text-zinc-400 hover:text-white transition flex items-center gap-2">
-        <i class="fas fa-chevron-left"></i> Home
-      </a>
-      <div class="font-bold tracking-tighter text-xl">RK</div>
+<!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
+      </div>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
     </div>
   </nav>
 
@@ -109,11 +146,37 @@ footer {
     </div>
   </main>
 
-  <footer class="glass border-t border-white/5 py-8 mt-auto">
-    <div class="max-w-5xl mx-auto px-6 text-center text-zinc-500 text-sm">
-      <p>Made with <span class="text-red-500">❤</span> by Robson</p>
+<!-- Footer -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Build With Care in Windhoek, Namibia</p>
     </div>
   </footer>
+  <script>
+    tailwind.config = { darkMode: 'class' };
 
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
 </body>
 </html>
