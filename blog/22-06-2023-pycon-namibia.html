@@ -1,76 +1,223 @@
 <!DOCTYPE html>
-<html lang="en-US">
+<html lang="en" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
-  <meta name="description" content="Pycon Namibia Technical Event 2023">
-  <meta name="keywords" content="Pycon Namibia, Python Converence, Coding, EuroPycon">
-  <meta name="author" content="Robson Kanhalelo">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pycon Namibia Technical Event 2023" />
+  <meta name="keywords" content="Pycon Namibia, Python Conference, Coding, EuroPycon" />
+  <meta name="author" content="Robson Kanhalelo" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
   <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
-    <link rel="manifest" href="../images/site.webmanifest">
-  
-  <link href="https://fonts.googleapis.com/css2?family=Maven+Pro:wght@400;700;900&display=swap" rel="stylesheet">
-  <title>blog</title>
-  <link rel="stylesheet" href="../css/style2.css">
+  <link rel="manifest" href="../images/site.webmanifest">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <title>Reflecting on PyCon Namibia 2023</title>
+
   <style>
-    .jst {
-        text-align: justify;
+    body { font-family: 'Inter', system-ui, sans-serif; }
+    
+    .glass {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 255, 255, 0.12);
     }
-     a {
-        color: #0082c8;
-        text-decoration: underline;
-     }
+    
+    .dark .glass {
+      background: rgba(0, 0, 0, 0.65);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .article-wrapper {
+      max-width: 42rem;
+    }
+
+    .blog-content p {
+      line-height: 1.85;
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      text-align: justify;
+    }
+    
+    .blog-content h2, .blog-content h3, .blog-content h4 {
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+      display: block;
+    }
+
+    .blog-content h2 { font-size: 2rem; }
+    .blog-content h3 { font-size: 1.75rem; }
+    .blog-content h4 { font-size: 1.5rem; }
+    
+    .blog-content h2::before, .blog-content h3::before, .blog-content h4::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.35em;
+      width: 6px;
+      height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
+    }
+
+    .blog-content a {
+      color: #60a5fa;
+      text-decoration: underline;
+      text-underline-offset: 4px;
+    }
   </style>
 </head>
-<body>
-  <header>
-    <ul class="main-nav">
-      <li><a href="../index.html">← Home</a></li>
-      <li><a href="../projects/projects.html">Projects →</a></li>
-    </ul>
-  </header>
-  <div class="content">
-    <article>
-      <h1>Reflecting on PyCon Namibia 2023.</h1>
-      <div class="article-details"><small class="author">Robson - </small><time datetime="22-06-2023">22-06-2023</time> | <a class="tag" href="../tags/python.html">#python</a></div>
-      <div class="image-div">
-        <img class="intro-img" src="../images/Pohamba.jpg" alt="Robson">
-        <span class="figcaption">Me at Pycon Namibia - 2023</span>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
+
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects2.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
       </div>
-      <h2>Hello Pythonistas!</h2>
-        <p class="first-para">. . I love Python 	&#128521; . .</p>
-        <p class="jst">In today's rapidly evolving technosphere, there has never been a better time to immerse oneself in the world of technology, learning, building, and sharing experiences with fellow experts. The globalized nature of technical events enables us to connect and collaborate with professionals across various domains, identify knowledge gaps, and cultivate our skills with newfound expertise.</p>
+
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index2.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects2.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+        Reflecting on PyCon Namibia 2023
+      </h1>
+      <div class="mt-8 flex items-center gap-6 text-sm text-zinc-400">
+        <div>Robson Kanhalelo</div>
+        <div>•</div>
+        <time datetime="2023-06-22">June 22, 2023</time>
+        <div class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#python</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+    <div class="glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <img src="../images/Pohamba.jpg" 
+           alt="Robson at Pycon Namibia 2023" 
+           class="w-full h-auto">
+      <div class="px-8 py-4 text-sm text-zinc-400 dark:text-zinc-600 border-t border-white/10">
+        Me at Pycon Namibia - 2023
+      </div>
+    </div>
+  </div>
+
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
         
-        <h4>The Power of Python:</h4>
-        <p class="jst">
+        <h2>Hello Pythonistas!</h2>
+        <p class="italic text-center text-blue-400">. . I love Python 😉 . .</p>
+
+        <p>In today's rapidly evolving technosphere, there has never been a better time to immerse oneself in the world of technology, learning, building, and sharing experiences with fellow experts. The globalized nature of technical events enables us to connect and collaborate with professionals across various domains, identify knowledge gaps, and cultivate our skills with newfound expertise.</p>
+        
+        <h4>The Power of Python</h4>
+        <p>
         No discussion about PyCon Namibia is complete without acknowledging the incredible impact of Python. This versatile and captivating language has taken the web by storm, becoming the go-to tool for nearly every developer.
         </p>
-        <h4>Day 1: A Thrilling Experience:</h4>
-        <p class="jst">
-        I had the privilege of delving into the realms of Machine Learning and Data Science alongside my fellow speaker and newfound friend, <a href="https://www.linkedin.com/in/olaniyan-adewale-68452892">Olaniyan Adewale Hafeez</a>. Our exploration offered fresh perspectives and profound insights. Moreover, Adewale delivered an engaging demo on Microcontrollers and circuit programming using Micropython—an efficient implementation of Python tailored for small embedded development boards. This demonstration was invaluable, particularly for the enthusiastic audience of learners present at the conference.
-    </p>
-    <h4>Day 2: Enlightening Talks and Knowledge-Sharing:</h4>
-    <p class="jst">
-        On the second day, I stumbled upon an enlightening talk by <a href="https://nlauchande.github.io/about.html">Natu Lauchande</a> titled "Introduction to machine learning engineering with MLflow." This session revealed the remarkable features of MLflow, which proved indispensable in fine-tuning Machine Learning workflows. Additionally, the day featured numerous productive workshops on Data Science and Technical documentation, enriching attendees with practical skills and insights. 
-    </p>
-    <h4>The Grand Finale: Inspiring Talks and Unforgettable Moments:</h4>
-    <p class="jst">
-    The final day of PyCon NA 2023 presented an opportunity for me to deliver a practical demo on building Real-time Machine Learning Data Applications using Python. It was a momentous occasion as I stepped onto the stage for my first demo at PyCon NA. The day unfolded with a captivating series of talks by esteemed international speakers, including <a href="https://twitter.com/astrojuanlu">Juan Luis Cano Rodríguez</a> , and <a href="https://github.com/john-sandall">John Sandall</a>. The event culminated in lightning talks, adding a delightful touch and leaving participants inspired and motivated.
-    </p>
-    <h4>Looking Ahead to PyCon NA 2024:</h4>
-    <p class="jst">  
-    As we set our sights on PyCon NA 2024, it is vital to foster increased stakeholder engagement and garner support from educational institutions, including schools and tertiary organizations, as well as private sector involvement. PyCon Namibia truly belongs to us, the Namibians, and by embracing these collaborations, we can further elevate the event's impact and reach.
-    </p>
-    <p class="jst">
+
+        <h4>Day 1: A Thrilling Experience</h4>
+        <p>
+        I had the privilege of delving into the realms of Machine Learning and Data Science alongside my fellow speaker and newfound friend, <a href="https://www.linkedin.com/in/olaniyan-adewale-68452892" target="_blank">Olaniyan Adewale Hafeez</a>. Our exploration offered fresh perspectives and profound insights. Moreover, Adewale delivered an engaging demo on Microcontrollers and circuit programming using Micropython—an efficient implementation of Python tailored for small embedded development boards. This demonstration was invaluable, particularly for the enthusiastic audience of learners present at the conference.
+        </p>
+
+        <h4>Day 2: Enlightening Talks and Knowledge-Sharing</h4>
+        <p>
+        On the second day, I stumbled upon an enlightening talk by <a href="https://nlauchande.github.io/about.html" target="_blank">Natu Lauchande</a> titled "Introduction to machine learning engineering with MLflow." This session revealed the remarkable features of MLflow, which proved indispensable in fine-tuning Machine Learning workflows. Additionally, the day featured numerous productive workshops on Data Science and Technical documentation, enriching attendees with practical skills and insights. 
+        </p>
+
+        <h4>The Grand Finale: Inspiring Talks and Unforgettable Moments</h4>
+        <p>
+        The final day of PyCon NA 2023 presented an opportunity for me to deliver a practical demo on building Real-time Machine Learning Data Applications using Python. It was a momentous occasion as I stepped onto the stage for my first demo at PyCon NA. The day unfolded with a captivating series of talks by esteemed international speakers, including <a href="https://twitter.com/astrojuanlu" target="_blank">Juan Luis Cano Rodríguez</a>, and <a href="https://github.com/john-sandall" target="_blank">John Sandall</a>. The event culminated in lightning talks, adding a delightful touch and leaving participants inspired and motivated.
+        </p>
+
+        <h4>Looking Ahead to PyCon NA 2024</h4>
+        <p>  
+        As we set our sights on PyCon NA 2024, it is vital to foster increased stakeholder engagement and garner support from educational institutions, including schools and tertiary organizations, as well as private sector involvement. PyCon Namibia truly belongs to us, the Namibians, and by embracing these collaborations, we can further elevate the event's impact and reach.
+        </p>
+
+        <p>
         Kudos to the PyCon NA 2023 organizing team for successfully pulling off this remarkable event.
-    </p>
-    <h4>Enjoy the <a href="https://drive.google.com/drive/folders/1e2PmQ4TLAz4Cu37fmkQWB1mx5VSEtTUk?usp=drive_link">Gallery</a>, and see you at PyCon NA 2024!</h4>
-    </article>
-  </div>
-<footer>
-  <small class="copyright">Made with <span class="love">&#x2764; </span>by  Robson</small>
-</footer>
+        </p>
+
+        <h3>Cheers!</h3>
+        <p>
+        Enjoy the <a href="https://drive.google.com/drive/folders/1e2PmQ4TLAz4Cu37fmkQWB1mx5VSEtTUk?usp=drive_link" target="_blank">Gallery</a>, and see you at PyCon NA 2024!
+        </p>
+
+      </div>
+    </div>
+  </article>
+
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Redesigned with Tailwind CSS + Glassmorphism</p>
+    </div>
+  </footer>
+
+  <script>
+    tailwind.config = { darkMode: 'class' };
+
+    // Theme toggle
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    // Mobile menu
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+  </script>
 </body>
 </html>
