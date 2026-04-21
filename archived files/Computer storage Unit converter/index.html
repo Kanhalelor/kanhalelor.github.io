@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <title>Weight Converter</title>
+    <link rel="stylesheet" href="./convert.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./convert.css">
+  </head>
+<body>
+  <div class="wrapper">
+    <h3 class="title">Computer Storage Units Conversion Calculator</h3>
+    <span class="call">Value to convert</span>
+    <input type="number" name="units" id="value">
+    <span class="call">From:</span>
+    <select class="menu1">
+      <option>Bit</option>
+      <option>Kilobytes</option>
+      <option>Megabytes</option>
+      <option>Gigabytes</option>
+      <option>Terabytes</option>
+    </select>
+    <span class="call">To:</span>
+    <select class="menu2">
+      <option>Bit</option>
+      <option selected>Kilobytes</option>
+      <option>Megabytes</option>
+      <option>Gigabytes</option>
+      <option>Terabytes</option>
+    </select>
+    <button id="btn">convert</button>
+    <button id="clr">Clear</button>
+    <ul class="units">
+      <li>
+        <h4 id="unit-title">Bit</h4>
+        <span id="unit">0.0</span>
+      </li>
+      <li>
+        <h4 id="unit-title">Kilobytes</h4>
+        <span id="unit">0.0</span>
+      </li>
+      <li>
+        <h4 id="unit-title">Megabytes</h4>
+        <span id="unit">0.0</span>
+      </li>
+      <li>
+        <h4 id="unit-title">Gigabytes</h4>
+        <span id="unit">0.0</span>
+      </li>
+      <li>
+        <h4 id="unit-title">Terabytes</h4>
+        <span id="unit">0.0</span>
+      </li>
+    </ul>
+  </div>
+  <script src="./convert.js">
+</body>
+<html>
