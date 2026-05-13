@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Key findings from Namibia's 2024 15th School Day Report — enrollment, dropout, regional equity.">
+  <meta name="keywords" content="Namibia, Education, MoEAC, EMIS, 15th School Day Report, 2024">
+  <meta name="author" content="Robson Kanhalelo">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="https://rawcdn.githack.com/Kanhalelor/kanhalelor.github.io/506cd3da9a16ebc89cb927b9461d19bf13ac4faf/images/favicon-16x16.png">
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+
+  <title>Namibia Education Report 2024 — Key Findings</title>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+    body { font-family: 'Inter', system-ui, sans-serif; }
+
+    .glass {
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid rgba(255,255,255,0.12);
+    }
+    .dark .glass {
+      background: rgba(0,0,0,0.65);
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .article-wrapper { max-width: 42rem; }
+
+    .blog-content p {
+      line-height: 1.85;
+      font-size: 1.1rem;
+      text-align: justify;
+    }
+    .blog-content h2 {
+      font-size: 1.85rem;
+      font-weight: 600;
+      margin-top: 3rem;
+      margin-bottom: 1.25rem;
+      position: relative;
+      padding-left: 1.25rem;
+    }
+    .blog-content h2::before {
+      content: '';
+      position: absolute;
+      left: 0; top: 0.35em;
+      width: 6px; height: 1.1em;
+      background: rgb(59 130 246);
+      border-radius: 9999px;
+    }
+
+    /* Stat counter animation */
+    @keyframes countUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .stat-card { animation: countUp 0.6s ease forwards; }
+
+    /* Progress bar */
+    .bar-fill { transition: width 1.4s cubic-bezier(0.4,0,0.2,1); }
+
+    /* Callout box */
+    .callout {
+      border-left: 4px solid rgb(59 130 246);
+      background: rgba(59,130,246,0.08);
+      border-radius: 0 0.75rem 0.75rem 0;
+      padding: 1rem 1.25rem;
+      margin: 1.5rem 0;
+    }
+    .callout-danger {
+      border-left-color: rgb(239 68 68);
+      background: rgba(239,68,68,0.07);
+    }
+    .callout-warn {
+      border-left-color: rgb(234 179 8);
+      background: rgba(234,179,8,0.07);
+    }
+    .callout-success {
+      border-left-color: rgb(34 197 94);
+      background: rgba(34,197,94,0.07);
+    }
+
+    /* Chart container */
+    .chart-container { position: relative; width: 100%; }
+
+    /* Region bar */
+    .region-bar-track {
+      height: 10px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 999px;
+      overflow: hidden;
+    }
+    .region-bar-fill {
+      height: 100%;
+      border-radius: 999px;
+      background: rgb(59 130 246);
+      width: 0;
+      transition: width 1.2s cubic-bezier(0.4,0,0.2,1);
+    }
+
+    /* Table */
+    .data-table th { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: #9ca3af; }
+    .data-table tr:not(:last-child) { border-bottom: 1px solid rgba(255,255,255,0.06); }
+
+    /* Pulse badge */
+    @keyframes pulse-ring { 0%,100% { opacity:1; } 50% { opacity:0.4; } }
+    .pulse { animation: pulse-ring 2s infinite; }
+  </style>
+</head>
+<body class="bg-zinc-950 text-zinc-100 dark:bg-zinc-50 dark:text-zinc-900">
+
+  <!-- Navigation -->
+  <nav class="sticky top-0 z-50 glass">
+    <div class="max-w-6xl mx-auto px-6 py-5 flex justify-between items-center">
+      <div class="text-2xl font-semibold tracking-tighter">R K</div>
+      <div class="hidden md:flex gap-8 text-sm font-medium">
+        <a href="../index.html" class="hover:text-blue-400 transition-colors flex items-center gap-1">
+          <i class="fas fa-arrow-left"></i> Home
+        </a>
+        <a href="../projects/projects.html" class="hover:text-blue-400 transition-colors">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400 font-semibold">Blog</a>
+      </div>
+      <div class="md:hidden">
+        <button id="mobile-menu-btn" class="p-3 text-2xl"><i class="fas fa-bars"></i></button>
+      </div>
+      <button id="theme-toggle" class="p-3 rounded-2xl hover:bg-white/10 dark:hover:bg-black/10 transition">
+        <i class="fas fa-moon text-xl"></i>
+      </button>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden glass border-t border-white/10">
+      <div class="px-6 py-8 flex flex-col gap-6 text-lg font-medium">
+        <a href="../index.html" class="flex items-center gap-2"><i class="fas fa-arrow-left"></i> Home</a>
+        <a href="../projects/projects.html">Projects</a>
+        <a href="../blog/blog.html" class="text-blue-400">Blog</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Article Header -->
+  <section class="pt-16 pb-12 bg-zinc-900 dark:bg-zinc-100">
+    <div class="max-w-4xl mx-auto px-6">
+      <div class="flex items-center gap-4 text-sm text-blue-400 mb-6">
+        <a href="../blog/blog.html" class="hover:underline">← Back to Blog</a>
+      </div>
+      <h1 class="text-4xl md:text-5xl font-bold tracking-tighter leading-tight">
+        Namibia's 2024 Education Report:<br>What the Data Is Telling Us
+      </h1>
+      <div class="mt-8 flex flex-wrap items-center gap-4 text-sm text-zinc-400">
+        <div>Robson Kanhalelo</div>
+        <div>•</div>
+        <time datetime="2024-07-09">July 2024</time>
+        <span class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#data</span>
+        <span class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#namibia</span>
+        <span class="px-3 py-1 bg-zinc-800 dark:bg-zinc-200 text-zinc-300 dark:text-zinc-700 rounded-full text-xs">#education</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Hero visual strip -->
+  <div class="max-w-4xl mx-auto px-6 -mt-8 relative z-10">
+    <div class="glass rounded-3xl overflow-hidden shadow-[rgba(0,0,0,0.3)_0_1px_3px] bg-gradient-to-r from-blue-900/40 via-zinc-900/60 to-blue-950/40 px-8 py-10 flex flex-col items-center text-center">
+      <div class="text-6xl font-bold text-blue-400 mb-2" id="hero-count">0</div>
+      <div class="text-zinc-300 text-lg font-medium">learners enrolled across Namibia — 2024</div>
+      <div class="mt-4 flex gap-3 text-sm text-zinc-400 flex-wrap justify-center">
+        <span><i class="fas fa-school mr-1 text-blue-400"></i>2,036 schools</span>
+        <span>•</span>
+        <span><i class="fas fa-chalkboard-teacher mr-1 text-blue-400"></i>33,322 teachers</span>
+        <span>•</span>
+        <span><i class="fas fa-map-marker-alt mr-1 text-blue-400"></i>14 regions</span>
+      </div>
+      <div class="mt-3 text-xs text-zinc-500">Source: MoEAC 15th School Day Report 2024 (EMIS)</div>
+    </div>
+  </div>
+
+  <!-- Article Content -->
+  <article class="max-w-4xl mx-auto px-6 py-16">
+    <div class="article-wrapper mx-auto bg-white/5 dark:bg-zinc-900/70 backdrop-blur-xl rounded-3xl p-10 md:p-14 shadow-[rgba(0,0,0,0.3)_0_1px_3px]">
+      <div class="blog-content prose prose-invert dark:prose-invert max-w-none">
+
+        <p>Every year, Namibia's Education Management Information System (EMIS) publishes the <strong>15th School Day Report</strong> — a snapshot of every learner, school, and teacher in the country as captured on the 15th school day of the academic year. It is the closest thing Namibia has to a real-time pulse check on its education system.</p>
+
+        <p>The 2024 edition just dropped. I went through it carefully and pulled out the numbers that matter. Some are encouraging. Others should make every policymaker uncomfortable.</p>
+
+        <!-- ============ SECTION 1: HEADLINE STATS ============ -->
+        <h2>The headline numbers</h2>
+
+        <p>Total enrollment hit <strong>896,311 learners</strong> in 2024 — up from 864,707 in 2023, a growth of about 3.7%. That's consistent with the roughly 2–3% annual increase we've seen over recent years. We are reaching more children. That matters.</p>
+
+        <!-- Stat cards -->
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-3 my-8 not-prose">
+          <div class="stat-card glass rounded-2xl p-4 text-center" style="animation-delay:0s">
+            <div class="text-2xl font-bold text-blue-400" data-target="896311" data-format="comma">0</div>
+            <div class="text-xs text-zinc-400 mt-1">total learners</div>
+          </div>
+          <div class="stat-card glass rounded-2xl p-4 text-center" style="animation-delay:0.1s">
+            <div class="text-2xl font-bold text-blue-400" data-target="2036" data-format="comma">0</div>
+            <div class="text-xs text-zinc-400 mt-1">schools</div>
+          </div>
+          <div class="stat-card glass rounded-2xl p-4 text-center" style="animation-delay:0.2s">
+            <div class="text-2xl font-bold text-blue-400" data-target="33322" data-format="comma">0</div>
+            <div class="text-xs text-zinc-400 mt-1">teachers</div>
+          </div>
+          <div class="stat-card glass rounded-2xl p-4 text-center" style="animation-delay:0.3s">
+            <div class="text-2xl font-bold text-blue-400" data-target="37" data-format="plus">0</div>
+            <div class="text-xs text-zinc-400 mt-1">% enrollment growth vs 2022</div>
+          </div>
+        </div>
+
+        <p>But raw enrollment numbers can be seductive. They tell you how many children walked through the school gate on day fifteen. They don't tell you how many will still be there by Grade 12.</p>
+
+        <!-- ============ SECTION 2: THE FUNNEL ============ -->
+        <h2>The pipeline is broken</h2>
+
+        <p>This is the finding that should concern us most. Look at what happens to learners as they progress through secondary school:</p>
+
+        <!-- Funnel bars -->
+        <div class="not-prose glass rounded-2xl p-6 my-6 space-y-4" id="funnel-section">
+          <div class="text-sm font-semibold text-zinc-300 mb-5">Secondary school enrollment by grade — 2024</div>
+          <div id="funnel-bars" class="space-y-3"></div>
+          <div class="text-xs text-zinc-500 mt-3 pt-3 border-t border-white/10">
+            From Grade 8 to Grade 12: only <span class="text-red-400 font-semibold">13.4%</span> of learners who entered junior secondary complete senior secondary.
+          </div>
+        </div>
+
+        <div class="callout callout-danger not-prose">
+          <div class="font-semibold text-red-300 text-sm mb-1">⚠ The cliff at Grade 11</div>
+          <p class="text-sm text-zinc-300 leading-relaxed">Enrollment drops from 55,541 in Grade 10 to just 41,926 in Grade 11 — a loss of nearly 14,000 learners in a single year. That is not noise. That is a systemic failure point that demands immediate investigation.</p>
+        </div>
+
+        <!-- Chart: Funnel -->
+        <div class="not-prose glass rounded-2xl p-6 my-6">
+          <div class="text-sm font-semibold text-zinc-300 mb-4">Grade-by-grade secondary enrollment</div>
+          <div class="chart-container" style="height:260px">
+            <canvas id="funnelChart" role="img" aria-label="Bar chart showing Namibia secondary school enrollment by grade in 2024, declining sharply from Grade 8 to Grade 12">Enrollment: Gr8 77439, Gr9 57511, Gr10 55541, Gr11 41926, Gr12 10396.</canvas>
+          </div>
+        </div>
+
+        <p>Of every 100 children who enroll in Grade 8, fewer than 14 will sit for their Grade 12 exams. This is not a dropout statistic — it is a systemic failure of retention. And it concentrates at the exact moment learners need the most support: the transition from junior to senior secondary.</p>
+
+        <!-- ============ SECTION 3: REGIONAL INEQUALITY ============ -->
+        <h2>Not all regions are equal</h2>
+
+        <p>The national averages obscure enormous regional disparities. Ohangwena alone accounts for over 121,000 learners — nearly five times the 25,137 enrolled in //Kharas. Yet resource allocation does not scale proportionally.</p>
+
+        <!-- Regional chart -->
+        <div class="not-prose glass rounded-2xl p-6 my-6">
+          <div class="text-sm font-semibold text-zinc-300 mb-4">Learner enrollment by region — 2024</div>
+          <div class="chart-container" style="height:420px">
+            <canvas id="regionChart" role="img" aria-label="Horizontal bar chart of learner enrollment across Namibia's 14 regions in 2024">Regional enrollment data from 25,137 in //Kharas to 121,119 in Ohangwena.</canvas>
+          </div>
+        </div>
+
+        <div class="callout callout-warn not-prose">
+          <div class="font-semibold text-yellow-300 text-sm mb-1">📍 The north-south divide</div>
+          <p class="text-sm text-zinc-300 leading-relaxed">Northern regions (Ohangwena, Omusati, Kavango East) carry the highest enrollment loads and are simultaneously the most under-resourced in terms of infrastructure and teacher supply. Southern regions have fewer schools, fewer learners — but proportionally better-resourced classrooms.</p>
+        </div>
+
+        <!-- ============ SECTION 4: TEACHER RATIO ============ -->
+        <h2>Teachers: the ratio hides the reality</h2>
+
+        <p>At a national average of <strong>1 teacher per 27 learners</strong>, Namibia's teacher-to-learner ratio looks acceptable on paper. But national averages are averages of inequality. The practical reality in an Ohangwena primary school, where class sizes routinely exceed 40, is entirely different from a private school in Windhoek.</p>
+
+        <!-- Teacher ratio visual -->
+        <div class="not-prose glass rounded-2xl p-6 my-6">
+          <div class="text-sm font-semibold text-zinc-300 mb-5">Teacher deployment context</div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-center">
+            <div class="bg-white/5 rounded-xl p-4">
+              <div class="text-3xl font-bold text-blue-400">1:27</div>
+              <div class="text-xs text-zinc-400 mt-1">national avg ratio</div>
+            </div>
+            <div class="bg-white/5 rounded-xl p-4">
+              <div class="text-3xl font-bold text-red-400">1:40+</div>
+              <div class="text-xs text-zinc-400 mt-1">estimated northern regions</div>
+            </div>
+            <div class="bg-white/5 rounded-xl p-4">
+              <div class="text-3xl font-bold text-green-400">1,740</div>
+              <div class="text-xs text-zinc-400 mt-1">state schools (85%)</div>
+            </div>
+          </div>
+          <div class="mt-4 text-xs text-zinc-500">State schools enroll the vast majority of Namibia's 896,311 learners with proportionally fewer resources than private institutions.</div>
+        </div>
+
+        <!-- ============ SECTION 5: GENDER ============ -->
+        <h2>Gender: parity masks two different problems</h2>
+
+        <p>For the first time, you might look at the gender split and feel reassured — there are slightly more girls enrolled than boys. But dig into what that means and the picture becomes less comfortable.</p>
+
+        <!-- Gender chart -->
+        <div class="not-prose glass rounded-2xl p-6 my-6">
+          <div class="text-sm font-semibold text-zinc-300 mb-1">Gender enrollment split — 2024</div>
+          <div class="text-xs text-zinc-500 mb-4">Female enrollment slightly exceeds male enrollment system-wide</div>
+          <div class="chart-container" style="height:220px">
+            <canvas id="genderChart" role="img" aria-label="Doughnut chart showing female vs male learner enrollment in Namibia 2024">Female: approximately 452,000. Male: approximately 444,000.</canvas>
+          </div>
+          <div class="flex justify-center gap-6 mt-4 text-xs text-zinc-400">
+            <span class="flex items-center gap-1"><span class="inline-block w-3 h-3 rounded-sm bg-blue-500"></span> Female ~452K</span>
+            <span class="flex items-center gap-1"><span class="inline-block w-3 h-3 rounded-sm bg-zinc-500"></span> Male ~444K</span>
+          </div>
+        </div>
+
+        <p>More girls than boys are in school because <strong>boys drop out at higher rates</strong>, not because girls have better outcomes. And among the girls who stay, <strong>grade repetition is disproportionately high</strong>. Both patterns signal failure — one of early exit, one of progression quality. Celebrating numeric parity here would be missing the point entirely.</p>
+
+        <!-- ============ SECTION 6: ENROLLMENT TREND ============ -->
+        <h2>Enrollment over time</h2>
+
+        <p>Zooming out, the long-term trend is genuinely positive. Namibia has grown enrollment consistently year-on-year, recovering and accelerating past post-pandemic disruptions. The system is getting bigger. The question is whether it is getting better.</p>
+
+        <div class="not-prose glass rounded-2xl p-6 my-6">
+          <div class="text-sm font-semibold text-zinc-300 mb-4">Total learner enrollment trend (2020–2024)</div>
+          <div class="chart-container" style="height:240px">
+            <canvas id="trendChart" role="img" aria-label="Line chart of total Namibia learner enrollment from 2020 to 2024 showing steady growth">2020: 808000, 2021: 820000, 2022: 839579, 2023: 864707, 2024: 896311.</canvas>
+          </div>
+        </div>
+
+        <!-- ============ SECTION 7: ACTIONS ============ -->
+        <h2>What needs to happen — now</h2>
+
+        <p>The data is specific enough to demand specific responses. Here is what I believe the Ministry must prioritize before the 2025 academic year:</p>
+
+        <!-- Action items -->
+        <div class="not-prose space-y-3 my-6" id="action-list"></div>
+
+        <div class="callout callout-success not-prose">
+          <div class="font-semibold text-green-300 text-sm mb-1">📌 A concrete target</div>
+          <p class="text-sm text-zinc-300 leading-relaxed">Namibia spends over 20% of its national budget on education — one of the highest rates in the world. That investment deserves a Grade 12 completion rate target of at least <strong>30% by 2027</strong>. The current ~13% is not acceptable.</p>
+        </div>
+
+        <h2>Closing thoughts</h2>
+
+        <p>I am not pessimistic about Namibia's education system. The enrollment growth is real. The infrastructure investment is real. The commitment at the policy level is real.</p>
+
+        <p>But good intent does not retain a child who drops out between Grade 10 and Grade 11. Numbers do not survive on investment alone — they need targeted, regional, gender-aware interventions informed by exactly the kind of data this report provides.</p>
+
+        <p>The 15th School Day Report exists precisely so we can have this conversation. Let's have it.</p>
+
+        <br><br>
+        <p><strong>Data source: MoEAC 15th School Day Report 2024, EMIS Division. Full report available at meiysac.gov.na 📊</strong></p>
+
+      </div>
+    </div>
+  </article>
+
+  <!-- Footer -->
+  <footer class="py-12 text-center text-zinc-500 text-sm border-t border-zinc-800 dark:border-zinc-200">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
+      <div class="flex items-center gap-6">
+        <a href="https://x.com/kanhalelor/" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-x-twitter"></i></a>
+        <a href="https://github.com/Kanhalelor" target="_blank" class="hover:text-blue-400 transition text-2xl"><i class="fab fa-github"></i></a>
+      </div>
+      <p>Made with <span class="text-red-500">❤️</span> by Robson Kanhalelo</p>
+      <p class="text-xs">© 2026 • Build With Care in Windhoek, Namibia</p>
+    </div>
+  </footer>
+
+  <script>
+    tailwind.config = { darkMode: 'class' };
+
+    /* ── Theme toggle ── */
+    const toggleBtn = document.getElementById('theme-toggle');
+    const htmlEl = document.documentElement;
+    toggleBtn.addEventListener('click', () => {
+      htmlEl.classList.toggle('dark');
+      const icon = toggleBtn.querySelector('i');
+      icon.classList.toggle('fa-moon');
+      icon.classList.toggle('fa-sun');
+    });
+
+    const mobileBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    mobileBtn.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+      const icon = mobileBtn.querySelector('i');
+      icon.classList.toggle('fa-bars');
+      icon.classList.toggle('fa-times');
+    });
+
+    /* ── Animated counter util ── */
+    function animateCount(el, target, duration = 1800) {
+      const fmt = el.dataset.format;
+      let start = null;
+      function step(ts) {
+        if (!start) start = ts;
+        const progress = Math.min((ts - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const val = Math.round(eased * target);
+        if (fmt === 'comma') el.textContent = val.toLocaleString();
+        else if (fmt === 'plus') el.textContent = '+' + val + '%';
+        else el.textContent = val;
+        if (progress < 1) requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    }
+
+    /* ── Hero counter ── */
+    function animateHero() {
+      const el = document.getElementById('hero-count');
+      animateCount({ textContent: '', dataset: { format: 'comma' }, set textContent(v) { el.textContent = v; } }, 896311, 2200);
+    }
+
+    /* ── Intersection observer to trigger all counters ── */
+    const counterEls = document.querySelectorAll('[data-target]');
+    const counterObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          animateCount(e.target, parseInt(e.target.dataset.target));
+          counterObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.3 });
+    counterEls.forEach(el => counterObserver.observe(el));
+
+    /* Hero triggers on load */
+    setTimeout(animateHero, 400);
+
+    /* ── Funnel bars ── */
+    const funnelData = [
+      { grade: 'Grade 8',  count: 77439, color: '#3b82f6' },
+      { grade: 'Grade 9',  count: 57511, color: '#60a5fa' },
+      { grade: 'Grade 10', count: 55541, color: '#93c5fd' },
+      { grade: 'Grade 11', count: 41926, color: '#f97316' },
+      { grade: 'Grade 12', count: 10396, color: '#ef4444' },
+    ];
+    const maxCount = Math.max(...funnelData.map(d => d.count));
+    const funnelContainer = document.getElementById('funnel-bars');
+    funnelData.forEach(d => {
+      const pct = Math.round((d.count / maxCount) * 100);
+      funnelContainer.innerHTML += `
+        <div>
+          <div class="flex justify-between text-xs text-zinc-400 mb-1">
+            <span>${d.grade}</span>
+            <span class="font-medium" style="color:${d.color}">${d.count.toLocaleString()}</span>
+          </div>
+          <div class="region-bar-track">
+            <div class="region-bar-fill" style="background:${d.color}" data-width="${pct}"></div>
+          </div>
+        </div>`;
+    });
+
+    /* ── Regional bars observer ── */
+    const funnelObs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) {
+        document.querySelectorAll('.region-bar-fill').forEach(el => {
+          el.style.width = el.dataset.width + '%';
+        });
+        funnelObs.disconnect();
+      }
+    }, { threshold: 0.3 });
+    funnelObs.observe(document.getElementById('funnel-section'));
+
+    /* ── Action list ── */
+    const actions = [
+      { icon: 'fa-triangle-exclamation', color: 'text-red-400',    title: 'Emergency secondary retention audit',      body: 'The Grade 10→11 cliff needs a dedicated investigation. Why are ~14,000 learners leaving at that exact moment? Is it fees, distance, pregnancy, employment pressure? We need the answer before the next academic year.' },
+      { icon: 'fa-person-chalkboard',    color: 'text-blue-400',   title: 'Accelerate teacher deployment north',        body: 'Ohangwena, Omusati, and Kavango regions are carrying enormous learner loads. Teacher deployment quotas must be weighted by regional enrollment density, not just school count.' },
+      { icon: 'fa-venus-mars',           color: 'text-yellow-400', title: 'Gender-disaggregated tracking system',       body: 'We need real-time, grade-level data on male dropout and female repetition rates — separately, and by region. The aggregate masks too much.' },
+      { icon: 'fa-road',                 color: 'text-green-400',  title: 'Rural infrastructure: //Kharas to Kavango', body: 'Distance remains a documented barrier to enrollment and retention. Hostel expansion and transport support in under-served regions should be treated as retention infrastructure, not just welfare.' },
+      { icon: 'fa-bullseye',             color: 'text-purple-400', title: 'Set a public Grade 12 completion target',   body: 'Commit to 30% Grade 12 completion by 2027. Publish annual progress. Link budget allocations to the metric. Make accountability visible.' },
+    ];
+
+    const actionList = document.getElementById('action-list');
+    actions.forEach((a, i) => {
+      actionList.innerHTML += `
+        <div class="glass rounded-2xl p-5 flex gap-4 items-start" style="animation-delay:${i * 0.1}s">
+          <div class="mt-0.5 w-8 h-8 flex-shrink-0 flex items-center justify-center rounded-full bg-white/5">
+            <i class="fas ${a.icon} ${a.color}"></i>
+          </div>
+          <div>
+            <div class="font-semibold text-sm text-zinc-100 mb-1">${i + 1}. ${a.title}</div>
+            <div class="text-sm text-zinc-400 leading-relaxed">${a.body}</div>
+          </div>
+        </div>`;
+    });
+
+    /* ── CHART.JS CHARTS ── */
+
+    const chartDefaults = {
+      color: '#a1a1aa',
+      plugins: { legend: { display: false } },
+      scales: {
+        x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#71717a', font: { size: 11 } } },
+        y: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#71717a', font: { size: 11 } } },
+      }
+    };
+
+    /* Funnel bar chart */
+    new Chart(document.getElementById('funnelChart'), {
+      type: 'bar',
+      data: {
+        labels: ['Grade 8', 'Grade 9', 'Grade 10', 'Grade 11', 'Grade 12'],
+        datasets: [{
+          label: 'Learners',
+          data: [77439, 57511, 55541, 41926, 10396],
+          backgroundColor: ['#3b82f6','#60a5fa','#93c5fd','#f97316','#ef4444'],
+          borderRadius: 6,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toLocaleString() + ' learners' } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#a1a1aa', font: { size: 12 } } },
+          y: {
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { color: '#a1a1aa', font: { size: 11 }, callback: v => v.toLocaleString() }
+          }
+        }
+      }
+    });
+
+    /* Regional horizontal bar chart */
+    const regionData = [
+      { region: '//Kharas',       count: 25137 },
+      { region: 'Omaheke',        count: 27135 },
+      { region: 'Hardap',         count: 28530 },
+      { region: 'Kunene',         count: 34011 },
+      { region: 'Zambezi',        count: 43366 },
+      { region: 'Kavango West',   count: 49075 },
+      { region: 'Oshana',         count: 60987 },
+      { region: 'Erongo',         count: 53577 },
+      { region: 'Otjozondjupa',   count: 56183 },
+      { region: 'Oshikoto',       count: 78788 },
+      { region: 'Kavango East',   count: 75774 },
+      { region: 'Khomas',         count: 101642 },
+      { region: 'Omusati',        count: 109383 },
+      { region: 'Ohangwena',      count: 121119 },
+    ].sort((a, b) => a.count - b.count);
+
+    new Chart(document.getElementById('regionChart'), {
+      type: 'bar',
+      data: {
+        labels: regionData.map(d => d.region),
+        datasets: [{
+          label: 'Learners',
+          data: regionData.map(d => d.count),
+          backgroundColor: regionData.map(d =>
+            d.count > 100000 ? '#ef4444' :
+            d.count > 70000  ? '#f97316' :
+            d.count > 40000  ? '#3b82f6' : '#6b7280'
+          ),
+          borderRadius: 4,
+          borderSkipped: false,
+        }]
+      },
+      options: {
+        indexAxis: 'y',
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toLocaleString() + ' learners' } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#a1a1aa', font: { size: 11 }, callback: v => (v/1000)+'K' } },
+          y: { grid: { display: false }, ticks: { color: '#a1a1aa', font: { size: 11 } } }
+        }
+      }
+    });
+
+    /* Gender doughnut */
+    new Chart(document.getElementById('genderChart'), {
+      type: 'doughnut',
+      data: {
+        labels: ['Female', 'Male'],
+        datasets: [{
+          data: [452000, 444311],
+          backgroundColor: ['#3b82f6', '#52525b'],
+          borderColor: 'rgba(0,0,0,0)',
+          hoverOffset: 6,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        cutout: '72%',
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toLocaleString() } }
+        }
+      }
+    });
+
+    /* Enrollment trend line */
+    new Chart(document.getElementById('trendChart'), {
+      type: 'line',
+      data: {
+        labels: ['2020', '2021', '2022', '2023', '2024'],
+        datasets: [{
+          label: 'Total learners',
+          data: [808000, 820000, 839579, 864707, 896311],
+          borderColor: '#3b82f6',
+          backgroundColor: 'rgba(59,130,246,0.10)',
+          pointBackgroundColor: '#3b82f6',
+          pointRadius: 5,
+          pointHoverRadius: 7,
+          tension: 0.35,
+          fill: true,
+        }]
+      },
+      options: {
+        responsive: true, maintainAspectRatio: false,
+        plugins: {
+          legend: { display: false },
+          tooltip: { callbacks: { label: ctx => ' ' + ctx.raw.toLocaleString() + ' learners' } }
+        },
+        scales: {
+          x: { grid: { color: 'rgba(255,255,255,0.05)' }, ticks: { color: '#a1a1aa', font: { size: 12 } } },
+          y: {
+            grid: { color: 'rgba(255,255,255,0.05)' },
+            ticks: { color: '#a1a1aa', font: { size: 11 }, callback: v => (v/1000).toFixed(0)+'K' },
+            min: 780000
+          }
+        }
+      }
+    });
+
+  </script>
+</body>
+</html>
